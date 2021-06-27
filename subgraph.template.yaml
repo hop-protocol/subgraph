@@ -2,15 +2,15 @@ specVersion: 0.0.2
 description: Hop Protocol
 repository: https://github.com/hop-protocol/hop-subgraph
 schema:
-  file: schema.graphql
+  file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: HopL2Bridge
-    network: matic
+    network: {{network}}
     source:
-      address: "0x25D8039bB044dC227f741a9e381CA4cEAE2E6aE8"
+      address: '{{address}}'
       abi: L2_Bridge
-      startBlock: 15810014
+      startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -19,9 +19,8 @@ dataSources:
         - TransferSent
       abis:
         - name: L2_Bridge
-          file: HopL2Bridge/abis/L2_Bridge.json
+          file: ./abis/L2_Bridge.json
       eventHandlers:
-        - event: TransferSent(indexed bytes32,indexed uint256,indexed
-            address,uint256,bytes32,uint256,uint256,uint256,uint256)
+        - event: TransferSent(indexed bytes32,indexed uint256,indexed address,uint256,bytes32,uint256,uint256,uint256,uint256)
           handler: handleTransferSent
-      file: HopL2Bridge/HopL2Bridge.wasm
+      file: ./src/mapping.ts

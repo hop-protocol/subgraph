@@ -1,4 +1,4 @@
-import { TransferSent } from '../generated/Hop/L2_Bridge'
+import { TransferSent } from '../generated/HopL2Bridge/L2_Bridge'
 import { TransferSent as TransferSentEntity } from '../generated/schema'
 
 export function handleTransferSent(event: TransferSent): void {

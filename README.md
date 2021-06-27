@@ -5,6 +5,12 @@
 ## Development
 
 ```bash
+npm run prepare:polygon
+# or
+npm run prepare:xdai
+```
+
+```bash
 npm run codegen
 ```
 
