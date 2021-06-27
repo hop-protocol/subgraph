@@ -21,6 +21,16 @@ dataSources:
         - name: L2_Bridge
           file: ./abis/L2_Bridge.json
       eventHandlers:
+        - event: MultipleWithdrawalsSettled(indexed address,indexed bytes32,uint256)
+          handler: handleMultipleWithdrawalsSettled
+        - event: TransferRootSet(indexed bytes32,uint256)
+          handler: handleTransferRootSet
         - event: TransferSent(indexed bytes32,indexed uint256,indexed address,uint256,bytes32,uint256,uint256,uint256,uint256)
           handler: handleTransferSent
+        - event: TransfersCommitted(indexed uint256,indexed bytes32,uint256,uint256)
+          handler: handleTransfersCommitted
+        - event: WithdrawalBondSettled(indexed address,indexed bytes32,indexed bytes32)
+          handler: handleWithdrawalBondSettled
+        - event: WithdrawalBonded(indexed bytes32,uint256)
+          handler: handleWithdrawalBonded
       file: ./src/mapping.ts

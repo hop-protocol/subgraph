@@ -1,3 +1,16 @@
+type MultipleWithdrawalsSettled @entity {
+  id: ID!
+  bonder: String!
+  rootHash: Bytes!
+  totalBondsSettled: BigInt!
+}
+
+type TransferRootSet @entity {
+  id: ID!
+  rootHash: Bytes!
+  totalAmount: BigInt!
+}
+
 type TransferSent @entity {
   id: ID!
   transferId: Bytes!
@@ -11,3 +24,23 @@ type TransferSent @entity {
   deadline: BigInt!
 }
 
+type TransfersCommitted @entity {
+  id: ID!
+  destinationChainId: BigInt!
+  rootHash: Bytes!
+  totalAmount: BigInt!
+  rootCommittedAt: BigInt!
+}
+
+type WithdrawalBondSettled @entity {
+  id: ID!
+  bonder: String!
+  transferId: Bytes!
+  rootHash: Bytes!
+}
+
+type WithdrawalBonded @entity {
+  id: ID!
+  transferId: Bytes!
+  amount: BigInt!
+}

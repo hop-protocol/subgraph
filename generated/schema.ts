@@ -12,6 +12,119 @@ import {
   BigDecimal
 } from "@graphprotocol/graph-ts";
 
+export class MultipleWithdrawalsSettled extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(
+      id !== null,
+      "Cannot save MultipleWithdrawalsSettled entity without an ID"
+    );
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save MultipleWithdrawalsSettled entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("MultipleWithdrawalsSettled", id.toString(), this);
+  }
+
+  static load(id: string): MultipleWithdrawalsSettled | null {
+    return store.get(
+      "MultipleWithdrawalsSettled",
+      id
+    ) as MultipleWithdrawalsSettled | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get bonder(): string {
+    let value = this.get("bonder");
+    return value.toString();
+  }
+
+  set bonder(value: string) {
+    this.set("bonder", Value.fromString(value));
+  }
+
+  get rootHash(): Bytes {
+    let value = this.get("rootHash");
+    return value.toBytes();
+  }
+
+  set rootHash(value: Bytes) {
+    this.set("rootHash", Value.fromBytes(value));
+  }
+
+  get totalBondsSettled(): BigInt {
+    let value = this.get("totalBondsSettled");
+    return value.toBigInt();
+  }
+
+  set totalBondsSettled(value: BigInt) {
+    this.set("totalBondsSettled", Value.fromBigInt(value));
+  }
+}
+
+export class TransferRootSet extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save TransferRootSet entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save TransferRootSet entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("TransferRootSet", id.toString(), this);
+  }
+
+  static load(id: string): TransferRootSet | null {
+    return store.get("TransferRootSet", id) as TransferRootSet | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get rootHash(): Bytes {
+    let value = this.get("rootHash");
+    return value.toBytes();
+  }
+
+  set rootHash(value: Bytes) {
+    this.set("rootHash", Value.fromBytes(value));
+  }
+
+  get totalAmount(): BigInt {
+    let value = this.get("totalAmount");
+    return value.toBigInt();
+  }
+
+  set totalAmount(value: BigInt) {
+    this.set("totalAmount", Value.fromBigInt(value));
+  }
+}
+
 export class TransferSent extends Entity {
   constructor(id: string) {
     super();
@@ -121,5 +234,185 @@ export class TransferSent extends Entity {
 
   set deadline(value: BigInt) {
     this.set("deadline", Value.fromBigInt(value));
+  }
+}
+
+export class TransfersCommitted extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save TransfersCommitted entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save TransfersCommitted entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("TransfersCommitted", id.toString(), this);
+  }
+
+  static load(id: string): TransfersCommitted | null {
+    return store.get("TransfersCommitted", id) as TransfersCommitted | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get destinationChainId(): BigInt {
+    let value = this.get("destinationChainId");
+    return value.toBigInt();
+  }
+
+  set destinationChainId(value: BigInt) {
+    this.set("destinationChainId", Value.fromBigInt(value));
+  }
+
+  get rootHash(): Bytes {
+    let value = this.get("rootHash");
+    return value.toBytes();
+  }
+
+  set rootHash(value: Bytes) {
+    this.set("rootHash", Value.fromBytes(value));
+  }
+
+  get totalAmount(): BigInt {
+    let value = this.get("totalAmount");
+    return value.toBigInt();
+  }
+
+  set totalAmount(value: BigInt) {
+    this.set("totalAmount", Value.fromBigInt(value));
+  }
+
+  get rootCommittedAt(): BigInt {
+    let value = this.get("rootCommittedAt");
+    return value.toBigInt();
+  }
+
+  set rootCommittedAt(value: BigInt) {
+    this.set("rootCommittedAt", Value.fromBigInt(value));
+  }
+}
+
+export class WithdrawalBondSettled extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(
+      id !== null,
+      "Cannot save WithdrawalBondSettled entity without an ID"
+    );
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save WithdrawalBondSettled entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("WithdrawalBondSettled", id.toString(), this);
+  }
+
+  static load(id: string): WithdrawalBondSettled | null {
+    return store.get(
+      "WithdrawalBondSettled",
+      id
+    ) as WithdrawalBondSettled | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get bonder(): string {
+    let value = this.get("bonder");
+    return value.toString();
+  }
+
+  set bonder(value: string) {
+    this.set("bonder", Value.fromString(value));
+  }
+
+  get transferId(): Bytes {
+    let value = this.get("transferId");
+    return value.toBytes();
+  }
+
+  set transferId(value: Bytes) {
+    this.set("transferId", Value.fromBytes(value));
+  }
+
+  get rootHash(): Bytes {
+    let value = this.get("rootHash");
+    return value.toBytes();
+  }
+
+  set rootHash(value: Bytes) {
+    this.set("rootHash", Value.fromBytes(value));
+  }
+}
+
+export class WithdrawalBonded extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save WithdrawalBonded entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save WithdrawalBonded entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("WithdrawalBonded", id.toString(), this);
+  }
+
+  static load(id: string): WithdrawalBonded | null {
+    return store.get("WithdrawalBonded", id) as WithdrawalBonded | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get transferId(): Bytes {
+    let value = this.get("transferId");
+    return value.toBytes();
+  }
+
+  set transferId(value: Bytes) {
+    this.set("transferId", Value.fromBytes(value));
+  }
+
+  get amount(): BigInt {
+    let value = this.get("amount");
+    return value.toBigInt();
+  }
+
+  set amount(value: BigInt) {
+    this.set("amount", Value.fromBigInt(value));
   }
 }
