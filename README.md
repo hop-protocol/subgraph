@@ -1,3 +1,21 @@
-# Example Subgraph
+# Hop Subgraph
 
-An example to help you get started with The Graph. For more information see the docs on https://thegraph.com/docs/.
+> The Hop Protocol Subgraph for [The Graph](https://thegraph.com/).
+
+## Development
+
+```bash
+npm run codegen
+```
+
+```bash
+npm run build
+```
+
+```bash
+npm run deploy
+```
+
+## License
+
+[MIT](LICENSE)
