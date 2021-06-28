@@ -1,3 +1,44 @@
+type ChallengeResolved @entity {
+  id: ID!
+  transferRootId: Bytes!
+  rootHash: Bytes!
+  originalAmount: BigInt!
+}
+
+type MultipleWithdrawalsSettled @entity {
+  id: ID!
+  bonder: String!
+  rootHash: Bytes!
+  totalBondsSettled: BigInt!
+}
+
+type TransferBondChallenged @entity {
+  id: ID!
+  transferRootId: Bytes!
+  rootHash: Bytes!
+  originalAmount: BigInt!
+}
+
+type TransferRootBonded @entity {
+  id: ID!
+  root: Bytes!
+  amount: BigInt!
+}
+
+type TransferRootConfirmed @entity {
+  id: ID!
+  originChainId: BigInt!
+  destinationChainId: BigInt!
+  rootHash: Bytes!
+  totalAmount: BigInt!
+}
+
+type TransferRootSet @entity {
+  id: ID!
+  rootHash: Bytes!
+  totalAmount: BigInt!
+}
+
 type TransferSentToL2 @entity {
   id: ID!
   destinationChainId: BigInt!
@@ -7,4 +48,17 @@ type TransferSentToL2 @entity {
   deadline: BigInt!
   relayer: String!
   relayerFee: BigInt!
+}
+
+type WithdrawalBondSettled @entity {
+  id: ID!
+  bonder: String!
+  transferId: Bytes!
+  rootHash: Bytes!
+}
+
+type WithdrawalBonded @entity {
+  id: ID!
+  transferId: Bytes!
+  amount: BigInt!
 }

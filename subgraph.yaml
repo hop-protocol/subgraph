@@ -16,11 +16,35 @@ dataSources:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
+        - ChallengeResolved
+        - MultipleWithdrawalsSettled
+        - TransferBondChallenged
+        - TransferRootBonded
+        - TransferRootConfirmed
+        - TransferRootSet
         - TransferSentToL2
+        - WithdrawalBondSettled
+        - WithdrawalBonded
       abis:
         - name: L1_Bridge
           file: ./abis/L1_Bridge.json
       eventHandlers:
+        - event: ChallengeResolved(indexed bytes32,indexed bytes32,uint256)
+          handler: handleChallengeResolved
+        - event: MultipleWithdrawalsSettled(indexed address,indexed bytes32,uint256)
+          handler: handleMultipleWithdrawalsSettled
+        - event: TransferBondChallenged(indexed bytes32,indexed bytes32,uint256)
+          handler: handleTransferBondChallenged
+        - event: TransferRootBonded(indexed bytes32,uint256)
+          handler: handleTransferRootBonded
+        - event: TransferRootConfirmed(indexed uint256,indexed uint256,indexed bytes32,uint256)
+          handler: handleTransferRootConfirmed
+        - event: TransferRootSet(indexed bytes32,uint256)
+          handler: handleTransferRootSet
         - event: TransferSentToL2(indexed uint256,indexed address,uint256,uint256,uint256,indexed address,uint256)
           handler: handleTransferSentToL2
+        - event: WithdrawalBondSettled(indexed address,indexed bytes32,indexed bytes32)
+          handler: handleWithdrawalBondSettled
+        - event: WithdrawalBonded(indexed bytes32,uint256)
+          handler: handleWithdrawalBonded
       file: ./src/L1_mapping.ts
