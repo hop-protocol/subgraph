@@ -9,8 +9,10 @@
     "build": "graph build",
     "deploy": "graph deploy hop-protocol/hop --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-local": "graph deploy hop-protocol/hop --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
     "prepare:polygon": "mustache config/polygon.json subgraph.template.yaml > subgraph.yaml",
     "prepare:xdai": "mustache config/xdai.json subgraph.template.yaml > subgraph.yaml",
+    "build-deploy:mainnet": "npm run prepare:mainnet && npm run codegen && npm run build && graph deploy hop-protocol/hop --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "build-deploy:polygon": "npm run prepare:polygon && npm run codegen && npm run build && graph deploy hop-protocol/hop-polygon --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "build-deploy:xdai": "npm run prepare:xdai && npm run codegen && npm run build && graph deploy hop-protocol/hop-xdai --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/"
   },

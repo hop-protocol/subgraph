@@ -1,0 +1,10 @@
+type TransferSentToL2 @entity {
+  id: ID!
+  destinationChainId: BigInt!
+  recipient: String!
+  amount: BigInt!
+  amountOutMin: BigInt!
+  deadline: BigInt!
+  relayer: String!
+  relayerFee: BigInt!
+}

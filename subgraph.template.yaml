@@ -1,8 +1,34 @@
 specVersion: 0.0.2
 description: Hop Protocol
 repository: https://github.com/hop-protocol/hop-subgraph
+{{#isMainnet}}
 schema:
-  file: ./schema.graphql
+  file: ./L1_schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: HopL1Bridge
+    network: {{network}}
+    source:
+      address: '{{address}}'
+      abi: L1_Bridge
+      startBlock: {{startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - TransferSentToL2
+      abis:
+        - name: L1_Bridge
+          file: ./abis/L1_Bridge.json
+      eventHandlers:
+        - event: TransferSentToL2(indexed uint256,indexed address,uint256,uint256,uint256,indexed address,uint256)
+          handler: handleTransferSentToL2
+      file: ./src/L1_mapping.ts
+{{/isMainnet}}
+{{^isMainnet}}
+schema:
+  file: ./L2_schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: HopL2Bridge
@@ -16,7 +42,12 @@ dataSources:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
+        - MultipleWithdrawalsSettled
+        - TransferRootSet
         - TransferSent
+        - TransfersCommitted
+        - WithdrawalBondSettled
+        - WithdrawalBonded
       abis:
         - name: L2_Bridge
           file: ./abis/L2_Bridge.json
@@ -33,4 +64,5 @@ dataSources:
           handler: handleWithdrawalBondSettled
         - event: WithdrawalBonded(indexed bytes32,uint256)
           handler: handleWithdrawalBonded
-      file: ./src/mapping.ts
+      file: ./src/L2_mapping.ts
+{{/isMainnet}}

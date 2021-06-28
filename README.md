@@ -39,6 +39,7 @@ npm run deploy
 Prepare, build and deploy
 
 ```bash
+npm run build-deploy:mainnet
 npm run build-deploy:polygon
 npm run build-deploy:xdai
 ```
