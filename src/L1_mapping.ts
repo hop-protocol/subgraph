@@ -182,7 +182,6 @@ export function handleUnstake(event: Unstake): void {
   entity.save()
 }
 
-
 export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void {
   let id = event.params.transferId.toHex()
   let entity = WithdrawalBondSettledEntity.load(id)

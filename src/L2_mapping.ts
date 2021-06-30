@@ -1,19 +1,55 @@
 import {
+  BonderAdded,
+  BonderRemoved,
   MultipleWithdrawalsSettled,
+  Stake,
+  TransferFromL1Completed,
   TransferRootSet,
   TransferSent,
   TransfersCommitted,
+  Unstake,
   WithdrawalBondSettled,
-  WithdrawalBonded
+  WithdrawalBonded,
+  Withdrew
 } from '../generated/HopL2Bridge/L2_Bridge'
 import {
+  BonderAdded as BonderAddedEntity,
+  BonderRemoved as BonderRemovedEntity,
   MultipleWithdrawalsSettled as MultipleWithdrawalsSettledEntity,
+  Stake as StakeEntity,
+  TransferFromL1Completed as TransferFromL1CompletedEntity,
   TransferRootSet as TransferRootSetEntity,
   TransferSent as TransferSentEntity,
   TransfersCommitted as TransfersCommittedEntity,
+  Unstake as UnstakeEntity,
   WithdrawalBondSettled as WithdrawalBondSettledEntity,
-  WithdrawalBonded as WithdrawalBondedEntity
+  WithdrawalBonded as WithdrawalBondedEntity,
+  Withdrew as WithdrewEntity,
 } from '../generated/schema'
+
+export function handleBonderAdded(event: BonderAdded): void {
+  let id = event.params._event.transaction.hash.toHexString()
+  let entity = BonderAddedEntity.load(id)
+  if (entity == null) {
+    entity = new BonderAddedEntity(id)
+  }
+
+  entity.newBonder = event.params.newBonder.toHexString()
+
+  entity.save()
+}
+
+export function handleBonderRemoved(event: BonderRemoved): void {
+  let id = event.params._event.transaction.hash.toHexString()
+  let entity = BonderRemovedEntity.load(id)
+  if (entity == null) {
+    entity = new BonderRemovedEntity(id)
+  }
+
+  entity.previousBonder = event.params.previousBonder.toHexString()
+
+  entity.save()
+}
 
 export function handleMultipleWithdrawalsSettled(event: MultipleWithdrawalsSettled): void {
   let id = event.params.rootHash.toHex()
@@ -25,6 +61,36 @@ export function handleMultipleWithdrawalsSettled(event: MultipleWithdrawalsSettl
   entity.bonder = event.params.bonder.toHexString()
   entity.rootHash = event.params.rootHash
   entity.totalBondsSettled = event.params.totalBondsSettled
+
+  entity.save()
+}
+
+export function handleStake(event: Stake): void {
+  let id = event.params._event.transaction.hash.toHexString()
+  let entity = StakeEntity.load(id)
+  if (entity == null) {
+    entity = new StakeEntity(id)
+  }
+
+  entity.account = event.params.account.toHexString()
+  entity.amount = event.params.amount
+
+  entity.save()
+}
+
+export function handleTransferFromL1Completed(event: TransferFromL1Completed): void {
+  let id = event.params._event.transaction.hash.toHexString()
+  let entity = TransferFromL1CompletedEntity.load(id)
+  if (entity == null) {
+    entity = new TransferFromL1CompletedEntity(id)
+  }
+
+  entity.recipient = event.params.recipient.toHexString()
+  entity.amount = event.params.amount
+  entity.amountOutMin = event.params.amountOutMin
+  entity.deadline = event.params.deadline
+  entity.relayer = event.params.relayer.toHexString()
+  entity.relayerFee = event.params.relayerFee
 
   entity.save()
 }
@@ -77,6 +143,19 @@ export function handleTransfersCommitted(event: TransfersCommitted): void {
   entity.save()
 }
 
+export function handleUnstake(event: Unstake): void {
+  let id = event.params._event.transaction.hash.toHexString()
+  let entity = UnstakeEntity.load(id)
+  if (entity == null) {
+    entity = new UnstakeEntity(id)
+  }
+
+  entity.account = event.params.account.toHexString()
+  entity.amount = event.params.amount
+
+  entity.save()
+}
+
 export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void {
   let id = event.params.rootHash.toHex()
   let entity = WithdrawalBondSettledEntity.load(id)
@@ -100,6 +179,21 @@ export function handleWithdrawalBonded(event: WithdrawalBonded): void {
 
   entity.transferId = event.params.transferId
   entity.amount = event.params.amount
+
+  entity.save()
+}
+
+export function handleWithdrew(event: Withdrew): void {
+  let id = event.params.transferId.toHex()
+  let entity = WithdrewEntity.load(id)
+  if (entity == null) {
+    entity = new WithdrewEntity(id)
+  }
+
+  entity.transferId = event.params.transferId
+  entity.recipient = event.params.recipient.toHexString()
+  entity.amount = event.params.amount
+  entity.transferNonce = event.params.transferNonce
 
   entity.save()
 }

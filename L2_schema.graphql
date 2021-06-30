@@ -1,8 +1,34 @@
+type BonderAdded @entity {
+  id: ID!
+  newBonder: String!
+}
+
+type BonderRemoved @entity {
+  id: ID!
+  previousBonder: String!
+}
+
 type MultipleWithdrawalsSettled @entity {
   id: ID!
   bonder: String!
   rootHash: Bytes!
   totalBondsSettled: BigInt!
+}
+
+type Stake @entity {
+  id: ID!
+  account: String!
+  amount: BigInt!
+}
+
+type TransferFromL1Completed @entity {
+  id: ID!
+  recipient: String!
+  amount: BigInt!
+  amountOutMin: BigInt!
+  deadline: BigInt!
+  relayer: String!
+  relayerFee: BigInt!
 }
 
 type TransferRootSet @entity {
@@ -32,6 +58,12 @@ type TransfersCommitted @entity {
   rootCommittedAt: BigInt!
 }
 
+type Unstake @entity {
+  id: ID!
+  account: String!
+  amount: BigInt!
+}
+
 type WithdrawalBondSettled @entity {
   id: ID!
   bonder: String!
@@ -43,4 +75,12 @@ type WithdrawalBonded @entity {
   id: ID!
   transferId: Bytes!
   amount: BigInt!
+}
+
+type Withdrew @entity {
+  id: ID!
+  transferId: Bytes!
+  recipient: String!
+  amount: BigInt!
+  transferNonce: Bytes!
 }
