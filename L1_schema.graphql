@@ -1,3 +1,13 @@
+type BonderAdded @entity {
+  id: ID!
+  newBonder: String!
+}
+
+type BonderRemoved @entity {
+  id: ID!
+  previousBonder: String!
+}
+
 type ChallengeResolved @entity {
   id: ID!
   transferRootId: Bytes!
@@ -10,6 +20,12 @@ type MultipleWithdrawalsSettled @entity {
   bonder: String!
   rootHash: Bytes!
   totalBondsSettled: BigInt!
+}
+
+type Stake @entity {
+  id: ID!
+  account: String!
+  amount: BigInt!
 }
 
 type TransferBondChallenged @entity {
@@ -50,6 +66,12 @@ type TransferSentToL2 @entity {
   relayerFee: BigInt!
 }
 
+type Unstake @entity {
+  id: ID!
+  account: String!
+  amount: BigInt!
+}
+
 type WithdrawalBondSettled @entity {
   id: ID!
   bonder: String!
@@ -61,4 +83,12 @@ type WithdrawalBonded @entity {
   id: ID!
   transferId: Bytes!
   amount: BigInt!
+}
+
+type Withdrew @entity {
+  id: ID!
+  transferId: Bytes!
+  recipient: String!
+  amount: BigInt!
+  transferNonce: Bytes!
 }

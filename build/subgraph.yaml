@@ -16,23 +16,34 @@ dataSources:
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
+        - BonderAdded
+        - BonderRemoved
         - ChallengeResolved
         - MultipleWithdrawalsSettled
+        - Stake
         - TransferBondChallenged
         - TransferRootBonded
         - TransferRootConfirmed
         - TransferRootSet
         - TransferSentToL2
+        - Unstake
         - WithdrawalBondSettled
         - WithdrawalBonded
+        - Withdrew
       abis:
         - name: L1_Bridge
           file: HopL1Bridge/abis/L1_Bridge.json
       eventHandlers:
+        - event: BonderAdded(indexed address)
+          handler: handleBonderAdded
+        - event: BonderRemoved(indexed address)
+          handler: handleBonderRemoved
         - event: ChallengeResolved(indexed bytes32,indexed bytes32,uint256)
           handler: handleChallengeResolved
         - event: MultipleWithdrawalsSettled(indexed address,indexed bytes32,uint256)
           handler: handleMultipleWithdrawalsSettled
+        - event: Stake(indexed address,uint256)
+          handler: handleStake
         - event: TransferBondChallenged(indexed bytes32,indexed bytes32,uint256)
           handler: handleTransferBondChallenged
         - event: TransferRootBonded(indexed bytes32,uint256)
@@ -44,8 +55,12 @@ dataSources:
         - event: TransferSentToL2(indexed uint256,indexed address,uint256,uint256,uint256,indexed
             address,uint256)
           handler: handleTransferSentToL2
+        - event: Unstake(indexed address,uint256)
+          handler: handleUnstake
         - event: WithdrawalBondSettled(indexed address,indexed bytes32,indexed bytes32)
           handler: handleWithdrawalBondSettled
         - event: WithdrawalBonded(indexed bytes32,uint256)
           handler: handleWithdrawalBonded
+        - event: Withdrew(indexed bytes32,indexed address,uint256,bytes32)
+          handler: handleWithdrew
       file: HopL1Bridge/HopL1Bridge.wasm
