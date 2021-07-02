@@ -48,6 +48,8 @@ type TransferSent @entity {
   index: BigInt!
   amountOutMin: BigInt!
   deadline: BigInt!
+  transactionHash: String!
+  timestamp: BigInt!
 }
 
 type TransfersCommitted @entity {

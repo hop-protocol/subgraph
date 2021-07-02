@@ -165,6 +165,8 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
   entity.deadline = event.params.deadline
   entity.relayer = event.params.relayer.toHexString()
   entity.relayerFee = event.params.relayerFee
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
 
   entity.save()
 }

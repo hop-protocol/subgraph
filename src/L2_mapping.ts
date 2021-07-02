@@ -124,6 +124,8 @@ export function handleTransferSent(event: TransferSent): void {
   entity.index = event.params.index
   entity.amountOutMin = event.params.amountOutMin
   entity.deadline = event.params.deadline
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
 
   entity.save()
 }

@@ -64,6 +64,8 @@ type TransferSentToL2 @entity {
   deadline: BigInt!
   relayer: String!
   relayerFee: BigInt!
+  transactionHash: String!
+  timestamp: BigInt!
 }
 
 type Unstake @entity {
