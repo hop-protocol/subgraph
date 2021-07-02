@@ -36,6 +36,10 @@ export function handleBonderAdded(event: BonderAdded): void {
 
   entity.newBonder = event.params.newBonder.toHexString()
 
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
+
   entity.save()
 }
 
@@ -47,6 +51,10 @@ export function handleBonderRemoved(event: BonderRemoved): void {
   }
 
   entity.previousBonder = event.params.previousBonder.toHexString()
+
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
 
   entity.save()
 }
@@ -62,6 +70,10 @@ export function handleMultipleWithdrawalsSettled(event: MultipleWithdrawalsSettl
   entity.rootHash = event.params.rootHash
   entity.totalBondsSettled = event.params.totalBondsSettled
 
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
+
   entity.save()
 }
 
@@ -74,6 +86,10 @@ export function handleStake(event: Stake): void {
 
   entity.account = event.params.account.toHexString()
   entity.amount = event.params.amount
+
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
 
   entity.save()
 }
@@ -92,6 +108,10 @@ export function handleTransferFromL1Completed(event: TransferFromL1Completed): v
   entity.relayer = event.params.relayer.toHexString()
   entity.relayerFee = event.params.relayerFee
 
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
+
   entity.save()
 }
 
@@ -104,6 +124,10 @@ export function handleTransferRootSet(event: TransferRootSet): void {
 
   entity.rootHash = event.params.rootHash
   entity.totalAmount = event.params.totalAmount
+
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
 
   entity.save()
 }
@@ -127,6 +151,10 @@ export function handleTransferSent(event: TransferSent): void {
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.timestamp = event.params._event.block.timestamp
 
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
+
   entity.save()
 }
 
@@ -142,6 +170,10 @@ export function handleTransfersCommitted(event: TransfersCommitted): void {
   entity.totalAmount = event.params.totalAmount
   entity.rootCommittedAt = event.params.rootCommittedAt
 
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
+
   entity.save()
 }
 
@@ -154,6 +186,10 @@ export function handleUnstake(event: Unstake): void {
 
   entity.account = event.params.account.toHexString()
   entity.amount = event.params.amount
+
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
 
   entity.save()
 }
@@ -169,6 +205,10 @@ export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void 
   entity.transferId = event.params.transferId
   entity.rootHash = event.params.rootHash
 
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
+
   entity.save()
 }
 
@@ -181,6 +221,10 @@ export function handleWithdrawalBonded(event: WithdrawalBonded): void {
 
   entity.transferId = event.params.transferId
   entity.amount = event.params.amount
+
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
 
   entity.save()
 }
@@ -196,6 +240,10 @@ export function handleWithdrew(event: Withdrew): void {
   entity.recipient = event.params.recipient.toHexString()
   entity.amount = event.params.amount
   entity.transferNonce = event.params.transferNonce
+
+  entity.transactionHash = event.params._event.transaction.hash.toHexString()
+  entity.timestamp = event.params._event.block.timestamp
+  entity.blockNumber = event.params._event.block.number
 
   entity.save()
 }
