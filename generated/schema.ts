@@ -146,91 +146,6 @@ export class BonderRemoved extends Entity {
   }
 }
 
-export class ChallengeResolved extends Entity {
-  constructor(id: string) {
-    super();
-    this.set("id", Value.fromString(id));
-  }
-
-  save(): void {
-    let id = this.get("id");
-    assert(id !== null, "Cannot save ChallengeResolved entity without an ID");
-    assert(
-      id.kind == ValueKind.STRING,
-      "Cannot save ChallengeResolved entity with non-string ID. " +
-        'Considering using .toHex() to convert the "id" to a string.'
-    );
-    store.set("ChallengeResolved", id.toString(), this);
-  }
-
-  static load(id: string): ChallengeResolved | null {
-    return store.get("ChallengeResolved", id) as ChallengeResolved | null;
-  }
-
-  get id(): string {
-    let value = this.get("id");
-    return value.toString();
-  }
-
-  set id(value: string) {
-    this.set("id", Value.fromString(value));
-  }
-
-  get transferRootId(): Bytes {
-    let value = this.get("transferRootId");
-    return value.toBytes();
-  }
-
-  set transferRootId(value: Bytes) {
-    this.set("transferRootId", Value.fromBytes(value));
-  }
-
-  get rootHash(): Bytes {
-    let value = this.get("rootHash");
-    return value.toBytes();
-  }
-
-  set rootHash(value: Bytes) {
-    this.set("rootHash", Value.fromBytes(value));
-  }
-
-  get originalAmount(): BigInt {
-    let value = this.get("originalAmount");
-    return value.toBigInt();
-  }
-
-  set originalAmount(value: BigInt) {
-    this.set("originalAmount", Value.fromBigInt(value));
-  }
-
-  get transactionHash(): string {
-    let value = this.get("transactionHash");
-    return value.toString();
-  }
-
-  set transactionHash(value: string) {
-    this.set("transactionHash", Value.fromString(value));
-  }
-
-  get timestamp(): BigInt {
-    let value = this.get("timestamp");
-    return value.toBigInt();
-  }
-
-  set timestamp(value: BigInt) {
-    this.set("timestamp", Value.fromBigInt(value));
-  }
-
-  get blockNumber(): BigInt {
-    let value = this.get("blockNumber");
-    return value.toBigInt();
-  }
-
-  set blockNumber(value: BigInt) {
-    this.set("blockNumber", Value.fromBigInt(value));
-  }
-}
-
 export class MultipleWithdrawalsSettled extends Entity {
   constructor(id: string) {
     super();
@@ -398,7 +313,7 @@ export class Stake extends Entity {
   }
 }
 
-export class TransferBondChallenged extends Entity {
+export class TransferFromL1Completed extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -408,21 +323,21 @@ export class TransferBondChallenged extends Entity {
     let id = this.get("id");
     assert(
       id !== null,
-      "Cannot save TransferBondChallenged entity without an ID"
+      "Cannot save TransferFromL1Completed entity without an ID"
     );
     assert(
       id.kind == ValueKind.STRING,
-      "Cannot save TransferBondChallenged entity with non-string ID. " +
+      "Cannot save TransferFromL1Completed entity with non-string ID. " +
         'Considering using .toHex() to convert the "id" to a string.'
     );
-    store.set("TransferBondChallenged", id.toString(), this);
+    store.set("TransferFromL1Completed", id.toString(), this);
   }
 
-  static load(id: string): TransferBondChallenged | null {
+  static load(id: string): TransferFromL1Completed | null {
     return store.get(
-      "TransferBondChallenged",
+      "TransferFromL1Completed",
       id
-    ) as TransferBondChallenged | null;
+    ) as TransferFromL1Completed | null;
   }
 
   get id(): string {
@@ -434,98 +349,13 @@ export class TransferBondChallenged extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get transferRootId(): Bytes {
-    let value = this.get("transferRootId");
-    return value.toBytes();
-  }
-
-  set transferRootId(value: Bytes) {
-    this.set("transferRootId", Value.fromBytes(value));
-  }
-
-  get rootHash(): Bytes {
-    let value = this.get("rootHash");
-    return value.toBytes();
-  }
-
-  set rootHash(value: Bytes) {
-    this.set("rootHash", Value.fromBytes(value));
-  }
-
-  get originalAmount(): BigInt {
-    let value = this.get("originalAmount");
-    return value.toBigInt();
-  }
-
-  set originalAmount(value: BigInt) {
-    this.set("originalAmount", Value.fromBigInt(value));
-  }
-
-  get transactionHash(): string {
-    let value = this.get("transactionHash");
+  get recipient(): string {
+    let value = this.get("recipient");
     return value.toString();
   }
 
-  set transactionHash(value: string) {
-    this.set("transactionHash", Value.fromString(value));
-  }
-
-  get timestamp(): BigInt {
-    let value = this.get("timestamp");
-    return value.toBigInt();
-  }
-
-  set timestamp(value: BigInt) {
-    this.set("timestamp", Value.fromBigInt(value));
-  }
-
-  get blockNumber(): BigInt {
-    let value = this.get("blockNumber");
-    return value.toBigInt();
-  }
-
-  set blockNumber(value: BigInt) {
-    this.set("blockNumber", Value.fromBigInt(value));
-  }
-}
-
-export class TransferRootBonded extends Entity {
-  constructor(id: string) {
-    super();
-    this.set("id", Value.fromString(id));
-  }
-
-  save(): void {
-    let id = this.get("id");
-    assert(id !== null, "Cannot save TransferRootBonded entity without an ID");
-    assert(
-      id.kind == ValueKind.STRING,
-      "Cannot save TransferRootBonded entity with non-string ID. " +
-        'Considering using .toHex() to convert the "id" to a string.'
-    );
-    store.set("TransferRootBonded", id.toString(), this);
-  }
-
-  static load(id: string): TransferRootBonded | null {
-    return store.get("TransferRootBonded", id) as TransferRootBonded | null;
-  }
-
-  get id(): string {
-    let value = this.get("id");
-    return value.toString();
-  }
-
-  set id(value: string) {
-    this.set("id", Value.fromString(value));
-  }
-
-  get root(): Bytes {
-    let value = this.get("root");
-    return value.toBytes();
-  }
-
-  set root(value: Bytes) {
-    this.set("root", Value.fromBytes(value));
+  set recipient(value: string) {
+    this.set("recipient", Value.fromString(value));
   }
 
   get amount(): BigInt {
@@ -537,104 +367,40 @@ export class TransferRootBonded extends Entity {
     this.set("amount", Value.fromBigInt(value));
   }
 
-  get transactionHash(): string {
-    let value = this.get("transactionHash");
+  get amountOutMin(): BigInt {
+    let value = this.get("amountOutMin");
+    return value.toBigInt();
+  }
+
+  set amountOutMin(value: BigInt) {
+    this.set("amountOutMin", Value.fromBigInt(value));
+  }
+
+  get deadline(): BigInt {
+    let value = this.get("deadline");
+    return value.toBigInt();
+  }
+
+  set deadline(value: BigInt) {
+    this.set("deadline", Value.fromBigInt(value));
+  }
+
+  get relayer(): string {
+    let value = this.get("relayer");
     return value.toString();
   }
 
-  set transactionHash(value: string) {
-    this.set("transactionHash", Value.fromString(value));
+  set relayer(value: string) {
+    this.set("relayer", Value.fromString(value));
   }
 
-  get timestamp(): BigInt {
-    let value = this.get("timestamp");
+  get relayerFee(): BigInt {
+    let value = this.get("relayerFee");
     return value.toBigInt();
   }
 
-  set timestamp(value: BigInt) {
-    this.set("timestamp", Value.fromBigInt(value));
-  }
-
-  get blockNumber(): BigInt {
-    let value = this.get("blockNumber");
-    return value.toBigInt();
-  }
-
-  set blockNumber(value: BigInt) {
-    this.set("blockNumber", Value.fromBigInt(value));
-  }
-}
-
-export class TransferRootConfirmed extends Entity {
-  constructor(id: string) {
-    super();
-    this.set("id", Value.fromString(id));
-  }
-
-  save(): void {
-    let id = this.get("id");
-    assert(
-      id !== null,
-      "Cannot save TransferRootConfirmed entity without an ID"
-    );
-    assert(
-      id.kind == ValueKind.STRING,
-      "Cannot save TransferRootConfirmed entity with non-string ID. " +
-        'Considering using .toHex() to convert the "id" to a string.'
-    );
-    store.set("TransferRootConfirmed", id.toString(), this);
-  }
-
-  static load(id: string): TransferRootConfirmed | null {
-    return store.get(
-      "TransferRootConfirmed",
-      id
-    ) as TransferRootConfirmed | null;
-  }
-
-  get id(): string {
-    let value = this.get("id");
-    return value.toString();
-  }
-
-  set id(value: string) {
-    this.set("id", Value.fromString(value));
-  }
-
-  get originChainId(): BigInt {
-    let value = this.get("originChainId");
-    return value.toBigInt();
-  }
-
-  set originChainId(value: BigInt) {
-    this.set("originChainId", Value.fromBigInt(value));
-  }
-
-  get destinationChainId(): BigInt {
-    let value = this.get("destinationChainId");
-    return value.toBigInt();
-  }
-
-  set destinationChainId(value: BigInt) {
-    this.set("destinationChainId", Value.fromBigInt(value));
-  }
-
-  get rootHash(): Bytes {
-    let value = this.get("rootHash");
-    return value.toBytes();
-  }
-
-  set rootHash(value: Bytes) {
-    this.set("rootHash", Value.fromBytes(value));
-  }
-
-  get totalAmount(): BigInt {
-    let value = this.get("totalAmount");
-    return value.toBigInt();
-  }
-
-  set totalAmount(value: BigInt) {
-    this.set("totalAmount", Value.fromBigInt(value));
+  set relayerFee(value: BigInt) {
+    this.set("relayerFee", Value.fromBigInt(value));
   }
 
   get transactionHash(): string {
@@ -741,7 +507,7 @@ export class TransferRootSet extends Entity {
   }
 }
 
-export class TransferSentToL2 extends Entity {
+export class TransferSent extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -749,17 +515,17 @@ export class TransferSentToL2 extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id !== null, "Cannot save TransferSentToL2 entity without an ID");
+    assert(id !== null, "Cannot save TransferSent entity without an ID");
     assert(
       id.kind == ValueKind.STRING,
-      "Cannot save TransferSentToL2 entity with non-string ID. " +
+      "Cannot save TransferSent entity with non-string ID. " +
         'Considering using .toHex() to convert the "id" to a string.'
     );
-    store.set("TransferSentToL2", id.toString(), this);
+    store.set("TransferSent", id.toString(), this);
   }
 
-  static load(id: string): TransferSentToL2 | null {
-    return store.get("TransferSentToL2", id) as TransferSentToL2 | null;
+  static load(id: string): TransferSent | null {
+    return store.get("TransferSent", id) as TransferSent | null;
   }
 
   get id(): string {
@@ -769,6 +535,15 @@ export class TransferSentToL2 extends Entity {
 
   set id(value: string) {
     this.set("id", Value.fromString(value));
+  }
+
+  get transferId(): Bytes {
+    let value = this.get("transferId");
+    return value.toBytes();
+  }
+
+  set transferId(value: Bytes) {
+    this.set("transferId", Value.fromBytes(value));
   }
 
   get destinationChainId(): BigInt {
@@ -798,6 +573,33 @@ export class TransferSentToL2 extends Entity {
     this.set("amount", Value.fromBigInt(value));
   }
 
+  get transferNonce(): Bytes {
+    let value = this.get("transferNonce");
+    return value.toBytes();
+  }
+
+  set transferNonce(value: Bytes) {
+    this.set("transferNonce", Value.fromBytes(value));
+  }
+
+  get bonderFee(): BigInt {
+    let value = this.get("bonderFee");
+    return value.toBigInt();
+  }
+
+  set bonderFee(value: BigInt) {
+    this.set("bonderFee", Value.fromBigInt(value));
+  }
+
+  get index(): BigInt {
+    let value = this.get("index");
+    return value.toBigInt();
+  }
+
+  set index(value: BigInt) {
+    this.set("index", Value.fromBigInt(value));
+  }
+
   get amountOutMin(): BigInt {
     let value = this.get("amountOutMin");
     return value.toBigInt();
@@ -816,22 +618,98 @@ export class TransferSentToL2 extends Entity {
     this.set("deadline", Value.fromBigInt(value));
   }
 
-  get relayer(): string {
-    let value = this.get("relayer");
+  get transactionHash(): string {
+    let value = this.get("transactionHash");
     return value.toString();
   }
 
-  set relayer(value: string) {
-    this.set("relayer", Value.fromString(value));
+  set transactionHash(value: string) {
+    this.set("transactionHash", Value.fromString(value));
   }
 
-  get relayerFee(): BigInt {
-    let value = this.get("relayerFee");
+  get timestamp(): BigInt {
+    let value = this.get("timestamp");
     return value.toBigInt();
   }
 
-  set relayerFee(value: BigInt) {
-    this.set("relayerFee", Value.fromBigInt(value));
+  set timestamp(value: BigInt) {
+    this.set("timestamp", Value.fromBigInt(value));
+  }
+
+  get blockNumber(): BigInt {
+    let value = this.get("blockNumber");
+    return value.toBigInt();
+  }
+
+  set blockNumber(value: BigInt) {
+    this.set("blockNumber", Value.fromBigInt(value));
+  }
+}
+
+export class TransfersCommitted extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save TransfersCommitted entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save TransfersCommitted entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("TransfersCommitted", id.toString(), this);
+  }
+
+  static load(id: string): TransfersCommitted | null {
+    return store.get("TransfersCommitted", id) as TransfersCommitted | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get destinationChainId(): BigInt {
+    let value = this.get("destinationChainId");
+    return value.toBigInt();
+  }
+
+  set destinationChainId(value: BigInt) {
+    this.set("destinationChainId", Value.fromBigInt(value));
+  }
+
+  get rootHash(): Bytes {
+    let value = this.get("rootHash");
+    return value.toBytes();
+  }
+
+  set rootHash(value: Bytes) {
+    this.set("rootHash", Value.fromBytes(value));
+  }
+
+  get totalAmount(): BigInt {
+    let value = this.get("totalAmount");
+    return value.toBigInt();
+  }
+
+  set totalAmount(value: BigInt) {
+    this.set("totalAmount", Value.fromBigInt(value));
+  }
+
+  get rootCommittedAt(): BigInt {
+    let value = this.get("rootCommittedAt");
+    return value.toBigInt();
+  }
+
+  set rootCommittedAt(value: BigInt) {
+    this.set("rootCommittedAt", Value.fromBigInt(value));
   }
 
   get transactionHash(): string {

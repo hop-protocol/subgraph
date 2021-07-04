@@ -12,9 +12,13 @@
     "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
     "prepare:polygon": "mustache config/polygon.json subgraph.template.yaml > subgraph.yaml",
     "prepare:xdai": "mustache config/xdai.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:optimism": "mustache config/optimism.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:arbitrum": "mustache config/arbitrum.json subgraph.template.yaml > subgraph.yaml",
     "build-deploy:mainnet": "npm run prepare:mainnet && npm run codegen && npm run build && graph deploy hop-protocol/hop --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "build-deploy:polygon": "npm run prepare:polygon && npm run codegen && npm run build && graph deploy hop-protocol/hop-polygon --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "build-deploy:xdai": "npm run prepare:xdai && npm run codegen && npm run build && graph deploy hop-protocol/hop-xdai --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/"
+    "build-deploy:xdai": "npm run prepare:xdai && npm run codegen && npm run build && graph deploy hop-protocol/hop-xdai --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "build-deploy:optimism": "npm run prepare:optimism && npm run codegen && npm run build && graph deploy hop-protocol/hop-optimism --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "build-deploy:arbitrum": "npm run prepare:arbitrum && npm run codegen && npm run build && graph deploy hop-protocol/hop-arbitrum --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.20.0",

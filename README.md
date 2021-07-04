@@ -42,6 +42,8 @@ Prepare, build and deploy
 npm run build-deploy:mainnet
 npm run build-deploy:polygon
 npm run build-deploy:xdai
+npm run build-deploy:optimism
+npm run build-deploy:arbitrum
 ```
 
 ## License
