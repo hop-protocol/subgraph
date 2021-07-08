@@ -2,15 +2,15 @@ specVersion: 0.0.2
 description: Hop Protocol
 repository: https://github.com/hop-protocol/hop-subgraph
 schema:
-  file: ./L2_schema.graphql
+  file: ./L1_schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: HopL2Bridge
-    network: matic
+    name: HopL1Bridge
+    network: mainnet
     source:
-      address: '0x25D8039bB044dC227f741a9e381CA4cEAE2E6aE8'
-      abi: L2_Bridge
-      startBlock: 15810014
+      address: '0x3666f603Cc164936C1b87e207F36BEBa4AC5f18a'
+      abi: L1_Bridge
+      startBlock: 12650032
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -18,36 +18,42 @@ dataSources:
       entities:
         - BonderAdded
         - BonderRemoved
+        - ChallengeResolved
         - MultipleWithdrawalsSettled
         - Stake
-        - TransferFromL1Completed
+        - TransferBondChallenged
+        - TransferRootBonded
+        - TransferRootConfirmed
         - TransferRootSet
-        - TransferSent
-        - TransfersCommitted
+        - TransferSentToL2
         - Unstake
         - WithdrawalBondSettled
         - WithdrawalBonded
         - Withdrew
       abis:
-        - name: L2_Bridge
-          file: ./abis/L2_Bridge.json
+        - name: L1_Bridge
+          file: ./abis/L1_Bridge.json
       eventHandlers:
         - event: BonderAdded(indexed address)
           handler: handleBonderAdded
         - event: BonderRemoved(indexed address)
           handler: handleBonderRemoved
+        - event: ChallengeResolved(indexed bytes32,indexed bytes32,uint256)
+          handler: handleChallengeResolved
         - event: MultipleWithdrawalsSettled(indexed address,indexed bytes32,uint256)
           handler: handleMultipleWithdrawalsSettled
         - event: Stake(indexed address,uint256)
           handler: handleStake
-        - event: TransferFromL1Completed(indexed address,uint256,uint256,uint256,indexed address,uint256)
-          handler: handleTransferFromL1Completed
+        - event: TransferBondChallenged(indexed bytes32,indexed bytes32,uint256)
+          handler: handleTransferBondChallenged
+        - event: TransferRootBonded(indexed bytes32,uint256)
+          handler: handleTransferRootBonded
+        - event: TransferRootConfirmed(indexed uint256,indexed uint256,indexed bytes32,uint256)
+          handler: handleTransferRootConfirmed
         - event: TransferRootSet(indexed bytes32,uint256)
           handler: handleTransferRootSet
-        - event: TransferSent(indexed bytes32,indexed uint256,indexed address,uint256,bytes32,uint256,uint256,uint256,uint256)
-          handler: handleTransferSent
-        - event: TransfersCommitted(indexed uint256,indexed bytes32,uint256,uint256)
-          handler: handleTransfersCommitted
+        - event: TransferSentToL2(indexed uint256,indexed address,uint256,uint256,uint256,indexed address,uint256)
+          handler: handleTransferSentToL2
         - event: Unstake(indexed address,uint256)
           handler: handleUnstake
         - event: WithdrawalBondSettled(indexed address,indexed bytes32,indexed bytes32)
@@ -56,4 +62,4 @@ dataSources:
           handler: handleWithdrawalBonded
         - event: Withdrew(indexed bytes32,indexed address,uint256,bytes32)
           handler: handleWithdrew
-      file: ./src/L2_mapping.ts
+      file: ./src/L1_mapping.ts

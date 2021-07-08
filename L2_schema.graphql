@@ -3,6 +3,7 @@ type BonderAdded @entity {
   newBonder: String!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -12,6 +13,7 @@ type BonderRemoved @entity {
   previousBonder: String!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -23,6 +25,7 @@ type MultipleWithdrawalsSettled @entity {
   totalBondsSettled: BigInt!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -33,6 +36,7 @@ type Stake @entity {
   amount: BigInt!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -47,6 +51,7 @@ type TransferFromL1Completed @entity {
   relayerFee: BigInt!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -57,6 +62,7 @@ type TransferRootSet @entity {
   totalAmount: BigInt!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -74,6 +80,7 @@ type TransferSent @entity {
   deadline: BigInt!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -86,6 +93,7 @@ type TransfersCommitted @entity {
   rootCommittedAt: BigInt!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -96,6 +104,7 @@ type Unstake @entity {
   amount: BigInt!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -107,6 +116,7 @@ type WithdrawalBondSettled @entity {
   rootHash: Bytes!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -117,6 +127,7 @@ type WithdrawalBonded @entity {
   amount: BigInt!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
@@ -129,6 +140,7 @@ type Withdrew @entity {
   transferNonce: Bytes!
 
   transactionHash: String!
+  transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
 }
