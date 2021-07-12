@@ -66,7 +66,7 @@ export function handleBonderRemoved(event: BonderRemoved): void {
 }
 
 export function handleChallengeResolved(event: ChallengeResolved): void {
-  let id = event.params.rootHash.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = ChallengeResolvedEntity.load(id)
   if (entity == null) {
     entity = new ChallengeResolvedEntity(id)
@@ -85,7 +85,7 @@ export function handleChallengeResolved(event: ChallengeResolved): void {
 }
 
 export function handleMultipleWithdrawalsSettled(event: MultipleWithdrawalsSettled): void {
-  let id = event.params.rootHash.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = MultipleWithdrawalsSettledEntity.load(id)
   if (entity == null) {
     entity = new MultipleWithdrawalsSettledEntity(id)
@@ -122,7 +122,7 @@ export function handleStake(event: Stake): void {
 }
 
 export function handleTransferBondChallenged(event: TransferBondChallenged): void {
-  let id = event.params.transferRootId.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = TransferBondChallengedEntity.load(id)
   if (entity == null) {
     entity = new TransferBondChallengedEntity(id)
@@ -141,7 +141,7 @@ export function handleTransferBondChallenged(event: TransferBondChallenged): voi
 }
 
 export function handleTransferRootBonded(event: TransferRootBonded): void {
-  let id = event.params.root.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = TransferRootBondedEntity.load(id)
   if (entity == null) {
     entity = new TransferRootBondedEntity(id)
@@ -159,7 +159,7 @@ export function handleTransferRootBonded(event: TransferRootBonded): void {
 }
 
 export function handleTransferRootConfirmed(event: TransferRootConfirmed): void {
-  let id = event.params.rootHash.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = TransferRootConfirmedEntity.load(id)
   if (entity == null) {
     entity = new TransferRootConfirmedEntity(id)
@@ -179,7 +179,7 @@ export function handleTransferRootConfirmed(event: TransferRootConfirmed): void 
 }
 
 export function handleTransferRootSet(event: TransferRootSet): void {
-  let id = event.params.rootHash.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = TransferRootSetEntity.load(id)
   if (entity == null) {
     entity = new TransferRootSetEntity(id)
@@ -238,7 +238,7 @@ export function handleUnstake(event: Unstake): void {
 }
 
 export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void {
-  let id = event.params.transferId.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = WithdrawalBondSettledEntity.load(id)
   if (entity == null) {
     entity = new WithdrawalBondSettledEntity(id)
@@ -257,7 +257,7 @@ export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void 
 }
 
 export function handleWithdrawalBonded(event: WithdrawalBonded): void {
-  let id = event.params.transferId.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = WithdrawalBondedEntity.load(id)
   if (entity == null) {
     entity = new WithdrawalBondedEntity(id)
@@ -275,7 +275,7 @@ export function handleWithdrawalBonded(event: WithdrawalBonded): void {
 }
 
 export function handleWithdrew(event: Withdrew): void {
-  let id = event.params.transferId.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = WithdrewEntity.load(id)
   if (entity == null) {
     entity = new WithdrewEntity(id)

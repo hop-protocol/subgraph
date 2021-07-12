@@ -62,7 +62,7 @@ export function handleBonderRemoved(event: BonderRemoved): void {
 }
 
 export function handleMultipleWithdrawalsSettled(event: MultipleWithdrawalsSettled): void {
-  let id = event.params.rootHash.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = MultipleWithdrawalsSettledEntity.load(id)
   if (entity == null) {
     entity = new MultipleWithdrawalsSettledEntity(id)
@@ -121,7 +121,7 @@ export function handleTransferFromL1Completed(event: TransferFromL1Completed): v
 }
 
 export function handleTransferRootSet(event: TransferRootSet): void {
-  let id = event.params.rootHash.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = TransferRootSetEntity.load(id)
   if (entity == null) {
     entity = new TransferRootSetEntity(id)
@@ -166,7 +166,7 @@ export function handleTransferSent(event: TransferSent): void {
 }
 
 export function handleTransfersCommitted(event: TransfersCommitted): void {
-  let id = event.params.rootHash.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = TransfersCommittedEntity.load(id)
   if (entity == null) {
     entity = new TransfersCommittedEntity(id)
@@ -204,7 +204,7 @@ export function handleUnstake(event: Unstake): void {
 }
 
 export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void {
-  let id = event.params.rootHash.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = WithdrawalBondSettledEntity.load(id)
   if (entity == null) {
     entity = new WithdrawalBondSettledEntity(id)
@@ -223,7 +223,7 @@ export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void 
 }
 
 export function handleWithdrawalBonded(event: WithdrawalBonded): void {
-  let id = event.params.transferId.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = WithdrawalBondedEntity.load(id)
   if (entity == null) {
     entity = new WithdrawalBondedEntity(id)
@@ -241,7 +241,7 @@ export function handleWithdrawalBonded(event: WithdrawalBonded): void {
 }
 
 export function handleWithdrew(event: Withdrew): void {
-  let id = event.params.transferId.toHex()
+  let id = event.params._event.transaction.hash.toHexString()
   let entity = WithdrewEntity.load(id)
   if (entity == null) {
     entity = new WithdrewEntity(id)
