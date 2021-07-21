@@ -6,6 +6,8 @@ type BonderAdded @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type BonderRemoved @entity {
@@ -16,6 +18,8 @@ type BonderRemoved @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type ChallengeResolved @entity {
@@ -28,6 +32,8 @@ type ChallengeResolved @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type MultipleWithdrawalsSettled @entity {
@@ -40,6 +46,8 @@ type MultipleWithdrawalsSettled @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type Stake @entity {
@@ -51,6 +59,8 @@ type Stake @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type TransferBondChallenged @entity {
@@ -63,6 +73,8 @@ type TransferBondChallenged @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type TransferRootBonded @entity {
@@ -74,6 +86,8 @@ type TransferRootBonded @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type TransferRootConfirmed @entity {
@@ -87,6 +101,8 @@ type TransferRootConfirmed @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type TransferRootSet @entity {
@@ -98,6 +114,8 @@ type TransferRootSet @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type TransferSentToL2 @entity {
@@ -114,6 +132,8 @@ type TransferSentToL2 @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type Unstake @entity {
@@ -125,6 +145,8 @@ type Unstake @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type WithdrawalBondSettled @entity {
@@ -137,6 +159,8 @@ type WithdrawalBondSettled @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type WithdrawalBonded @entity {
@@ -148,6 +172,8 @@ type WithdrawalBonded @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }
 
 type Withdrew @entity {
@@ -161,4 +187,6 @@ type Withdrew @entity {
   transactionIndex: BigInt!
   timestamp: BigInt!
   blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
 }

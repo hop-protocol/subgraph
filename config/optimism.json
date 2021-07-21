@@ -1,5 +1,9 @@
 {
   "network": "optimism",
-  "address": "",
-  "startBlock": 0
+  "bridges": [{
+    "dataSourceName": "HopL2Bridge",
+    "token": "USDC",
+    "address": "",
+    "startBlock": 0
+  }]
 }

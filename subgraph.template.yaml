@@ -5,8 +5,9 @@ repository: https://github.com/hop-protocol/hop-subgraph
 schema:
   file: ./L1_schema.graphql
 dataSources:
+{{#bridges}}
   - kind: ethereum/contract
-    name: HopL1Bridge
+    name: {{dataSourceName}}
     network: {{network}}
     source:
       address: '{{address}}'
@@ -63,14 +64,16 @@ dataSources:
           handler: handleWithdrawalBonded
         - event: Withdrew(indexed bytes32,indexed address,uint256,bytes32)
           handler: handleWithdrew
-      file: ./src/L1_mapping.ts
+      file: ./src/L1_mapping_{{token}}.ts
+{{/bridges}}
 {{/isMainnet}}
 {{^isMainnet}}
 schema:
   file: ./L2_schema.graphql
 dataSources:
+{{#bridges}}
   - kind: ethereum/contract
-    name: HopL2Bridge
+    name: {{dataSourceName}}
     network: {{network}}
     source:
       address: '{{address}}'
@@ -121,5 +124,6 @@ dataSources:
           handler: handleWithdrawalBonded
         - event: Withdrew(indexed bytes32,indexed address,uint256,bytes32)
           handler: handleWithdrew
-      file: ./src/L2_mapping.ts
+      file: ./src/L2_mapping_{{token}}.ts
+{{/bridges}}
 {{/isMainnet}}
