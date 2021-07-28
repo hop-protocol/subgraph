@@ -60,7 +60,7 @@ typings/
 # next.js build output
 .next
 
-config/
+config/*
 !config/template.json
 !config/mainnet.json
 !config/xdai.json
@@ -68,7 +68,7 @@ config/
 !config/optimism.json
 !config/arbitrum.json
 
-src/
+src/*
 !src/L1_mapping.template.ts
 !src/L2_mapping.template.ts
 !src/L2_Amm_mapping.template.ts

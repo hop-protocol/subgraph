@@ -1,0 +1,6 @@
+{
+  "network": "{{network}}",
+  "isMainnet": {{isMainnet}},
+  "token": "{{token}}",
+  "address": "{{address}}"
+}

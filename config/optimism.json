@@ -1,0 +1,10 @@
+{
+  "network": "optimism",
+  "isMainnet": false,
+  "bridges": [{
+    "dataSourceName": "HopL2Bridge",
+    "token": "USDC",
+    "address": "",
+    "startBlock": 0
+  }]
+}

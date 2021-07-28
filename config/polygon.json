@@ -1,0 +1,28 @@
+{
+  "network": "matic",
+  "isMainnet": false,
+  "token": [{
+    "dataSourceName": "Token",
+    "token": "USDC",
+    "address": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+    "startBlock": 15810014
+  }],
+  "amm": [{
+    "dataSourceName": "HopL2Amm",
+    "token": "USDC",
+    "address": "0x5C32143C8B198F392d01f8446b754c181224ac26",
+    "startBlock": 15810000
+  }],
+  "bridges": [{
+    "dataSourceName": "HopL2Bridge",
+    "token": "USDC",
+    "address": "0x25D8039bB044dC227f741a9e381CA4cEAE2E6aE8",
+    "startBlock": 15810014
+  },
+  {
+    "dataSourceName": "HopL2BridgeUSDT",
+    "token": "USDT",
+    "address": "0x6c9a1ACF73bd85463A46B0AFc076FBdf602b690B",
+    "startBlock": 17058878
+  }]
+}
