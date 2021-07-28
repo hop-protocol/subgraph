@@ -77,3 +77,9 @@ src/*
 buildfiles.sh
 !build.sh
 !buildfiles.template.sh
+
+schema.yaml
+subgraph.yaml
+!subgraph.template.yaml
+generated
+build
