@@ -22,6 +22,20 @@ type BonderRemoved @entity {
   token: String!
 }
 
+type ChallengeResolved @entity {
+  id: ID!
+  transferRootId: Bytes!
+  rootHash: Bytes!
+  originalAmount: BigInt!
+
+  transactionHash: String!
+  transactionIndex: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
+}
+
 type MultipleWithdrawalsSettled @entity {
   id: ID!
   bonder: String!
@@ -49,14 +63,39 @@ type Stake @entity {
   token: String!
 }
 
-type TransferFromL1Completed @entity {
+type TransferBondChallenged @entity {
   id: ID!
-  recipient: String!
+  transferRootId: Bytes!
+  rootHash: Bytes!
+  originalAmount: BigInt!
+
+  transactionHash: String!
+  transactionIndex: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
+}
+
+type TransferRootBonded @entity {
+  id: ID!
+  root: Bytes!
   amount: BigInt!
-  amountOutMin: BigInt!
-  deadline: BigInt!
-  relayer: String!
-  relayerFee: BigInt!
+
+  transactionHash: String!
+  transactionIndex: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
+}
+
+type TransferRootConfirmed @entity {
+  id: ID!
+  originChainId: BigInt!
+  destinationChainId: BigInt!
+  rootHash: Bytes!
+  totalAmount: BigInt!
 
   transactionHash: String!
   transactionIndex: BigInt!
@@ -79,32 +118,15 @@ type TransferRootSet @entity {
   token: String!
 }
 
-type TransferSent @entity {
+type TransferSentToL2 @entity {
   id: ID!
-  transferId: Bytes!
   destinationChainId: BigInt!
   recipient: String!
   amount: BigInt!
-  transferNonce: Bytes!
-  bonderFee: BigInt!
-  index: BigInt!
   amountOutMin: BigInt!
   deadline: BigInt!
-
-  transactionHash: String!
-  transactionIndex: BigInt!
-  timestamp: BigInt!
-  blockNumber: BigInt!
-  contractAddress: String!
-  token: String!
-}
-
-type TransfersCommitted @entity {
-  id: ID!
-  destinationChainId: BigInt!
-  rootHash: Bytes!
-  totalAmount: BigInt!
-  rootCommittedAt: BigInt!
+  relayer: String!
+  relayerFee: BigInt!
 
   transactionHash: String!
   transactionIndex: BigInt!
@@ -166,5 +188,25 @@ type Withdrew @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  token: String!
+}
+
+type Transfer @entity {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+
+  transactionHash: String!
+  transactionIndex: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  contractAddress: String!
+  token: String!
+}
+
+type Tvl @entity {
+  id: ID!
+  amount: BigInt!
   token: String!
 }

@@ -1,9 +1,0 @@
-{
-  "network": "arbitrum",
-  "bridges": [{
-    "dataSourceName": "HopL2Bridge",
-    "token": "USDC",
-    "address": "",
-    "startBlock": 0
-  }]
-}

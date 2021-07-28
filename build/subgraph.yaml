@@ -2,8 +2,28 @@ specVersion: 0.0.2
 description: Hop Protocol
 repository: https://github.com/hop-protocol/hop-subgraph
 schema:
-  file: L1_schema.graphql
+  file: L1_Bridge_schema.graphql
 dataSources:
+  - kind: ethereum/contract
+    name: Token
+    network: mainnet
+    source:
+      address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+      abi: Token
+      startBlock: 12650032
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Token
+          file: Token/abis/Token.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: Token/Token.wasm
   - kind: ethereum/contract
     name: HopL1Bridge
     network: mainnet
@@ -64,63 +84,3 @@ dataSources:
         - event: Withdrew(indexed bytes32,indexed address,uint256,bytes32)
           handler: handleWithdrew
       file: HopL1Bridge/HopL1Bridge.wasm
-  - kind: ethereum/contract
-    name: HopL1BridgeUSDT
-    network: mainnet
-    source:
-      address: "0x3E4a3a4796d16c0Cd582C382691998f7c06420B6"
-      abi: L1_Bridge
-      startBlock: 12860139
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - BonderAdded
-        - BonderRemoved
-        - ChallengeResolved
-        - MultipleWithdrawalsSettled
-        - Stake
-        - TransferBondChallenged
-        - TransferRootBonded
-        - TransferRootConfirmed
-        - TransferRootSet
-        - TransferSentToL2
-        - Unstake
-        - WithdrawalBondSettled
-        - WithdrawalBonded
-        - Withdrew
-      abis:
-        - name: L1_Bridge
-          file: HopL1BridgeUSDT/abis/L1_Bridge.json
-      eventHandlers:
-        - event: BonderAdded(indexed address)
-          handler: handleBonderAdded
-        - event: BonderRemoved(indexed address)
-          handler: handleBonderRemoved
-        - event: ChallengeResolved(indexed bytes32,indexed bytes32,uint256)
-          handler: handleChallengeResolved
-        - event: MultipleWithdrawalsSettled(indexed address,indexed bytes32,uint256)
-          handler: handleMultipleWithdrawalsSettled
-        - event: Stake(indexed address,uint256)
-          handler: handleStake
-        - event: TransferBondChallenged(indexed bytes32,indexed bytes32,uint256)
-          handler: handleTransferBondChallenged
-        - event: TransferRootBonded(indexed bytes32,uint256)
-          handler: handleTransferRootBonded
-        - event: TransferRootConfirmed(indexed uint256,indexed uint256,indexed bytes32,uint256)
-          handler: handleTransferRootConfirmed
-        - event: TransferRootSet(indexed bytes32,uint256)
-          handler: handleTransferRootSet
-        - event: TransferSentToL2(indexed uint256,indexed address,uint256,uint256,uint256,indexed
-            address,uint256)
-          handler: handleTransferSentToL2
-        - event: Unstake(indexed address,uint256)
-          handler: handleUnstake
-        - event: WithdrawalBondSettled(indexed address,indexed bytes32,indexed bytes32)
-          handler: handleWithdrawalBondSettled
-        - event: WithdrawalBonded(indexed bytes32,uint256)
-          handler: handleWithdrawalBonded
-        - event: Withdrew(indexed bytes32,indexed address,uint256,bytes32)
-          handler: handleWithdrew
-      file: HopL1BridgeUSDT/HopL1BridgeUSDT.wasm
