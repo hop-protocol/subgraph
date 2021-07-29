@@ -1,4 +1,7 @@
 import {
+  BigInt
+} from "@graphprotocol/graph-ts";
+import {
   BonderAdded,
   BonderRemoved,
   MultipleWithdrawalsSettled,
@@ -25,6 +28,7 @@ import {
   WithdrawalBondSettled as WithdrawalBondSettledEntity,
   WithdrawalBonded as WithdrawalBondedEntity,
   Withdrew as WithdrewEntity,
+  Volume as VolumeEntity
 } from '../generated/schema'
 
 const TOKEN_SYMBOL = '{{token}}'
@@ -177,6 +181,16 @@ export function handleTransferSent(event: TransferSent): void {
   entity.token = TOKEN_SYMBOL
 
   entity.save()
+
+  const volumeId = "volume:{{token}}"
+  let volumeEntity = VolumeEntity.load(volumeId)
+  if (volumeEntity == null) {
+    volumeEntity = new VolumeEntity(volumeId)
+    volumeEntity.amount = BigInt.fromString('0')
+  }
+  volumeEntity.amount = volumeEntity.amount.plus(event.params.amount)
+  volumeEntity.token = TOKEN_SYMBOL
+  volumeEntity.save()
 }
 
 export function handleTransfersCommitted(event: TransfersCommitted): void {

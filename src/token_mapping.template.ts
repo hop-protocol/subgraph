@@ -1,10 +1,10 @@
 import {
-  Transfer
-} from '../generated/Token/Token'
-import {
   BigInt,
   Address
 } from "@graphprotocol/graph-ts";
+import {
+  Transfer
+} from '../generated/Token/Token'
 import {
   Transfer as TransferEntity,
   Tvl as TvlEntity

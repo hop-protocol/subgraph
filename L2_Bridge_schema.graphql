@@ -204,3 +204,9 @@ type Tvl @entity {
   amount: BigInt!
   token: String!
 }
+
+type Volume @entity {
+  id: ID!
+  amount: BigInt!
+  token: String!
+}
