@@ -1,17 +1,28 @@
 {
   "network": "matic",
   "isMainnet": false,
-  "token": [{
+  "subgraphName": "hop-polygon",
+  "tokens": [{
     "dataSourceName": "Token",
     "token": "USDC",
     "address": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
     "startBlock": 15810014
+  }, {
+    "dataSourceName": "TokenUSDT",
+    "token": "USDT",
+    "address": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+    "startBlock": 15810014
   }],
-  "amm": [{
+  "amms": [{
     "dataSourceName": "HopL2Amm",
     "token": "USDC",
     "address": "0x5C32143C8B198F392d01f8446b754c181224ac26",
     "startBlock": 15810000
+  }, {
+    "dataSourceName": "HopL2AmmUSDT",
+    "token": "USDT",
+    "address": "0xB2f7d27B21a69a033f85C42d5EB079043BAadC81",
+    "startBlock": 17058866
   }],
   "bridges": [{
     "dataSourceName": "HopL2Bridge",

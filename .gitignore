@@ -61,10 +61,10 @@ typings/
 .next
 
 config/*
-!config/template.json
+!config/mapping_config.template.json
 !config/mainnet.json
 !config/xdai.json
-!config/polygon.json
+!config/matic.json
 !config/optimism.json
 !config/arbitrum.json
 

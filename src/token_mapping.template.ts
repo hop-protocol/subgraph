@@ -9,15 +9,11 @@ import {
   Transfer as TransferEntity,
   Tvl as TvlEntity
 } from '../generated/schema'
-import keccak256 from 'keccak256'
 
 const TOKEN_SYMBOL = '{{token}}'
-const AMM_ADDRESS = '{{address}}'
 
-const ids = {
-  USDC: '0xdefd5f1714e5f23dcbd59ed529318750e641b9a89ef2f40027d090cd7fc1ed9d', // hash(tvl:TOKEN_SYMBOL)
-  USDT: '0x53cbedb611c96d507471ec3c6446ee802c223ad0bbcfd96a9a0079d23462ee0f'
-}
+// note: this is bridge address for L1
+const AMM_ADDRESS = '{{address}}'
 
 export function handleTransfer(event: Transfer): void {
   let id = event.params._event.transaction.hash.toHexString()
@@ -39,7 +35,7 @@ export function handleTransfer(event: Transfer): void {
 
   entity.save()
 
-  const tvlId = ids[TOKEN_SYMBOL]
+  const tvlId = "tvl:{{token}}"
   let tvlEntity = TvlEntity.load(tvlId)
   if (tvlEntity == null) {
     tvlEntity = new TvlEntity(tvlId)

@@ -1,10 +1,16 @@
 {
   "network": "xdai",
   "isMainnet": false,
+  "subgraphName": "hop-xdai",
   "tokens": [{
     "dataSourceName": "Token",
     "token": "USDC",
     "address": "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+    "startBlock": 16617211
+  }, {
+    "dataSourceName": "TokenUSDT",
+    "token": "USDT",
+    "address": "0x4ECaBa5870353805a9F068101A40E0f32ed605C6",
     "startBlock": 16617211
   }],
   "amms": [{
@@ -12,11 +18,21 @@
     "token": "USDC",
     "address": "0x5C32143C8B198F392d01f8446b754c181224ac26",
     "startBlock": 16617205
+  }, {
+    "dataSourceName": "HopL2AmmUSDT",
+    "token": "USDT",
+    "address": "0x3Aa637D6853f1d9A9354FE4301Ab852A88b237e7",
+    "startBlock": 17155190
   }],
   "bridges": [{
     "dataSourceName": "HopL2Bridge",
     "token": "USDC",
     "address": "0x25D8039bB044dC227f741a9e381CA4cEAE2E6aE8",
     "startBlock": 16617211
+  }, {
+    "dataSourceName": "HopL2BridgeUSDT",
+    "token": "USDT",
+    "address": "0xFD5a186A7e8453Eb867A360526c5d987A00ACaC2",
+    "startBlock": 17155195
   }]
 }
