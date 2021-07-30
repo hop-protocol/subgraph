@@ -8,15 +8,20 @@ import {
 import {
   Transfer as TransferEntity,
   Tvl as TvlEntity,
-  AmmTvl as AmmTvlEntity,
 } from '../generated/schema'
 
 const TOKEN_SYMBOL = '{{token}}'
 
-// note: this is bridge address for L1
-const AMM_ADDRESS = '{{address}}'
+const BRIDGE_ADDRESS = '{{address}}'
 
 export function handleTransfer(event: Transfer): void {
+  if (
+    !(event.params.to.equals(Address.fromHexString(BRIDGE_ADDRESS)) ||
+    event.params.from.equals(Address.fromHexString(BRIDGE_ADDRESS)))
+  ) {
+    return
+  }
+
   let id = event.params._event.transaction.hash.toHexString()
   let entity = TransferEntity.load(id)
   if (entity == null) {
@@ -42,27 +47,12 @@ export function handleTransfer(event: Transfer): void {
     tvlEntity = new TvlEntity(tvlId)
     tvlEntity.amount = BigInt.fromString('0')
   }
-  if (event.params.to.equals(Address.fromHexString(AMM_ADDRESS))) {
+  if (event.params.to.equals(Address.fromHexString(BRIDGE_ADDRESS))) {
     tvlEntity.amount = tvlEntity.amount.plus(event.params.value)
   }
-  if (event.params.from.equals(Address.fromHexString(AMM_ADDRESS))) {
+  if (event.params.from.equals(Address.fromHexString(BRIDGE_ADDRESS))) {
     tvlEntity.amount = tvlEntity.amount.minus(event.params.value)
   }
   tvlEntity.token = TOKEN_SYMBOL
   tvlEntity.save()
-
-  const ammTvlId = "ammTvl:{{token}}"
-  let ammTvlEntity = AmmTvlEntity.load(ammTvlId)
-  if (ammTvlEntity == null) {
-    ammTvlEntity = new AmmTvlEntity(ammTvlId)
-    ammTvlEntity.amount = BigInt.fromString('0')
-  }
-  if (event.params.to.equals(Address.fromHexString(AMM_ADDRESS))) {
-    ammTvlEntity.amount = ammTvlEntity.amount.plus(event.params.value)
-  }
-  if (event.params.from.equals(Address.fromHexString(AMM_ADDRESS))) {
-    ammTvlEntity.amount = ammTvlEntity.amount.minus(event.params.value)
-  }
-  ammTvlEntity.token = TOKEN_SYMBOL
-  ammTvlEntity.save()
 }

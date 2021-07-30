@@ -25,7 +25,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/token_mapping_{{network}}_{{token}}.ts
+      file: ./src/L1_token_mapping_{{network}}_{{token}}.ts
 {{/tokens}}
 {{#bridges}}
   - kind: ethereum/contract
@@ -113,7 +113,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/token_mapping_{{network}}_{{token}}.ts
+      file: ./src/L2_token_mapping_{{network}}_{{token}}.ts
 {{/tokens}}
 {{#amms}}
   - kind: ethereum/contract
