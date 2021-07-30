@@ -28,7 +28,8 @@ import {
   WithdrawalBondSettled as WithdrawalBondSettledEntity,
   WithdrawalBonded as WithdrawalBondedEntity,
   Withdrew as WithdrewEntity,
-  Volume as VolumeEntity
+  Volume as VolumeEntity,
+  BonderFee as BonderFeeEntity
 } from '../generated/schema'
 
 const TOKEN_SYMBOL = '{{token}}'
@@ -191,6 +192,16 @@ export function handleTransferSent(event: TransferSent): void {
   volumeEntity.amount = volumeEntity.amount.plus(event.params.amount)
   volumeEntity.token = TOKEN_SYMBOL
   volumeEntity.save()
+
+  const bonderFeeId = "bonderFee:{{token}}"
+  let bonderFeeEntity = BonderFeeEntity.load(bonderFeeId)
+  if (bonderFeeEntity == null) {
+    bonderFeeEntity = new BonderFeeEntity(bonderFeeId)
+    bonderFeeEntity.amount = BigInt.fromString('0')
+  }
+  bonderFeeEntity.amount = bonderFeeEntity.amount.plus(event.params.bonderFee)
+  bonderFeeEntity.token = TOKEN_SYMBOL
+  bonderFeeEntity.save()
 }
 
 export function handleTransfersCommitted(event: TransfersCommitted): void {

@@ -6,7 +6,7 @@ import {
 } from '../generated/HopL2Amm/L2_Amm'
 import {
   TokenSwap as TokenSwapEntity,
-  AmmFees as AmmFeesEntity,
+  AmmFee as AmmFeeEntity,
 } from '../generated/schema'
 
 const TOKEN_SYMBOL = '{{token}}'
@@ -36,9 +36,9 @@ export function handleTokenSwap(event: TokenSwap): void {
   entity.save()
 
   const ammFeesId = "ammFees:{{token}}"
-  let ammFeesEntity = AmmFeesEntity.load(ammFeesId)
+  let ammFeesEntity = AmmFeeEntity.load(ammFeesId)
   if (ammFeesEntity == null) {
-    ammFeesEntity = new AmmFeesEntity(ammFeesId)
+    ammFeesEntity = new AmmFeeEntity(ammFeesId)
     ammFeesEntity.amount = BigInt.fromString('0')
   }
 

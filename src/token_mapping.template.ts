@@ -7,7 +7,8 @@ import {
 } from '../generated/Token/Token'
 import {
   Transfer as TransferEntity,
-  Tvl as TvlEntity
+  Tvl as TvlEntity,
+  AmmTvl as AmmTvlEntity,
 } from '../generated/schema'
 
 const TOKEN_SYMBOL = '{{token}}'
@@ -49,4 +50,19 @@ export function handleTransfer(event: Transfer): void {
   }
   tvlEntity.token = TOKEN_SYMBOL
   tvlEntity.save()
+
+  const ammTvlId = "ammTvl:{{token}}"
+  let ammTvlEntity = AmmTvlEntity.load(ammTvlId)
+  if (ammTvlEntity == null) {
+    ammTvlEntity = new AmmTvlEntity(ammTvlId)
+    ammTvlEntity.amount = BigInt.fromString('0')
+  }
+  if (event.params.to.equals(Address.fromHexString(AMM_ADDRESS))) {
+    ammTvlEntity.amount = ammTvlEntity.amount.plus(event.params.value)
+  }
+  if (event.params.from.equals(Address.fromHexString(AMM_ADDRESS))) {
+    ammTvlEntity.amount = ammTvlEntity.amount.minus(event.params.value)
+  }
+  ammTvlEntity.token = TOKEN_SYMBOL
+  ammTvlEntity.save()
 }

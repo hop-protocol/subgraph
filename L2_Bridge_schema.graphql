@@ -211,7 +211,19 @@ type Volume @entity {
   token: String!
 }
 
-type AmmFees @entity {
+type AmmTvl @entity {
+  id: ID!
+  amount: BigInt!
+  token: String!
+}
+
+type AmmFee @entity {
+  id: ID!
+  amount: BigInt!
+  token: String!
+}
+
+type BonderFee @entity {
   id: ID!
   amount: BigInt!
   token: String!
