@@ -12,8 +12,7 @@ import {
 } from '../generated/schema'
 
 const TOKEN_SYMBOL = '{{token}}'
-
-const AMM_ADDRESS = '{{address}}'
+const AMM_ADDRESS = '{{ammAddress}}'
 
 export function handleTransfer(event: Transfer): void {
   if (

@@ -5,7 +5,7 @@ npx mustache config/$NETWORK.json subgraph.template.yaml > subgraph.yaml
 {{#tokens}}
 TOKEN="{{token}}"
 TEMP_CONFIG="/tmp/config_${NETWORK}_${TOKEN}.json"
-cat config/$NETWORK.json | jq "{ network: .network, isMainnet: .isMainnet, subgraphName: .subgraphName, token: \"$TOKEN\", address: (.tokens[] | select(.token == \"$TOKEN\")).address }" > $TEMP_CONFIG
+cat config/$NETWORK.json | jq "{ network: .network, isMainnet: .isMainnet, subgraphName: .subgraphName, token: \"$TOKEN\", address: (.tokens[] | select(.token == \"$TOKEN\")).address, ammAddress: (try ((.amms[] | select(.token == \"$TOKEN\")).address) // \"\"), bridgeAddress: (.bridges[] | select(.token == \"$TOKEN\")).address }" > $TEMP_CONFIG
 
 npx mustache $TEMP_CONFIG config/mapping_config.template.json > config/${NETWORK}_${TOKEN}.json
 {{#isMainnet}}

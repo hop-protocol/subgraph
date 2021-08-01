@@ -2,5 +2,7 @@
   "network": "{{network}}",
   "isMainnet": {{isMainnet}},
   "token": "{{token}}",
-  "address": "{{address}}"
+  "address": "{{address}}",
+  "ammAddress": "{{ammAddress}}",
+  "bridgeAddress": "{{bridgeAddress}}"
 }
