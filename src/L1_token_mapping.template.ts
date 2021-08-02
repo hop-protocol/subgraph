@@ -36,6 +36,7 @@ export function handleTransfer(event: Transfer): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()

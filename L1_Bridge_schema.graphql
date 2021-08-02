@@ -7,6 +7,7 @@ type BonderAdded @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -19,6 +20,7 @@ type BonderRemoved @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -33,6 +35,7 @@ type ChallengeResolved @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -47,6 +50,7 @@ type MultipleWithdrawalsSettled @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -60,6 +64,7 @@ type Stake @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -74,6 +79,7 @@ type TransferBondChallenged @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -87,6 +93,7 @@ type TransferRootBonded @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -102,6 +109,7 @@ type TransferRootConfirmed @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -115,6 +123,7 @@ type TransferRootSet @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -133,6 +142,7 @@ type TransferSentToL2 @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -146,6 +156,7 @@ type Unstake @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -160,6 +171,7 @@ type WithdrawalBondSettled @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -173,6 +185,7 @@ type WithdrawalBonded @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 
@@ -188,6 +201,7 @@ type Withdrew @entity {
   timestamp: BigInt!
   blockNumber: BigInt!
   contractAddress: String!
+  from: String!
   token: String!
 }
 

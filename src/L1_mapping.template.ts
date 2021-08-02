@@ -51,6 +51,7 @@ export function handleBonderAdded(event: BonderAdded): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -70,6 +71,7 @@ export function handleBonderRemoved(event: BonderRemoved): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -91,6 +93,7 @@ export function handleChallengeResolved(event: ChallengeResolved): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -112,6 +115,7 @@ export function handleMultipleWithdrawalsSettled(event: MultipleWithdrawalsSettl
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -132,6 +136,7 @@ export function handleStake(event: Stake): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -153,6 +158,7 @@ export function handleTransferBondChallenged(event: TransferBondChallenged): voi
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -173,6 +179,7 @@ export function handleTransferRootBonded(event: TransferRootBonded): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -195,6 +202,7 @@ export function handleTransferRootConfirmed(event: TransferRootConfirmed): void 
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -215,6 +223,7 @@ export function handleTransferRootSet(event: TransferRootSet): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -240,6 +249,7 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -270,6 +280,7 @@ export function handleUnstake(event: Unstake): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -291,6 +302,7 @@ export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void 
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -311,6 +323,7 @@ export function handleWithdrawalBonded(event: WithdrawalBonded): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
@@ -333,6 +346,7 @@ export function handleWithdrew(event: Withdrew): void {
   entity.timestamp = event.params._event.block.timestamp
   entity.blockNumber = event.params._event.block.number
   entity.contractAddress = event.params._event.address.toHexString()
+  entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
 
   entity.save()
