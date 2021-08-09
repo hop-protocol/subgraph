@@ -11,7 +11,12 @@
     "dataSourceName": "TokenUSDT",
     "token": "USDT",
     "address": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
-    "startBlock": 15810014
+    "startBlock": 17058878
+  }, {
+    "dataSourceName": "TokenMATIC",
+    "token": "MATIC",
+    "address": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+    "startBlock": 17669097
   }],
   "amms": [{
     "dataSourceName": "HopL2Amm",
@@ -23,17 +28,26 @@
     "token": "USDT",
     "address": "0xB2f7d27B21a69a033f85C42d5EB079043BAadC81",
     "startBlock": 17058866
+  }, {
+    "dataSourceName": "HopL2AmmMATIC",
+    "token": "MATIC",
+    "address": "0x3d4Cc8A61c7528Fd86C55cfe061a78dCBA48EDd1",
+    "startBlock": 17669083
   }],
   "bridges": [{
     "dataSourceName": "HopL2Bridge",
     "token": "USDC",
     "address": "0x25D8039bB044dC227f741a9e381CA4cEAE2E6aE8",
     "startBlock": 15810014
-  },
-  {
+  }, {
     "dataSourceName": "HopL2BridgeUSDT",
     "token": "USDT",
     "address": "0x6c9a1ACF73bd85463A46B0AFc076FBdf602b690B",
     "startBlock": 17058878
+  }, {
+    "dataSourceName": "HopL2BridgeMATIC",
+    "token": "MATIC",
+    "address": "0x553bC791D746767166fA3888432038193cEED5E2",
+    "startBlock": 17669097
   }]
 }

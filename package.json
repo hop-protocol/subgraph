@@ -13,7 +13,8 @@
     "build-deploy:polygon": "NETWORK=matic ./build.sh",
     "build-deploy:xdai": "NETWORK=xdai ./build.sh",
     "build-deploy:optimism": "NETWORK=optimism ./build.sh",
-    "build-deploy:arbitrum": "NETWORK=arbitrum ./build.sh"
+    "build-deploy:arbitrum": "NETWORK=arbitrum ./build.sh",
+    "clean": "./clean.sh"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.20.0",
