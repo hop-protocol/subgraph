@@ -1,5 +1,23 @@
 {
   "network": "optimism",
   "isMainnet": false,
-  "subgraphName": "hop-optimism"
+  "subgraphName": "hop-optimism",
+  "tokens": [{
+    "dataSourceName": "Token",
+    "token": "USDC",
+    "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+    "startBlock": 462499
+  }],
+  "amms": [{
+    "dataSourceName": "HopL2Amm",
+    "token": "USDC",
+    "address": "0x0e0E3d2C5c292161999474247956EF542caBF8dd",
+    "startBlock": 760155
+  }],
+  "bridges": [{
+    "dataSourceName": "HopL2Bridge",
+    "token": "USDC",
+    "address": "0xe22D2beDb3Eca35E6397e0C6D62857094aA26F52",
+    "startBlock": 760156
+  }]
 }
