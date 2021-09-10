@@ -1,0 +1,23 @@
+{
+  "network": "arbitrum-one",
+  "isMainnet": false,
+  "subgraphName": "hop-arbitrum",
+  "tokens": [{
+    "dataSourceName": "Token",
+    "token": "USDC",
+    "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+    "startBlock": 260713
+  }],
+  "amms": [{
+    "dataSourceName": "HopL2Amm",
+    "token": "USDC",
+    "address": "0xb87ac009f61fa214f196e232fd14a6f8ae422fa1",
+    "startBlock": 260586
+  }],
+  "bridges": [{
+    "dataSourceName": "HopL2Bridge",
+    "token": "USDC",
+    "address": "0xCB4cEeFce514B2d910d3ac529076D18e3aDD3775",
+    "startBlock": 260713
+  }]
+}
