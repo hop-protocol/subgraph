@@ -17,6 +17,11 @@
     "token": "MATIC",
     "address": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
     "startBlock": 12969385
+  }, {
+    "dataSourceName": "TokenDAI",
+    "token": "DAI",
+    "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "startBlock": 13226217
   }],
   "bridges": [{
     "dataSourceName": "HopL1Bridge",
@@ -33,5 +38,10 @@
     "token": "MATIC",
     "address": "0x22B1Cbb8D98a01a3B71D034BB899775A76Eb1cc2",
     "startBlock": 12969385
+  }, {
+    "dataSourceName": "HopL1BridgeDAI",
+    "token": "DAI",
+    "address": "0x3d4Cc8A61c7528Fd86C55cfe061a78dCBA48EDd1",
+    "startBlock": 13226217
   }]
 }

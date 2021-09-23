@@ -12,6 +12,11 @@
     "token": "USDT",
     "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
     "startBlock": 856444
+  }, {
+    "dataSourceName": "TokenDAI",
+    "token": "DAI",
+    "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
+    "startBlock": 1746403
   }],
   "amms": [{
     "dataSourceName": "HopL2Amm",
@@ -23,6 +28,11 @@
     "token": "USDT",
     "address": "0xeC4B41Af04cF917b54AEb6Df58c0f8D78895b5Ef",
     "startBlock": 856443
+  }, {
+    "dataSourceName": "HopL2AmmDAI",
+    "token": "DAI",
+    "address": "0xF181eD90D6CfaC84B8073FdEA6D34Aa744B41810",
+    "startBlock": 1746381
   }],
   "bridges": [{
     "dataSourceName": "HopL2Bridge",
@@ -34,5 +44,10 @@
     "token": "USDT",
     "address": "0x46ae9BaB8CEA96610807a275EBD36f8e916b5C61",
     "startBlock": 856444
+  }, {
+    "dataSourceName": "HopL2BridgeDAI",
+    "token": "DAI",
+    "address": "0x7191061D5d4C60f598214cC6913502184BAddf18",
+    "startBlock": 1746403
   }]
 }

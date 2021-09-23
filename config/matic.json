@@ -17,6 +17,11 @@
     "token": "MATIC",
     "address": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
     "startBlock": 17669097
+  }, {
+    "dataSourceName": "TokenDAI",
+    "token": "DAI",
+    "address": "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+    "startBlock": 19112518
   }],
   "amms": [{
     "dataSourceName": "HopL2Amm",
@@ -33,6 +38,11 @@
     "token": "MATIC",
     "address": "0x3d4Cc8A61c7528Fd86C55cfe061a78dCBA48EDd1",
     "startBlock": 17669083
+  }, {
+    "dataSourceName": "HopL2AmmDAI",
+    "token": "DAI",
+    "address": "0x25FB92E505F752F730cAD0Bd4fa17ecE4A384266",
+    "startBlock": 19112508
   }],
   "bridges": [{
     "dataSourceName": "HopL2Bridge",
@@ -49,5 +59,10 @@
     "token": "MATIC",
     "address": "0x553bC791D746767166fA3888432038193cEED5E2",
     "startBlock": 17669097
+  }, {
+    "dataSourceName": "HopL2BridgeDAI",
+    "token": "DAI",
+    "address": "0xEcf268Be00308980B5b3fcd0975D47C4C8e1382a",
+    "startBlock": 19112518
   }]
 }
