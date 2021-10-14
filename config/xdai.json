@@ -22,6 +22,11 @@
     "token": "DAI",
     "address": "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
     "startBlock": 18093617
+  }, {
+    "dataSourceName": "TokenETH",
+    "token": "ETH",
+    "address": "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1",
+    "startBlock": 18359713
   }],
   "amms": [{
     "dataSourceName": "HopL2Amm",
@@ -43,6 +48,11 @@
     "token": "DAI",
     "address": "0x24afDcA4653042C6D08fb1A754b2535dAcF6Eb24",
     "startBlock": 18093612
+  }, {
+    "dataSourceName": "HopL2AmmETH",
+    "token": "ETH",
+    "address": "0x4014DC015641c08788F15bD6eB20dA4c47D936d8",
+    "startBlock": 18359713
   }],
   "bridges": [{
     "dataSourceName": "HopL2Bridge",
@@ -64,5 +74,10 @@
     "token": "DAI",
     "address": "0x0460352b91D7CF42B0E1C1c30f06B602D9ef2238",
     "startBlock": 18093617
+  }, {
+    "dataSourceName": "HopL2BridgeETH",
+    "token": "ETH",
+    "address": "0xD8926c12C0B2E5Cd40cFdA49eCaFf40252Af491B",
+    "startBlock": 18359713
   }]
 }
