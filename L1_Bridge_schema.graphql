@@ -230,3 +230,10 @@ type Volume @entity {
   amount: BigInt!
   token: String!
 }
+
+type DailyVolume @entity {
+  id: ID!
+  amount: BigInt!
+  token: String!
+  date: Int!
+}

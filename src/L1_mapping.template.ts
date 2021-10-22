@@ -32,7 +32,8 @@ import {
   WithdrawalBondSettled as WithdrawalBondSettledEntity,
   WithdrawalBonded as WithdrawalBondedEntity,
   Withdrew as WithdrewEntity,
-  Volume as VolumeEntity
+  Volume as VolumeEntity,
+  DailyVolume as DailyVolumeEntity,
 } from '../generated/schema'
 
 const TOKEN_SYMBOL = '{{token}}'
@@ -254,6 +255,7 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
 
   entity.save()
 
+  // Cumulative volume
   const volumeId = "volume:{{token}}"
   let volumeEntity = VolumeEntity.load(volumeId)
   if (volumeEntity == null) {
@@ -263,6 +265,27 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
   volumeEntity.amount = volumeEntity.amount.plus(event.params.amount)
   volumeEntity.token = TOKEN_SYMBOL
   volumeEntity.save()
+
+  // Daily volume
+  // NOTE: TheGraph doesn't support date parsing because webassembly date support is primitive:
+  // https://github.com/graphprotocol/support/issues/26
+  // date logic borrowed from uniswap subgraphs:
+  // https://github.com/graphprotocol/uniswap-subgraph/blob/ed19523cd80d29a6b403591f4f1b24746ab05023/src/mappings/exchange.ts#L190
+  // Nov 2 2018 is 1541116800 for dayStartTimestamp and 17837 for dayID
+  // Nov 3 2018 would be 1541116800 + 86400 and 17838, and so on.
+  let blockTimestamp = event.params._event.block.timestamp.toI32()
+  let dayID = blockTimestamp / 86400
+  let dayStartTimestamp = dayID * 86400
+  let dailyVolumeId = `volume:{{token}}:${dayID}`
+  let dailyVolumEntity = DailyVolumeEntity.load(dailyVolumeId)
+  if (dailyVolumEntity == null) {
+    dailyVolumEntity = new DailyVolumeEntity(dailyVolumeId)
+    dailyVolumEntity.amount = BigInt.fromString('0')
+  }
+  dailyVolumEntity.amount = dailyVolumEntity.amount.plus(event.params.amount)
+  dailyVolumEntity.token = TOKEN_SYMBOL
+  dailyVolumEntity.date = dayStartTimestamp
+  dailyVolumEntity.save()
 }
 
 export function handleUnstake(event: Unstake): void {
