@@ -276,7 +276,7 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
   let blockTimestamp = event.params._event.block.timestamp.toI32()
   let dayID = blockTimestamp / 86400
   let dayStartTimestamp = dayID * 86400
-  let dailyVolumeId = `volume:{{token}}:${dayID}`
+  let dailyVolumeId = "volume:{{token}}:" + dayID.toString()
   let dailyVolumEntity = DailyVolumeEntity.load(dailyVolumeId)
   if (dailyVolumEntity == null) {
     dailyVolumEntity = new DailyVolumeEntity(dailyVolumeId)
