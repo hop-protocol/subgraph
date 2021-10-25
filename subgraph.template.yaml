@@ -93,28 +93,6 @@ dataSources:
 schema:
   file: ./L2_Bridge_schema.graphql
 dataSources:
-{{#tokens}}
-  - kind: ethereum/contract
-    name: {{dataSourceName}}
-    network: {{network}}
-    source:
-      address: '{{address}}'
-      abi: Token
-      startBlock: {{startBlock}}
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.4
-      language: wasm/assemblyscript
-      entities:
-        - Transfer
-      abis:
-        - name: Token
-          file: ./abis/Token.json
-      eventHandlers:
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
-      file: ./src/L2_token_mapping_{{network}}_{{token}}.ts
-{{/tokens}}
 {{#amms}}
   - kind: ethereum/contract
     name: {{dataSourceName}}
@@ -129,12 +107,24 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - TokenSwap
+        - AddLiquidity
+        - RemoveLiquidity
+        - RemoveLiquidityOne
+        - RemoveLiquidityImbalance
       abis:
         - name: L2_Amm
           file: ./abis/L2_Amm.json
       eventHandlers:
         - event: TokenSwap(indexed address,uint256,uint256,uint128,uint128)
           handler: handleTokenSwap
+        - event: AddLiquidity(indexed address,uint256[],uint256[],uint256,uint256)
+          handler: handleAddLiquidity
+        - event: RemoveLiquidity(indexed address,uint256[],uint256)
+          handler: handleRemoveLiquidity
+        - event: RemoveLiquidityOne(indexed address,uint256,uint256,uint256,uint256)
+          handler: handleRemoveLiquidityOne
+        - event: RemoveLiquidityImbalance(indexed address,uint256[],uint256[],uint256,uint256)
+          handler: handleRemoveLiquidityImbalance
       file: ./src/L2_Amm_mapping_{{network}}_{{token}}.ts
 {{/amms}}
 {{#bridges}}

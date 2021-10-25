@@ -1,3 +1,5 @@
+set -e
+
 NETWORK="{{network}}"
 
 npx mustache config/$NETWORK.json subgraph.template.yaml > subgraph.yaml

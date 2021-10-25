@@ -248,3 +248,69 @@ type BonderFee @entity {
   amount: BigInt!
   token: String!
 }
+
+type AddLiquidity @entity {
+  id: ID!
+  provider: String!
+  tokenAmounts: [BigInt!]
+  fees: [BigInt!]
+  invariant: BigInt!
+  lpTokenSupply: BigInt!
+
+  transactionHash: String!
+  transactionIndex: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  contractAddress: String!
+  from: String!
+  token: String!
+}
+
+type RemoveLiquidity @entity {
+  id: ID!
+  provider: String!
+  tokenAmounts: [BigInt!]
+  lpTokenSupply: BigInt!
+
+  transactionHash: String!
+  transactionIndex: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  contractAddress: String!
+  from: String!
+  token: String!
+}
+
+type RemoveLiquidityOne @entity {
+  id: ID!
+  provider: String!
+  lpTokenAmount: BigInt!
+  lpTokenSupply: BigInt!
+  boughtId: BigInt!
+  tokensBought: BigInt!
+
+  transactionHash: String!
+  transactionIndex: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  contractAddress: String!
+  from: String!
+  token: String!
+}
+
+type RemoveLiquidityImbalance @entity {
+  id: ID!
+  provider: String!
+  tokenAmounts: [BigInt!]
+  fees: [BigInt!]
+  invariant: BigInt!
+  lpTokenSupply: BigInt!
+
+  transactionHash: String!
+  transactionIndex: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  contractAddress: String!
+  from: String!
+  token: String!
+}
