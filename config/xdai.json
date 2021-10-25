@@ -27,6 +27,11 @@
     "token": "ETH",
     "address": "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1",
     "startBlock": 18359713
+  }, {
+    "dataSourceName": "TokenWBTC",
+    "token": "WBTC",
+    "address": "0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252",
+    "startBlock": 18723032
   }],
   "amms": [{
     "dataSourceName": "HopL2Amm",
@@ -53,6 +58,11 @@
     "token": "ETH",
     "address": "0x4014DC015641c08788F15bD6eB20dA4c47D936d8",
     "startBlock": 18359713
+  }, {
+    "dataSourceName": "HopL2AmmWBTC",
+    "token": "WBTC",
+    "address": "0xb07c6505e1E41112494123e40330c5Ac09817CFB",
+    "startBlock": 18723027
   }],
   "bridges": [{
     "dataSourceName": "HopL2Bridge",
@@ -79,5 +89,10 @@
     "token": "ETH",
     "address": "0xD8926c12C0B2E5Cd40cFdA49eCaFf40252Af491B",
     "startBlock": 18359713
+  }, {
+    "dataSourceName": "HopL2BridgeWBTC",
+    "token": "WBTC",
+    "address": "0x07C592684Ee9f71D58853F9387579332d471b6Ca",
+    "startBlock": 18723032
   }]
 }
