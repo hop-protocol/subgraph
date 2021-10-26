@@ -1,11 +1,5 @@
 set -e
 
-if test -z "$GRAPH_ACCESS_TOKEN"; then
-  printf "TheGraph access token is required. Access token is found in dashboard.\n\n"
-  printf "export GRAPH_ACCESS_TOKEN=<YOUR_ACCESS_TOKEN>\n\n"
-  exit 1
-fi
-
 NETWORK="{{network}}"
 
 npx mustache config/$NETWORK.json subgraph.template.yaml > subgraph.yaml
@@ -29,4 +23,8 @@ npx mustache $TEMP_CONFIG src/L2_Amm_mapping.template.ts > src/L2_Amm_mapping_${
 
 npm run codegen
 npm run build
-npx graph deploy "hop-protocol/{{subgraphName}}" --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --access-token "$GRAPH_ACCESS_TOKEN"
+
+# auth:
+# npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
+
+npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "hop-protocol/{{subgraphName}}"
