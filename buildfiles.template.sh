@@ -1,6 +1,7 @@
 set -e
 
 NETWORK="{{network}}"
+GITHUB_ORG="${GITHUB_ORG:=hop-protocol}"
 
 npx mustache config/$NETWORK.json subgraph.template.yaml > subgraph.yaml
 
@@ -27,4 +28,4 @@ npm run build
 # auth:
 # npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
 
-npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "hop-protocol/{{subgraphName}}"
+npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
