@@ -37,6 +37,7 @@ import {
 } from '../generated/schema'
 
 const TOKEN_SYMBOL = '{{token}}'
+const TOKEN_ADDRESS = '{{address}}'
 
 export function handleBonderAdded(event: BonderAdded): void {
   let id = event.params._event.transaction.hash.toHexString()
@@ -252,6 +253,7 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
   entity.contractAddress = event.params._event.address.toHexString()
   entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
+  entity.tokenAddress = TOKEN_ADDRESS
 
   entity.save()
 

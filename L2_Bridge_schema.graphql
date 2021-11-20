@@ -104,6 +104,7 @@ type TransferSent @entity {
   contractAddress: String!
   from: String!
   token: String!
+  tokenAddress: String!
 }
 
 type TransfersCommitted @entity {
@@ -196,6 +197,7 @@ type TokenSwap @entity {
   contractAddress: String!
   from: String!
   token: String!
+  tokenAddress: String!
 }
 
 type Transfer @entity {
@@ -241,6 +243,7 @@ type AmmFee @entity {
   id: ID!
   amount: BigInt!
   token: String!
+  tokenAddress: String!
 }
 
 type BonderFee @entity {
