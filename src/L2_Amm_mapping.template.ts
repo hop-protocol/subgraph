@@ -1,4 +1,5 @@
 import {
+  Address,
   BigInt,
 } from "@graphprotocol/graph-ts";
 import {
@@ -17,10 +18,13 @@ import {
   RemoveLiquidity as RemoveLiquidityEntity,
   RemoveLiquidityOne as RemoveLiquidityOneEntity,
   RemoveLiquidityImbalance as RemoveLiquidityImbalanceEntity,
+  Token as TokenEntity,
 } from '../generated/schema'
 
-const TOKEN_SYMBOL = '{{token}}'
 const TOKEN_ADDRESS = '{{address}}'
+const TOKEN_NAME = '{{tokenName}}'
+const TOKEN_SYMBOL = '{{token}}'
+const TOKEN_DECIMALS = {{tokenDecimals}}
 const BASIS_POINTS = '4000000' // 4bps
 const FEE_DENOMINATOR = '10000000000' // 10**10
 
@@ -44,7 +48,17 @@ export function handleTokenSwap(event: TokenSwap): void {
   entity.contractAddress = event.params._event.address.toHexString()
   entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
-  entity.tokenAddress = TOKEN_ADDRESS
+
+  let tokenEntity = TokenEntity.load(TOKEN_ADDRESS)
+  if (tokenEntity == null) {
+    tokenEntity = new TokenEntity(TOKEN_ADDRESS)
+    tokenEntity.address = Address.fromString(TOKEN_ADDRESS)
+    tokenEntity.name = TOKEN_NAME
+    tokenEntity.symbol = TOKEN_SYMBOL
+    tokenEntity.decimals = TOKEN_DECIMALS
+    tokenEntity.save()
+  }
+  entity.tokenEntity = TOKEN_ADDRESS
 
   entity.save()
 
@@ -57,7 +71,8 @@ export function handleTokenSwap(event: TokenSwap): void {
 
   ammFeesEntity.amount = ammFeesEntity.amount.plus(event.params.tokensSold.times(BigInt.fromString(BASIS_POINTS)).div(BigInt.fromString(FEE_DENOMINATOR)))
   ammFeesEntity.token = TOKEN_SYMBOL
-  ammFeesEntity.tokenAddress = TOKEN_ADDRESS
+  ammFeesEntity.tokenEntity = TOKEN_ADDRESS
+
   ammFeesEntity.save()
 }
 

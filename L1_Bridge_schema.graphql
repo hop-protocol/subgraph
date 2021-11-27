@@ -144,7 +144,7 @@ type TransferSentToL2 @entity {
   contractAddress: String!
   from: String!
   token: String!
-  tokenAddress: String!
+  tokenEntity: Token!
 }
 
 type Unstake @entity {
@@ -237,4 +237,21 @@ type DailyVolume @entity {
   amount: BigInt!
   token: String!
   date: Int!
+}
+
+type Token @entity {
+  "Token address"
+  id: ID!
+
+  "Token address"
+  address: Bytes!
+
+  "Token name"
+  name: String!
+
+  "Token symbol"
+  symbol: String!
+
+  "Token decimals"
+  decimals: Int!
 }

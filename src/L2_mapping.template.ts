@@ -1,4 +1,5 @@
 import {
+  Address,
   BigInt
 } from "@graphprotocol/graph-ts";
 import {
@@ -13,7 +14,7 @@ import {
   Unstake,
   WithdrawalBondSettled,
   WithdrawalBonded,
-  Withdrew
+  Withdrew,
 } from '../generated/HopL2Bridge/L2_Bridge'
 import {
   BonderAdded as BonderAddedEntity,
@@ -31,10 +32,13 @@ import {
   Volume as VolumeEntity,
   DailyVolume as DailyVolumeEntity,
   BonderFee as BonderFeeEntity,
+  Token as TokenEntity,
 } from '../generated/schema'
 
-const TOKEN_SYMBOL = '{{token}}'
 const TOKEN_ADDRESS = '{{address}}'
+const TOKEN_NAME = '{{tokenName}}'
+const TOKEN_SYMBOL = '{{token}}'
+const TOKEN_DECIMALS = {{tokenDecimals}}
 
 export function handleBonderAdded(event: BonderAdded): void {
   let id = event.params._event.transaction.hash.toHexString()
@@ -189,7 +193,17 @@ export function handleTransferSent(event: TransferSent): void {
   entity.contractAddress = event.params._event.address.toHexString()
   entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
-  entity.tokenAddress = TOKEN_ADDRESS
+
+  let tokenEntity = TokenEntity.load(TOKEN_ADDRESS)
+  if (tokenEntity == null) {
+    tokenEntity = new TokenEntity(TOKEN_ADDRESS)
+    tokenEntity.address = Address.fromString(TOKEN_ADDRESS)
+    tokenEntity.name = TOKEN_NAME
+    tokenEntity.symbol = TOKEN_SYMBOL
+    tokenEntity.decimals = TOKEN_DECIMALS
+    tokenEntity.save()
+  }
+  entity.tokenEntity = TOKEN_ADDRESS
 
   entity.save()
 

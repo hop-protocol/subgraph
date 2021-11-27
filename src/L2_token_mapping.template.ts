@@ -9,9 +9,13 @@ import {
   Transfer as TransferEntity,
   Tvl as TvlEntity,
   AmmTvl as AmmTvlEntity,
+  Token as TokenEntity,
 } from '../generated/schema'
 
+const TOKEN_ADDRESS = '{{address}}'
+const TOKEN_NAME = '{{tokenName}}'
 const TOKEN_SYMBOL = '{{token}}'
+const TOKEN_DECIMALS = {{tokenDecimals}}
 const AMM_ADDRESS = '{{ammAddress}}'
 
 export function handleTransfer(event: Transfer): void {

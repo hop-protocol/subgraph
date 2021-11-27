@@ -3,6 +3,8 @@
   "isMainnet": {{isMainnet}},
   "token": "{{token}}",
   "address": "{{address}}",
+  "tokenDecimals": "{{tokenDecimals}}",
+  "tokenName": "{{tokenName}}",
   "ammAddress": "{{ammAddress}}",
   "bridgeAddress": "{{bridgeAddress}}"
 }

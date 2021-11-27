@@ -5,26 +5,36 @@
   "tokens": [{
     "dataSourceName": "Token",
     "token": "USDC",
+    "tokenName": "USD Coin",
+    "tokenDecimals": 6,
     "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
     "startBlock": 440027
   }, {
     "dataSourceName": "TokenUSDT",
     "token": "USDT",
+    "tokenName": "Tether USD",
+    "tokenDecimals": 6,
     "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
     "startBlock": 441562
   }, {
     "dataSourceName": "TokenDAI",
     "token": "DAI",
+    "tokenName": "DAI Stablecoin",
+    "tokenDecimals": 18,
     "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
     "startBlock": 945326
   }, {
     "dataSourceName": "TokenETH",
     "token": "ETH",
+    "tokenName": "Ethereum",
+    "tokenDecimals": 18,
     "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
     "startBlock": 2135598
   }, {
     "dataSourceName": "TokenWBTC",
     "token": "WBTC",
+    "tokenName": "Wrapped BTC",
+    "tokenDecimals": 18,
     "address": "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
     "startBlock": 2481596
   }],
