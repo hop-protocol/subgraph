@@ -85,3 +85,4 @@ subgraph.yaml
 !subgraph.template.yaml
 generated
 build
+data

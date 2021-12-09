@@ -28,4 +28,9 @@ npm run build
 # auth:
 # npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
 
-npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
+#npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
+
+# running local:
+# docker-compose up
+# npx graph create hop-protocol/hop-optimism --node http://127.0.0.1:8020
+# npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-optimism
