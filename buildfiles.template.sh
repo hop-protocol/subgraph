@@ -28,7 +28,7 @@ npm run build
 # auth:
 # npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
 
-#npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
+npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
 
 # running local:
 # docker-compose up

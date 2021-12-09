@@ -54,6 +54,32 @@ The following subgraphs will need to be created on the dashboard:
 npm run clean
 ```
 
+**Deploying locally:**
+
+Update networks in docker-compose.yml
+
+```yml
+ethereum: 'optimism:https://mainnet.optimism.io'
+```
+
+Start containers:
+
+```bash
+docker-compose up
+```
+
+Create local subgraph:
+
+```bash
+npx graph create hop-protocol/hop-optimism --node http://127.0.0.1:8020
+```
+
+Deploy subgraph after building:
+
+```bash
+npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-optimism
+```
+
 ## License
 
 [MIT](LICENSE)
