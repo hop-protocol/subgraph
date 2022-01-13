@@ -20,6 +20,11 @@ import {
   RemoveLiquidityImbalance as RemoveLiquidityImbalanceEntity,
   Token as TokenEntity,
 } from '../generated/schema'
+import {
+  createBlockEntityIfNotExists,
+  createTransactionEntityIfNotExists,
+  createTokenEntityIfNotExists
+} from './shared'
 
 const TOKEN_ADDRESS = '{{address}}'
 const TOKEN_NAME = '{{tokenName}}'
@@ -41,6 +46,14 @@ export function handleTokenSwap(event: TokenSwap): void {
   entity.soldId = event.params.soldId
   entity.boughtId = event.params.boughtId
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -48,17 +61,6 @@ export function handleTokenSwap(event: TokenSwap): void {
   entity.contractAddress = event.params._event.address.toHexString()
   entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
-
-  let tokenEntity = TokenEntity.load(TOKEN_ADDRESS)
-  if (tokenEntity == null) {
-    tokenEntity = new TokenEntity(TOKEN_ADDRESS)
-    tokenEntity.address = Address.fromString(TOKEN_ADDRESS)
-    tokenEntity.name = TOKEN_NAME
-    tokenEntity.symbol = TOKEN_SYMBOL
-    tokenEntity.decimals = TOKEN_DECIMALS
-    tokenEntity.save()
-  }
-  entity.tokenEntity = TOKEN_ADDRESS
 
   entity.save()
 
@@ -89,6 +91,14 @@ export function handleAddLiquidity(event: AddLiquidity): void {
   entity.invariant = event.params.invariant
   entity.lpTokenSupply = event.params.lpTokenSupply
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -137,6 +147,14 @@ export function handleRemoveLiquidity(event: RemoveLiquidity): void {
   entity.tokenAmounts = event.params.tokenAmounts
   entity.lpTokenSupply = event.params.lpTokenSupply
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -187,6 +205,14 @@ export function handleRemoveLiquidityOne(event: RemoveLiquidityOne): void {
   entity.boughtId = event.params.boughtId
   entity.tokensBought = event.params.tokensBought
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -238,6 +264,14 @@ export function handleRemoveLiquidityImbalance(event: RemoveLiquidityImbalance):
   entity.invariant = event.params.invariant
   entity.lpTokenSupply = event.params.lpTokenSupply
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp

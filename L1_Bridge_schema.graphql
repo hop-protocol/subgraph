@@ -2,6 +2,11 @@ type BonderAdded @entity {
   id: ID!
   newBonder: String!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -15,6 +20,11 @@ type BonderRemoved @entity {
   id: ID!
   previousBonder: String!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -30,6 +40,11 @@ type ChallengeResolved @entity {
   rootHash: Bytes!
   originalAmount: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -45,6 +60,11 @@ type MultipleWithdrawalsSettled @entity {
   rootHash: Bytes!
   totalBondsSettled: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -59,6 +79,11 @@ type Stake @entity {
   account: String!
   amount: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -74,6 +99,11 @@ type TransferBondChallenged @entity {
   rootHash: Bytes!
   originalAmount: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -88,6 +118,11 @@ type TransferRootBonded @entity {
   root: Bytes!
   amount: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -104,6 +139,11 @@ type TransferRootConfirmed @entity {
   rootHash: Bytes!
   totalAmount: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -118,6 +158,11 @@ type TransferRootSet @entity {
   rootHash: Bytes!
   totalAmount: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -137,6 +182,11 @@ type TransferSentToL2 @entity {
   relayer: String!
   relayerFee: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -144,7 +194,6 @@ type TransferSentToL2 @entity {
   contractAddress: String!
   from: String!
   token: String!
-  tokenEntity: Token!
 }
 
 type Unstake @entity {
@@ -152,6 +201,11 @@ type Unstake @entity {
   account: String!
   amount: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -167,6 +221,11 @@ type WithdrawalBondSettled @entity {
   transferId: Bytes!
   rootHash: Bytes!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -181,6 +240,11 @@ type WithdrawalBonded @entity {
   transferId: Bytes!
   amount: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -197,6 +261,11 @@ type Withdrew @entity {
   amount: BigInt!
   transferNonce: Bytes!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -212,6 +281,11 @@ type Transfer @entity {
   to: String!
   value: BigInt!
 
+  block: Block!
+  transaction: Transaction!
+  tokenEntity: Token!
+
+  # legacy
   transactionHash: String!
   transactionIndex: BigInt!
   timestamp: BigInt!
@@ -229,14 +303,98 @@ type Tvl @entity {
 type Volume @entity {
   id: ID!
   amount: BigInt!
+
+  tokenEntity: Token!
+
+  # legacy
   token: String!
 }
 
 type DailyVolume @entity {
   id: ID!
   amount: BigInt!
-  token: String!
   date: Int!
+
+  tokenEntity: Token!
+
+  # legacy
+  token: String!
+}
+
+type Block @entity {
+  "Block hash"
+  id: ID!
+
+  "Block author"
+  author: Bytes!
+
+  "Block difficulty"
+  difficulty: BigInt!
+
+  "Block gas limit"
+  gasLimit: BigInt!
+
+  "Block gas used"
+  gasUsed: BigInt!
+
+  "Block hash"
+  hash: Bytes!
+
+  "Block number"
+  number: BigInt!
+
+  "Block parent hash"
+  parentHash: Bytes!
+
+  "Block receipts root"
+  receiptsRoot: Bytes!
+
+  "Block size"
+  size: BigInt
+
+  "Block state root"
+  stateRoot: Bytes!
+
+  "Block timestamp"
+  timestamp: BigInt!
+
+  "Block total difficulty"
+  totalDifficulty: BigInt!
+
+  "Block transactions root"
+  transactionsRoot: Bytes!
+
+  "Block uncles hash"
+  unclesHash: Bytes!
+}
+
+type Transaction @entity {
+  "Transaction hash"
+  id: ID!
+
+  "Transaction from address"
+  from: Bytes!
+
+  "Transaction gas limit"
+  gasLimit: BigInt!
+
+  "Transaction gas price"
+  gasPrice: BigInt!
+
+  "Transaction hash"
+  hash: Bytes!
+
+  "Transaction index"
+  index: BigInt!
+
+  "Transaction input"
+  input: Bytes!
+
+  "Transaction to address"
+  to: Bytes
+
+  "Transaction value"
+  value: BigInt!
 }
 
 type Token @entity {
@@ -246,12 +404,12 @@ type Token @entity {
   "Token address"
   address: Bytes!
 
+  "Token decimals"
+  decimals: Int!
+
   "Token name"
   name: String!
 
   "Token symbol"
   symbol: String!
-
-  "Token decimals"
-  decimals: Int!
 }

@@ -1,6 +1,7 @@
 import {
   BigInt,
-  Address
+  Address,
+  ethereum
 } from "@graphprotocol/graph-ts";
 import {
   Transfer
@@ -8,7 +9,14 @@ import {
 import {
   Transfer as TransferEntity,
   Tvl as TvlEntity,
+  Transaction as TransactionEntity,
+  Block as BlockEntity,
 } from '../generated/schema'
+import {
+  createBlockEntityIfNotExists,
+  createTransactionEntityIfNotExists,
+  createTokenEntityIfNotExists
+} from './shared'
 
 const TOKEN_SYMBOL = '{{token}}'
 const BRIDGE_ADDRESS = '{{bridgeAddress}}'
@@ -31,6 +39,12 @@ export function handleTransfer(event: Transfer): void {
   entity.to = event.params.to.toHexString()
   entity.value = event.params.value
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp

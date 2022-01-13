@@ -1,6 +1,7 @@
 import {
   Address,
-  BigInt
+  BigInt,
+  ethereum
 } from "@graphprotocol/graph-ts";
 import {
   BonderAdded,
@@ -36,7 +37,14 @@ import {
   Volume as VolumeEntity,
   DailyVolume as DailyVolumeEntity,
   Token as TokenEntity,
+  Transaction as TransactionEntity,
+  Block as BlockEntity,
 } from '../generated/schema'
+import {
+  createBlockEntityIfNotExists,
+  createTransactionEntityIfNotExists,
+  createTokenEntityIfNotExists
+} from './shared'
 
 const TOKEN_ADDRESS = '{{address}}'
 const TOKEN_NAME = '{{tokenName}}'
@@ -250,6 +258,14 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
   entity.relayer = event.params.relayer.toHexString()
   entity.relayerFee = event.params.relayerFee
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -257,17 +273,6 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
   entity.contractAddress = event.params._event.address.toHexString()
   entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
-
-  let tokenEntity = TokenEntity.load(TOKEN_ADDRESS)
-  if (tokenEntity == null) {
-    tokenEntity = new TokenEntity(TOKEN_ADDRESS)
-    tokenEntity.address = Address.fromString(TOKEN_ADDRESS)
-    tokenEntity.name = TOKEN_NAME
-    tokenEntity.symbol = TOKEN_SYMBOL
-    tokenEntity.decimals = TOKEN_DECIMALS
-    tokenEntity.save()
-  }
-  entity.tokenEntity = TOKEN_ADDRESS
 
   entity.save()
 
@@ -280,6 +285,8 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
   }
   volumeEntity.amount = volumeEntity.amount.plus(event.params.amount)
   volumeEntity.token = TOKEN_SYMBOL
+  volumeEntity.tokenEntity = TOKEN_ADDRESS
+
   volumeEntity.save()
 
   // Daily volume
@@ -293,15 +300,16 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
   let dayID = blockTimestamp / 86400
   let dayStartTimestamp = dayID * 86400
   let dailyVolumeId = "volume:{{token}}:" + dayID.toString()
-  let dailyVolumEntity = DailyVolumeEntity.load(dailyVolumeId)
-  if (dailyVolumEntity == null) {
-    dailyVolumEntity = new DailyVolumeEntity(dailyVolumeId)
-    dailyVolumEntity.amount = BigInt.fromString('0')
+  let dailyVolumeEntity = DailyVolumeEntity.load(dailyVolumeId)
+  if (dailyVolumeEntity == null) {
+    dailyVolumeEntity = new DailyVolumeEntity(dailyVolumeId)
+    dailyVolumeEntity.amount = BigInt.fromString('0')
   }
-  dailyVolumEntity.amount = dailyVolumEntity.amount.plus(event.params.amount)
-  dailyVolumEntity.token = TOKEN_SYMBOL
-  dailyVolumEntity.date = dayStartTimestamp
-  dailyVolumEntity.save()
+  dailyVolumeEntity.amount = dailyVolumeEntity.amount.plus(event.params.amount)
+  dailyVolumeEntity.token = TOKEN_SYMBOL
+  dailyVolumeEntity.tokenEntity = TOKEN_ADDRESS
+  dailyVolumeEntity.date = dayStartTimestamp
+  dailyVolumeEntity.save()
 }
 
 export function handleUnstake(event: Unstake): void {
@@ -314,6 +322,14 @@ export function handleUnstake(event: Unstake): void {
   entity.account = event.params.account.toHexString()
   entity.amount = event.params.amount
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -336,6 +352,14 @@ export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void 
   entity.transferId = event.params.transferId
   entity.rootHash = event.params.rootHash
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -357,6 +381,14 @@ export function handleWithdrawalBonded(event: WithdrawalBonded): void {
   entity.transferId = event.params.transferId
   entity.amount = event.params.amount
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -380,6 +412,14 @@ export function handleWithdrew(event: Withdrew): void {
   entity.amount = event.params.amount
   entity.transferNonce = event.params.transferNonce
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -390,3 +430,4 @@ export function handleWithdrew(event: Withdrew): void {
 
   entity.save()
 }
+

@@ -34,6 +34,11 @@ import {
   BonderFee as BonderFeeEntity,
   Token as TokenEntity,
 } from '../generated/schema'
+import {
+  createBlockEntityIfNotExists,
+  createTransactionEntityIfNotExists,
+  createTokenEntityIfNotExists
+} from './shared'
 
 const TOKEN_ADDRESS = '{{address}}'
 const TOKEN_NAME = '{{tokenName}}'
@@ -49,6 +54,14 @@ export function handleBonderAdded(event: BonderAdded): void {
 
   entity.newBonder = event.params.newBonder.toHexString()
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -69,6 +82,14 @@ export function handleBonderRemoved(event: BonderRemoved): void {
 
   entity.previousBonder = event.params.previousBonder.toHexString()
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -91,6 +112,14 @@ export function handleMultipleWithdrawalsSettled(event: MultipleWithdrawalsSettl
   entity.rootHash = event.params.rootHash
   entity.totalBondsSettled = event.params.totalBondsSettled
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -112,6 +141,14 @@ export function handleStake(event: Stake): void {
   entity.account = event.params.account.toHexString()
   entity.amount = event.params.amount
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -137,6 +174,14 @@ export function handleTransferFromL1Completed(event: TransferFromL1Completed): v
   entity.relayer = event.params.relayer.toHexString()
   entity.relayerFee = event.params.relayerFee
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -158,6 +203,14 @@ export function handleTransferRootSet(event: TransferRootSet): void {
   entity.rootHash = event.params.rootHash
   entity.totalAmount = event.params.totalAmount
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -186,6 +239,14 @@ export function handleTransferSent(event: TransferSent): void {
   entity.amountOutMin = event.params.amountOutMin
   entity.deadline = event.params.deadline
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -193,17 +254,6 @@ export function handleTransferSent(event: TransferSent): void {
   entity.contractAddress = event.params._event.address.toHexString()
   entity.from = event.params._event.transaction.from.toHexString()
   entity.token = TOKEN_SYMBOL
-
-  let tokenEntity = TokenEntity.load(TOKEN_ADDRESS)
-  if (tokenEntity == null) {
-    tokenEntity = new TokenEntity(TOKEN_ADDRESS)
-    tokenEntity.address = Address.fromString(TOKEN_ADDRESS)
-    tokenEntity.name = TOKEN_NAME
-    tokenEntity.symbol = TOKEN_SYMBOL
-    tokenEntity.decimals = TOKEN_DECIMALS
-    tokenEntity.save()
-  }
-  entity.tokenEntity = TOKEN_ADDRESS
 
   entity.save()
 
@@ -262,6 +312,14 @@ export function handleTransfersCommitted(event: TransfersCommitted): void {
   entity.totalAmount = event.params.totalAmount
   entity.rootCommittedAt = event.params.rootCommittedAt
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -283,6 +341,14 @@ export function handleUnstake(event: Unstake): void {
   entity.account = event.params.account.toHexString()
   entity.amount = event.params.amount
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -305,6 +371,14 @@ export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void 
   entity.transferId = event.params.transferId
   entity.rootHash = event.params.rootHash
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -326,6 +400,14 @@ export function handleWithdrawalBonded(event: WithdrawalBonded): void {
   entity.transferId = event.params.transferId
   entity.amount = event.params.amount
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
@@ -349,6 +431,14 @@ export function handleWithdrew(event: Withdrew): void {
   entity.amount = event.params.amount
   entity.transferNonce = event.params.transferNonce
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp

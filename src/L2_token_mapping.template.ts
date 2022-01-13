@@ -11,6 +11,11 @@ import {
   AmmTvl as AmmTvlEntity,
   Token as TokenEntity,
 } from '../generated/schema'
+import {
+  createBlockEntityIfNotExists,
+  createTransactionEntityIfNotExists,
+  createTokenEntityIfNotExists
+} from './shared'
 
 const TOKEN_ADDRESS = '{{address}}'
 const TOKEN_NAME = '{{tokenName}}'
@@ -36,6 +41,14 @@ export function handleTransfer(event: Transfer): void {
   entity.to = event.params.to.toHexString()
   entity.value = event.params.value
 
+  createBlockEntityIfNotExists(event.params._event)
+  createTransactionEntityIfNotExists(event.params._event)
+  createTokenEntityIfNotExists(TOKEN_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, TOKEN_DECIMALS)
+  entity.block = event.params._event.block.hash.toHexString()
+  entity.transaction = event.params._event.transaction.hash.toHexString()
+  entity.tokenEntity = TOKEN_ADDRESS
+
+  // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
   entity.transactionIndex = event.params._event.transaction.index
   entity.timestamp = event.params._event.block.timestamp
