@@ -7,7 +7,7 @@
 - [Mainnet](https://thegraph.com/explorer/subgraph/hop-protocol/hop-mainnet)
 - [Polygon](https://thegraph.com/explorer/subgraph/hop-protocol/hop-polygon)
 - [xDai](https://thegraph.com/explorer/subgraph/hop-protocol/hop-xdai)
-- [Optimism](https://thegraph.com/explorer/subgraph/hop-protocol/hop-arbitrum)
+- [Optimism](https://thegraph.com/explorer/subgraph/hop-protocol/hop-optimism)
 - [Arbitrum](https://thegraph.com/explorer/subgraph/hop-protocol/hop-arbitrum)
 
 ## Development
@@ -45,7 +45,7 @@ The following subgraphs will need to be created on the dashboard:
 - `hop-mainnet`
 - `hop-polygon`
 - `hop-xdai`
-- `hop-arbitrum`
+- `hop-optimism`
 - `hop-arbitrum`
 
 **Clean build files:**

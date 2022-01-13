@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Hop Protocol
-repository: https://github.com/hop-protocol/hop-subgraph
+repository: https://github.com/hop-protocol/subgraph
 {{#isMainnet}}
 schema:
   file: ./L1_Bridge_schema.graphql
