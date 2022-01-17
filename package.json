@@ -14,11 +14,13 @@
     "build-deploy:xdai": "NETWORK=xdai ./build.sh",
     "build-deploy:optimism": "NETWORK=optimism ./build.sh",
     "build-deploy:arbitrum": "NETWORK=arbitrum-one ./build.sh",
-    "clean": "./clean.sh"
+    "clean": "./clean.sh",
+    "clean:data": "rimraf data"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.23.2",
-    "@graphprotocol/graph-ts": "^0.23.1"
+    "@graphprotocol/graph-ts": "^0.23.1",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
