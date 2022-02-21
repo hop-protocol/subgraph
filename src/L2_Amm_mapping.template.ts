@@ -34,7 +34,7 @@ const BASIS_POINTS = '4000000' // 4bps
 const FEE_DENOMINATOR = '10000000000' // 10**10
 
 export function handleTokenSwap(event: TokenSwap): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = TokenSwapEntity.load(id)
   if (entity == null) {
     entity = new TokenSwapEntity(id)
@@ -79,7 +79,7 @@ export function handleTokenSwap(event: TokenSwap): void {
 }
 
 export function handleAddLiquidity(event: AddLiquidity): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = AddLiquidityEntity.load(id)
   if (entity == null) {
     entity = new AddLiquidityEntity(id)
@@ -137,7 +137,7 @@ export function handleAddLiquidity(event: AddLiquidity): void {
 }
 
 export function handleRemoveLiquidity(event: RemoveLiquidity): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = RemoveLiquidityEntity.load(id)
   if (entity == null) {
     entity = new RemoveLiquidityEntity(id)
@@ -193,7 +193,7 @@ export function handleRemoveLiquidity(event: RemoveLiquidity): void {
 }
 
 export function handleRemoveLiquidityOne(event: RemoveLiquidityOne): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = RemoveLiquidityOneEntity.load(id)
   if (entity == null) {
     entity = new RemoveLiquidityOneEntity(id)
@@ -252,7 +252,7 @@ export function handleRemoveLiquidityOne(event: RemoveLiquidityOne): void {
 }
 
 export function handleRemoveLiquidityImbalance(event: RemoveLiquidityImbalance): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = RemoveLiquidityImbalanceEntity.load(id)
   if (entity == null) {
     entity = new RemoveLiquidityImbalanceEntity(id)

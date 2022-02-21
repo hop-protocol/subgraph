@@ -31,7 +31,7 @@ export function handleTransfer(event: Transfer): void {
     return
   }
 
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = TransferEntity.load(id)
   if (entity == null) {
     entity = new TransferEntity(id)

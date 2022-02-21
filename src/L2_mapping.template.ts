@@ -46,7 +46,7 @@ const TOKEN_SYMBOL = '{{token}}'
 const TOKEN_DECIMALS = {{tokenDecimals}}
 
 export function handleBonderAdded(event: BonderAdded): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = BonderAddedEntity.load(id)
   if (entity == null) {
     entity = new BonderAddedEntity(id)
@@ -74,7 +74,7 @@ export function handleBonderAdded(event: BonderAdded): void {
 }
 
 export function handleBonderRemoved(event: BonderRemoved): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = BonderRemovedEntity.load(id)
   if (entity == null) {
     entity = new BonderRemovedEntity(id)
@@ -102,7 +102,7 @@ export function handleBonderRemoved(event: BonderRemoved): void {
 }
 
 export function handleMultipleWithdrawalsSettled(event: MultipleWithdrawalsSettled): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = MultipleWithdrawalsSettledEntity.load(id)
   if (entity == null) {
     entity = new MultipleWithdrawalsSettledEntity(id)
@@ -132,7 +132,7 @@ export function handleMultipleWithdrawalsSettled(event: MultipleWithdrawalsSettl
 }
 
 export function handleStake(event: Stake): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = StakeEntity.load(id)
   if (entity == null) {
     entity = new StakeEntity(id)
@@ -161,7 +161,7 @@ export function handleStake(event: Stake): void {
 }
 
 export function handleTransferFromL1Completed(event: TransferFromL1Completed): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = TransferFromL1CompletedEntity.load(id)
   if (entity == null) {
     entity = new TransferFromL1CompletedEntity(id)
@@ -194,7 +194,7 @@ export function handleTransferFromL1Completed(event: TransferFromL1Completed): v
 }
 
 export function handleTransferRootSet(event: TransferRootSet): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = TransferRootSetEntity.load(id)
   if (entity == null) {
     entity = new TransferRootSetEntity(id)
@@ -223,7 +223,7 @@ export function handleTransferRootSet(event: TransferRootSet): void {
 }
 
 export function handleTransferSent(event: TransferSent): void {
-  let id = event.params.transferId.toHex()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = TransferSentEntity.load(id)
   if (entity == null) {
     entity = new TransferSentEntity(id)
@@ -301,7 +301,7 @@ export function handleTransferSent(event: TransferSent): void {
 }
 
 export function handleTransfersCommitted(event: TransfersCommitted): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = TransfersCommittedEntity.load(id)
   if (entity == null) {
     entity = new TransfersCommittedEntity(id)
@@ -332,7 +332,7 @@ export function handleTransfersCommitted(event: TransfersCommitted): void {
 }
 
 export function handleUnstake(event: Unstake): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = UnstakeEntity.load(id)
   if (entity == null) {
     entity = new UnstakeEntity(id)
@@ -361,7 +361,7 @@ export function handleUnstake(event: Unstake): void {
 }
 
 export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = WithdrawalBondSettledEntity.load(id)
   if (entity == null) {
     entity = new WithdrawalBondSettledEntity(id)
@@ -391,7 +391,7 @@ export function handleWithdrawalBondSettled(event: WithdrawalBondSettled): void 
 }
 
 export function handleWithdrawalBonded(event: WithdrawalBonded): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = WithdrawalBondedEntity.load(id)
   if (entity == null) {
     entity = new WithdrawalBondedEntity(id)
@@ -420,7 +420,7 @@ export function handleWithdrawalBonded(event: WithdrawalBonded): void {
 }
 
 export function handleWithdrew(event: Withdrew): void {
-  let id = event.params._event.transaction.hash.toHexString()
+  let id = event.transaction.hash.toHexString().concat(event.transactionLogIndex.toString())
   let entity = WithdrewEntity.load(id)
   if (entity == null) {
     entity = new WithdrewEntity(id)
