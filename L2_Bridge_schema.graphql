@@ -474,8 +474,10 @@ type Transaction @entity {
   "Transaction index"
   index: BigInt!
 
-  "Transaction input"
-  input: Bytes!
+  # NOTE: disabled because it'll go over index limit
+  # https://github.com/graphprotocol/graph-node/issues/1133
+  #"Transaction input"
+  #input: Bytes!
 
   "Transaction to address"
   to: Bytes

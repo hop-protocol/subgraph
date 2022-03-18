@@ -40,7 +40,7 @@ export function createTransactionEntityIfNotExists(event: ethereum.Event):void {
     transactionEntity.gasPrice = event.transaction.gasPrice
     transactionEntity.hash = event.transaction.hash
     transactionEntity.index = event.transaction.index
-    transactionEntity.input = event.transaction.input
+    // transactionEntity.input = event.transaction.input
     transactionEntity.to = event.transaction.to
     transactionEntity.value = event.transaction.value
     transactionEntity.save()
