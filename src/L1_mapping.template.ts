@@ -264,6 +264,7 @@ export function handleTransferSentToL2(event: TransferSentToL2): void {
   entity.block = event.params._event.block.hash.toHexString()
   entity.transaction = event.params._event.transaction.hash.toHexString()
   entity.tokenEntity = TOKEN_ADDRESS
+  entity.logIndex = event.params._event.logIndex
 
   // legacy
   entity.transactionHash = event.params._event.transaction.hash.toHexString()
