@@ -185,6 +185,7 @@ type TransferSentToL2 @entity {
   block: Block!
   transaction: Transaction!
   tokenEntity: Token!
+  logIndex: BigInt!
 
   # legacy
   transactionHash: String!
