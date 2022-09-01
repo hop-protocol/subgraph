@@ -1,0 +1,42 @@
+{
+  "network": "optimism-goerli",
+  "isMainnet": false,
+  "subgraphName": "hop-optimism-goerli",
+  "tokens": [{
+    "dataSourceName": "Token",
+    "token": "USDC",
+    "tokenName": "USD Coin",
+    "tokenDecimals": 6,
+    "address": "0x6D4dd09982853F08d9966aC3cA4Eb5885F16f2b2",
+    "startBlock": 0
+  }, {
+    "dataSourceName": "TokenETH",
+    "token": "ETH",
+    "tokenName": "Ethereum",
+    "tokenDecimals": 18,
+    "address": "0xDc38c5aF436B9652225f92c370A011C673FA7Ba5",
+    "startBlock": 407263
+  }],
+  "amms": [{
+    "dataSourceName": "HopL2Amm",
+    "token": "USDC",
+    "address": "0x76b22b8C1079A44F1211D867D68b1eda76a635A7",
+    "startBlock": 27606309
+  }, {
+    "dataSourceName": "HopL2AmmETH",
+    "token": "ETH",
+    "address": "0xa50395bdEaca7062255109fedE012eFE63d6D402",
+    "startBlock": 407263
+  }],
+  "bridges": [{
+    "dataSourceName": "HopL2Bridge",
+    "token": "USDC",
+    "address": "0x3c0FFAca566fCcfD9Cc95139FEF6CBA143795963",
+    "startBlock": 27606309
+  }, {
+    "dataSourceName": "HopL2BridgeETH",
+    "token": "ETH",
+    "address": "0x2708E5C7087d4C6D295c8B58b2D452c360D505C7",
+    "startBlock": 407263
+  }]
+}

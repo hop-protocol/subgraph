@@ -68,6 +68,9 @@ config/*
 !config/matic.json
 !config/optimism.json
 !config/arbitrum-one.json
+!config/goerli.json
+!config/mumbai.json
+!config/optimism-goerli.json
 
 src/*
 !src/L1_mapping.template.ts

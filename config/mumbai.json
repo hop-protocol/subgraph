@@ -1,0 +1,42 @@
+{
+  "network": "mumbai",
+  "isMainnet": false,
+  "subgraphName": "hop-mumbai",
+  "tokens": [{
+    "dataSourceName": "Token",
+    "token": "USDC",
+    "tokenName": "USD Coin",
+    "tokenDecimals": 6,
+    "address": "0x6D4dd09982853F08d9966aC3cA4Eb5885F16f2b2",
+    "startBlock": 27606309
+  }, {
+    "dataSourceName": "TokenETH",
+    "token": "ETH",
+    "tokenName": "Ethereum",
+    "tokenDecimals": 18,
+    "address": "0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa",
+    "startBlock": 27594937
+  }],
+  "amms": [{
+    "dataSourceName": "HopL2Amm",
+    "token": "USDC",
+    "address": "0x76b22b8C1079A44F1211D867D68b1eda76a635A7",
+    "startBlock": 27606309
+  }, {
+    "dataSourceName": "HopL2AmmETH",
+    "token": "ETH",
+    "address": "0x3666f603Cc164936C1b87e207F36BEBa4AC5f18a",
+    "startBlock": 27594937
+  }],
+  "bridges": [{
+    "dataSourceName": "HopL2Bridge",
+    "token": "USDC",
+    "address": "0x3c0FFAca566fCcfD9Cc95139FEF6CBA143795963",
+    "startBlock": 27606309
+  }, {
+    "dataSourceName": "HopL2BridgeETH",
+    "token": "ETH",
+    "address": "0x34E8251051687BfF4EA23C18e466b3Ed13492abd",
+    "startBlock": 27594937
+  }]
+}

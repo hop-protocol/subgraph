@@ -4,11 +4,19 @@
 
 ## Subgraphs
 
+Mainnet
+
 - [Mainnet](https://thegraph.com/explorer/subgraph/hop-protocol/hop-mainnet)
 - [Polygon](https://thegraph.com/explorer/subgraph/hop-protocol/hop-polygon)
 - [xDai](https://thegraph.com/explorer/subgraph/hop-protocol/hop-xdai)
 - [Optimism](https://thegraph.com/explorer/subgraph/hop-protocol/hop-optimism)
 - [Arbitrum](https://thegraph.com/explorer/subgraph/hop-protocol/hop-arbitrum)
+
+Goerli
+
+- [Goerli](https://thegraph.com/explorer/subgraph/hop-protocol/hop-goerli)
+- [Mumbai](https://thegraph.com/explorer/subgraph/hop-protocol/hop-mumbai)
+- [Optimism Goerli](https://thegraph.com/explorer/subgraph/hop-protocol/hop-optimism-goerli)
 
 ## Development
 
@@ -28,6 +36,11 @@ npm run build-deploy:polygon
 npm run build-deploy:xdai
 npm run build-deploy:optimism
 npm run build-deploy:arbitrum
+
+# testnet
+npm run build-deploy:goerli
+npm run build-deploy:mumbai
+npm run build-deploy:optimism-goerli
 ```
 
 By default, it will deploy under `hop-protocol` github org.
@@ -47,6 +60,9 @@ The following subgraphs will need to be created on the dashboard:
 - `hop-xdai`
 - `hop-optimism`
 - `hop-arbitrum`
+- `hop-goerli`
+- `hop-mumbai`
+- `hop-optimism-goerli`
 
 **Clean build files:**
 

@@ -1,0 +1,31 @@
+{
+  "isMainnet": true,
+  "network": "goerli",
+  "subgraphName": "hop-goerli",
+  "tokens": [{
+    "dataSourceName": "Token",
+    "token": "USDC",
+    "tokenName": "USD Coin",
+    "tokenDecimals": 6,
+    "address": "0x98339D8C260052B7ad81c28c16C0b98420f2B46a",
+    "startBlock": 7398216
+  }, {
+    "dataSourceName": "TokenETH",
+    "token": "ETH",
+    "tokenName": "Ethereum",
+    "tokenDecimals": 18,
+    "address": "0x0000000000000000000000000000000000000000",
+    "startBlock": 7393532
+  }],
+  "bridges": [{
+    "dataSourceName": "HopL1Bridge",
+    "token": "USDC",
+    "address": "0x7D269D3E0d61A05a0bA976b7DBF8805bF844AF3F",
+    "startBlock": 7398216
+  }, {
+    "dataSourceName": "HopL1BridgeETH",
+    "token": "ETH",
+    "address": "0xC8A4FB931e8D77df8497790381CA7d228E68a41b",
+    "startBlock": 7393532
+  }]
+}
