@@ -266,7 +266,7 @@ type TransferRootSet @entity {
   id: ID!
   "Transfer root hash"
   rootHash: Bytes!
-  "Transfer root total amount'
+  "Transfer root total amount"
   totalAmount: BigInt!
 
   "Block entity"
