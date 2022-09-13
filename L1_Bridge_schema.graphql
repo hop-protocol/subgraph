@@ -1,324 +1,543 @@
 type BonderAdded @entity {
+  "Entity ID"
   id: ID!
+  "New bonder address"
   newBonder: String!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type BonderRemoved @entity {
+  "Entity ID"
   id: ID!
+  "Removed bonder address"
   previousBonder: String!
-
+  
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type ChallengeResolved @entity {
+  "Entity ID"
   id: ID!
+  "Transfer root ID"
   transferRootId: Bytes!
+  "Transfer root hash"
   rootHash: Bytes!
+  "Transfer root original amount"
   originalAmount: BigInt!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type MultipleWithdrawalsSettled @entity {
+  "Entity ID"
   id: ID!
+  "Bonder address"
   bonder: String!
+  "Transfer root hash"
   rootHash: Bytes!
+  "Total bonds settled amount"
   totalBondsSettled: BigInt!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type Stake @entity {
+  "Entity ID"
   id: ID!
+  "Bonder account address"
   account: String!
+  "Staked amount"
   amount: BigInt!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type TransferBondChallenged @entity {
+  "Entity ID"
   id: ID!
+  "Transfer root ID"
   transferRootId: Bytes!
+  "Transfer root hash"
   rootHash: Bytes!
+  "Transfer root original amount"
   originalAmount: BigInt!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type TransferRootBonded @entity {
+  "Entity ID"
   id: ID!
+  "Transfer root hash"
   root: Bytes!
+  "Transfer root amount"
   amount: BigInt!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type TransferRootConfirmed @entity {
+  "Entity ID"
   id: ID!
+  "Origin chain ID"
   originChainId: BigInt!
+  "Destination chain ID"
   destinationChainId: BigInt!
+  "Transfer root hash"
   rootHash: Bytes!
+  "Transfer root total amount"
   totalAmount: BigInt!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type TransferRootSet @entity {
+  "Entity ID"
   id: ID!
+  "Transfer root hash"
   rootHash: Bytes!
+  "Transfer root total amount"
   totalAmount: BigInt!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type TransferSentToL2 @entity {
+  "Entity ID"
   id: ID!
+  "Destination chain ID"
   destinationChainId: BigInt!
+  "Recipient address"
   recipient: String!
+  "Amount"
   amount: BigInt!
+  "Minimum amount out"
   amountOutMin: BigInt!
+  "Deadline timestamp"
   deadline: BigInt!
+  "Relayer address"
   relayer: String!
+  "Relayer fee amount"
   relayerFee: BigInt!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
+  "Transaction log index"
   logIndex: BigInt!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type Unstake @entity {
+  "Entity ID"
   id: ID!
+  "Bonder account address"
   account: String!
+  "Unstaked amount"
   amount: BigInt!
-
+  
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type WithdrawalBondSettled @entity {
+  "Entity ID"
   id: ID!
+  "Bonder address"
   bonder: String!
+  "Transfer ID"
   transferId: Bytes!
+  "Transfer root hash"
   rootHash: Bytes!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type WithdrawalBonded @entity {
+  "Entity ID"
   id: ID!
+  "Transfer ID"
   transferId: Bytes!
+  "Amount"
   amount: BigInt!
-
+  
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type Withdrew @entity {
+  "Entity ID"
   id: ID!
+  "Transfer ID"
   transferId: Bytes!
+  "Recipient address"
   recipient: String!
+  "Amount"
   amount: BigInt!
+  "Transfer nonce"
   transferNonce: Bytes!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "From address"
   from: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type Transfer @entity {
+  "Entity ID"
   id: ID!
+  "From address"
   from: String!
+  "To address"
   to: String!
+  "Transfer amount"
   value: BigInt!
 
+  "Block entity"
   block: Block!
+  "Transaction entity"
   transaction: Transaction!
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Transaction hash"
   transactionHash: String!
+  "Transaction index"
   transactionIndex: BigInt!
+  "Transaction timestamp"
   timestamp: BigInt!
+  "Transaction block number"
   blockNumber: BigInt!
+  "Contract address"
   contractAddress: String!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type Tvl @entity {
+  "Entity ID"
   id: ID!
+  "TVL total amount"
   amount: BigInt!
+  "Bridge token asset symbol"
   token: String!
 }
 
 type Volume @entity {
+  "Entity ID"
   id: ID!
+  "Cumulative volume total amount"
   amount: BigInt!
 
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Bridge token asset symbol"
   token: String!
 }
 
 type DailyVolume @entity {
+  "Entity ID"
   id: ID!
+  "Daily volume amount"
   amount: BigInt!
+  "Date unix timestamp"
   date: Int!
-
+  "Bridge token asset entity"
   tokenEntity: Token!
 
   # legacy
+  "Bridge token asset symbol"
   token: String!
 }
 
