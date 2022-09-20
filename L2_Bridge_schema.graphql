@@ -516,6 +516,8 @@ type AddLiquidity @entity {
   blockNumber: BigInt!
   "Contract address"
   contractAddress: String!
+  "From address"
+  from: String!
   "Bridge token asset symbol"
   token: String!
 }
@@ -586,6 +588,8 @@ type RemoveLiquidityOne @entity {
   blockNumber: BigInt!
   "Contract address"
   contractAddress: String!
+  "From address"
+  from: String!
   "Bridge token asset symbol"
   token: String!
 }
@@ -616,6 +620,8 @@ type RemoveLiquidityImbalance @entity {
   blockNumber: BigInt!
   "Contract address"
   contractAddress: String!
+  "From address"
+  from: String!
   "Bridge token asset symbol"
   token: String!
 }
