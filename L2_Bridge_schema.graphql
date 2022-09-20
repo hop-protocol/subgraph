@@ -219,7 +219,7 @@ type TransferSent @entity {
   amountOutMin: BigInt!
   "Deadline timestamp"
   deadline: BigInt!
-ƒ
+
   "Block entity"
   block: Block!
   "Transaction entity"
@@ -447,6 +447,8 @@ type TokenSwap @entity {
   blockNumber: BigInt!
   "Contract address"
   contractAddress: String!
+  "From address"
+  from: String!
   "Bridge token asset symbol"
   token: String!
 }
@@ -546,6 +548,8 @@ type RemoveLiquidity @entity {
   blockNumber: BigInt!
   "Contract address"
   contractAddress: String!
+  "From address"
+  from: String!
   "Bridge token asset symbol"
   token: String!
 }
