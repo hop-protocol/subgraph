@@ -44,6 +44,13 @@
     "tokenDecimals": 18,
     "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
     "startBlock": 13476113
+  }, {
+    "dataSourceName": "TokenSNX",
+    "token": "SNX",
+    "tokenName": "Synthetix Network Token",
+    "tokenDecimals": 18,
+    "address": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+    "startBlock": 15634323
   }],
   "bridges": [{
     "dataSourceName": "HopL1Bridge",
@@ -75,5 +82,10 @@
     "token": "WBTC",
     "address": "0xb98454270065A31D71Bf635F6F7Ee6A518dFb849",
     "startBlock": 13476113
+  }, {
+    "dataSourceName": "HopL1BridgeSNX",
+    "token": "SNX",
+    "address": "0x893246FACF345c99e4235E5A7bbEE7404c988b96",
+    "startBlock": 15634323
   }]
 }
