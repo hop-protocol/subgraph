@@ -44,6 +44,13 @@
     "tokenDecimals": 18,
     "address": "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6",
     "startBlock": 20536705
+  }, {
+    "dataSourceName": "TokenHOP",
+    "token": "HOP",
+    "tokenName": "Hop",
+    "tokenDecimals": 18,
+    "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
+    "startBlock": 33447834
   }],
   "amms": [{
     "dataSourceName": "HopL2Amm",
@@ -106,5 +113,10 @@
     "token": "WBTC",
     "address": "0x91Bd9Ccec64fC22475323a0E55d58F7786587905",
     "startBlock": 20536705
+  }, {
+    "dataSourceName": "HopL2BridgeHOP",
+    "token": "HOP",
+    "address": "0x58c61AeE5eD3D748a1467085ED2650B697A66234",
+    "startBlock": 33447834
   }]
 }

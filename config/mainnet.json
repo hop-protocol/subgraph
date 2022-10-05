@@ -58,6 +58,13 @@
     "tokenDecimals": 18,
     "address": "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
     "startBlock": 15678491
+  }, {
+    "dataSourceName": "TokenHOP",
+    "token": "HOP",
+    "tokenName": "Hop",
+    "tokenDecimals": 18,
+    "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
+    "startBlock": 15592825
   }],
   "bridges": [{
     "dataSourceName": "HopL1Bridge",
@@ -99,5 +106,10 @@
     "token": "sUSD",
     "address": "0x36443fC70E073fe9D50425f82a3eE19feF697d62",
     "startBlock": 15678491
+  }, {
+    "dataSourceName": "HopL1BridgeHOP",
+    "token": "HOP",
+    "address": "0x914f986a44AcB623A277d6Bd17368171FCbe4273",
+    "startBlock": 15592825
   }]
 }
