@@ -57,7 +57,7 @@
     "dataSourceName": "HopL2AmmETH",
     "token": "ETH",
     "address": "0x652d27c0F72771Ce5C76fd400edD61B406Ac6D97",
-    "startBlock": 2135598
+    "startBlock": 2135591
   }, {
     "dataSourceName": "HopL2AmmWBTC",
     "token": "WBTC",

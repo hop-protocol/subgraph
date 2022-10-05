@@ -81,12 +81,12 @@
     "dataSourceName": "HopL2AmmSNX",
     "token": "SNX",
     "address": "0x1990BC6dfe2ef605Bfc08f5A23564dB75642Ad73",
-    "startBlock": 26092038
+    "startBlock": 26091610
   }, {
     "dataSourceName": "HopL2AmmsUSD",
     "token": "sUSD",
     "address": "0x8d4063E82A4Db8CdAed46932E1c71e03CA69Bede",
-    "startBlock": 27410328
+    "startBlock": 27410231
   }],
   "bridges": [{
     "dataSourceName": "HopL2Bridge",
