@@ -51,6 +51,13 @@
     "tokenDecimals": 18,
     "address": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
     "startBlock": 15634323
+  }, {
+    "dataSourceName": "TokensUSD",
+    "token": "sUSD",
+    "tokenName": "Synth sUSD",
+    "tokenDecimals": 18,
+    "address": "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+    "startBlock": 15678491
   }],
   "bridges": [{
     "dataSourceName": "HopL1Bridge",
@@ -87,5 +94,10 @@
     "token": "SNX",
     "address": "0x893246FACF345c99e4235E5A7bbEE7404c988b96",
     "startBlock": 15634323
+  }, {
+    "dataSourceName": "HopL1BridgesUSD",
+    "token": "sUSD",
+    "address": "0x36443fC70E073fe9D50425f82a3eE19feF697d62",
+    "startBlock": 15678491
   }]
 }
