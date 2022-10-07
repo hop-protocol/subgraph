@@ -16,6 +16,13 @@
     "tokenDecimals": 18,
     "address": "0x0000000000000000000000000000000000000000",
     "startBlock": 7393532
+  }, {
+    "dataSourceName": "TokenHOP",
+    "token": "HOP",
+    "tokenName": "Hop",
+    "tokenDecimals": 18,
+    "address": "0x7191061D5d4C60f598214cC6913502184BAddf18",
+    "startBlock": 7670481
   }],
   "bridges": [{
     "dataSourceName": "HopL1Bridge",
@@ -27,5 +34,10 @@
     "token": "ETH",
     "address": "0xC8A4FB931e8D77df8497790381CA7d228E68a41b",
     "startBlock": 7393532
+  }, {
+    "dataSourceName": "HopL1BridgeHOP",
+    "token": "HOP",
+    "address": "0x13B7F51BD865410c3AcC4d56083C5B56aB38D203",
+    "startBlock": 7670481
   }]
 }
