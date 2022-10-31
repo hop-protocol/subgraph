@@ -32,6 +32,7 @@ The access token is found on the hosted-service [dashboard](https://thegraph.com
 
 ```bash
 npm run build-deploy:mainnet
+npm run build-deploy:mainnet-subgraph-studio
 npm run build-deploy:polygon
 npm run build-deploy:xdai
 npm run build-deploy:optimism
