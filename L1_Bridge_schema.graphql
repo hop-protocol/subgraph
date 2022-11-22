@@ -5,11 +5,11 @@ type BonderAdded @entity {
   newBonder: String!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -35,11 +35,11 @@ type BonderRemoved @entity {
   previousBonder: String!
   
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -69,11 +69,11 @@ type ChallengeResolved @entity {
   originalAmount: BigInt!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -103,11 +103,11 @@ type MultipleWithdrawalsSettled @entity {
   totalBondsSettled: BigInt!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -135,11 +135,11 @@ type Stake @entity {
   amount: BigInt!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -169,11 +169,11 @@ type TransferBondChallenged @entity {
   originalAmount: BigInt!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -202,11 +202,11 @@ type TransferRootBonded @entity {
   amount: BigInt!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -238,11 +238,11 @@ type TransferRootConfirmed @entity {
   totalAmount: BigInt!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -270,11 +270,11 @@ type TransferRootSet @entity {
   totalAmount: BigInt!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -312,11 +312,11 @@ type TransferSentToL2 @entity {
   relayerFee: BigInt!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
   "Transaction log index"
   logIndex: BigInt!
 
@@ -346,11 +346,11 @@ type Unstake @entity {
   amount: BigInt!
   
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -380,11 +380,11 @@ type WithdrawalBondSettled @entity {
   rootHash: Bytes!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -412,11 +412,11 @@ type WithdrawalBonded @entity {
   amount: BigInt!
   
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -448,11 +448,11 @@ type Withdrew @entity {
   transferNonce: Bytes!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -482,11 +482,11 @@ type Transfer @entity {
   value: BigInt!
 
   "Block entity"
-  block: Block!
+  block: Block
   "Transaction entity"
-  transaction: Transaction!
+  transaction: Transaction
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Transaction hash"
@@ -519,7 +519,7 @@ type Volume @entity {
   amount: BigInt!
 
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Bridge token asset symbol"
@@ -534,7 +534,7 @@ type DailyVolume @entity {
   "Date unix timestamp"
   date: Int!
   "Bridge token asset entity"
-  tokenEntity: Token!
+  tokenEntity: Token
 
   # legacy
   "Bridge token asset symbol"
