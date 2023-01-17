@@ -25,17 +25,22 @@ npx mustache $TEMP_CONFIG src/L2_Amm_mapping.template.ts > src/L2_Amm_mapping_${
 npm run codegen
 npm run build
 
-# auth:
-# npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
+if (test "$IS_SUBGRAPH_STUDIO" = "true"); then
+  echo 'running subgraph studio build'
+  # auth studio:
+  npx graph auth --studio $DEPLOY_KEY
 
-# deploy (comment this out when deploying locally):
-npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
+  # deploy studio:
+  npx graph deploy --debug --studio "hop-protocol-mainnet"
+else
+  echo 'running hosted build'
+  # auth:
+  npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
 
-# auth studio:
-# npx graph auth --studio $DEPLOY_KEY
-
-# deploy studio:
-# npx graph deploy --debug --studio "{{subgraphName}}"
+  # deploy:
+	# deploy (comment this out when deploying locally):
+  npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
+fi
 
 # running local (run this in seperate terminal):
 # docker-compose up

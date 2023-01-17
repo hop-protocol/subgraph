@@ -10,6 +10,7 @@
     "deploy": "graph deploy hop-protocol/hop --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-local": "graph deploy hop-protocol/hop --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
     "build-deploy:mainnet": "NETWORK=mainnet ./build.sh",
+    "build-deploy:mainnet-subgraph-studio": "NETWORK=mainnet IS_SUBGRAPH_STUDIO=true ./build.sh",
     "build-deploy:polygon": "NETWORK=matic ./build.sh",
     "build-deploy:xdai": "NETWORK=xdai ./build.sh",
     "build-deploy:optimism": "NETWORK=optimism ./build.sh",
@@ -22,8 +23,8 @@
     "clean:data": "rimraf data"
   },
   "devDependencies": {
-    "@graphprotocol/graph-cli": "^0.23.2",
-    "@graphprotocol/graph-ts": "^0.23.1",
+    "@graphprotocol/graph-cli": "0.33.1",
+    "@graphprotocol/graph-ts": "0.29.0",
     "rimraf": "^3.0.2"
   },
   "dependencies": {

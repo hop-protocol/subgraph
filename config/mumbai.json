@@ -16,6 +16,13 @@
     "tokenDecimals": 18,
     "address": "0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa",
     "startBlock": 27594937
+  }, {
+    "dataSourceName": "TokenHOP",
+    "token": "HOP",
+    "tokenName": "Hop",
+    "tokenDecimals": 18,
+    "address": "0x3F9880B2dF19aE17AdbdcD6a91a16fCd4a1A9D3D",
+    "startBlock": 28327302
   }],
   "amms": [{
     "dataSourceName": "HopL2Amm",
@@ -38,5 +45,10 @@
     "token": "ETH",
     "address": "0x34E8251051687BfF4EA23C18e466b3Ed13492abd",
     "startBlock": 27594937
+  }, {
+    "dataSourceName": "HopL2BridgeHOP",
+    "token": "HOP",
+    "address": "0x86cA30bEF97fB651b8d866D45503684b90cb3312",
+    "startBlock": 28327302
   }]
 }

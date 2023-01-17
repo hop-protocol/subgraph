@@ -44,6 +44,27 @@
     "tokenDecimals": 18,
     "address": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
     "startBlock": 13476113
+  }, {
+    "dataSourceName": "TokenSNX",
+    "token": "SNX",
+    "tokenName": "Synthetix Network Token",
+    "tokenDecimals": 18,
+    "address": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+    "startBlock": 15634323
+  }, {
+    "dataSourceName": "TokensUSD",
+    "token": "sUSD",
+    "tokenName": "Synth sUSD",
+    "tokenDecimals": 18,
+    "address": "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
+    "startBlock": 15678491
+  }, {
+    "dataSourceName": "TokenHOP",
+    "token": "HOP",
+    "tokenName": "Hop",
+    "tokenDecimals": 18,
+    "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
+    "startBlock": 15592825
   }],
   "bridges": [{
     "dataSourceName": "HopL1Bridge",
@@ -75,5 +96,20 @@
     "token": "WBTC",
     "address": "0xb98454270065A31D71Bf635F6F7Ee6A518dFb849",
     "startBlock": 13476113
+  }, {
+    "dataSourceName": "HopL1BridgeSNX",
+    "token": "SNX",
+    "address": "0x893246FACF345c99e4235E5A7bbEE7404c988b96",
+    "startBlock": 15634323
+  }, {
+    "dataSourceName": "HopL1BridgesUSD",
+    "token": "sUSD",
+    "address": "0x36443fC70E073fe9D50425f82a3eE19feF697d62",
+    "startBlock": 15678491
+  }, {
+    "dataSourceName": "HopL1BridgeHOP",
+    "token": "HOP",
+    "address": "0x914f986a44AcB623A277d6Bd17368171FCbe4273",
+    "startBlock": 15592825
   }]
 }
