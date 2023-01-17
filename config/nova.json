@@ -1,0 +1,26 @@
+{
+    "network": "nova",
+    "isMainnet": false,
+    "subgraphName": "hop-nova",
+    "tokens": [{
+      "dataSourceName": "TokenETH",
+      "token": "ETH",
+      "tokenName": "Ethereum",
+      "tokenDecimals": 18,
+      "address": "0x722E8BdD2ce80A4422E880164f2079488e115365",
+      "startBlock": 1724464
+    }],
+    "amms": [{
+      "dataSourceName": "HopL2AmmETH",
+      "token": "ETH",
+      "address": "0xCC0ACeb13a902d0BfBa37AD5d876320C7B590099",
+      "startBlock": 1724460
+    }],
+    "bridges": [{
+      "dataSourceName": "HopL2BridgeETH",
+      "token": "ETH",
+      "address": "0x8796860ca1677Bf5d54cE5A348Fe4b779a8212f3",
+      "startBlock": 1724464
+    }]
+  }
+  

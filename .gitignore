@@ -71,6 +71,7 @@ config/*
 !config/goerli.json
 !config/mumbai.json
 !config/optimism-goerli.json
+!config/nova.json
 
 src/*
 !src/L1_mapping.template.ts
