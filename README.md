@@ -20,7 +20,7 @@ Goerli
 
 ## Development
 
-**Authenticate:**
+### Authenticate
 
 ```bash
 npx graph auth https://api.thegraph.com/deploy/ <access-token>
@@ -28,7 +28,7 @@ npx graph auth https://api.thegraph.com/deploy/ <access-token>
 
 The access token is found on the hosted-service [dashboard](https://thegraph.com/hosted-service/dashboard).
 
-**Build and deploy:**
+### Build and deploy
 
 ```bash
 npm run build-deploy:mainnet
@@ -65,13 +65,13 @@ The following subgraphs will need to be created on the dashboard:
 - `hop-mumbai`
 - `hop-optimism-goerli`
 
-**Clean build files:**
+### Clean build files:
 
 ```bash
 npm run clean
 ```
 
-**Deploying locally:**
+## Deploying locally:
 
 Update networks in `docker-compose.yml`:
 
