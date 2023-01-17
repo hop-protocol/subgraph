@@ -72,10 +72,18 @@ npm run clean
 
 **Deploying locally:**
 
-Update networks in docker-compose.yml
+Update networks in `docker-compose.yml`:
+
+For Optimism Regenesis:
 
 ```yml
-ethereum: 'optimism:https://mainnet.optimism.io'
+ethereum: 'optimism:https://mainnet-replica-4.optimism.io'
+```
+
+For Arbitrum Nova:
+
+```yml
+ethereum: 'nova:https://nova.arbitrum.io/rpc'
 ```
 
 Start containers:
@@ -84,17 +92,57 @@ Start containers:
 docker-compose up
 ```
 
-Create local subgraph:
+Create local subgraph (in another terminal):
+
+For Optimism Regenesis:
 
 ```bash
 npx graph create hop-protocol/hop-optimism --node http://127.0.0.1:8020
 ```
 
-Deploy subgraph after building:
+For Arbitrum Nova:
+
+```bash
+npx graph create hop-protocol/hop-nova --node http://127.0.0.1:8020
+```
+
+Deploy subgraph after building (add this line at the bottom of `buildfiles.template.sh` and comment out existing `npx graph deploy` line):
+
+For Optimism Regenesis:
 
 ```bash
 npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-optimism
 ```
+
+For Arbitrum Nova:
+
+```bash
+npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-nova
+```
+
+Build and deploy:
+
+For Optimism Regenesis:
+
+```bash
+npm run build-deploy:optimism
+```
+
+For Arbitrum Nova:
+
+```bash
+npm run build-deploy:nova
+```
+
+Query subgraphs
+
+For Optimism Regenesis:
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-optimism
+
+For Arbitrum Nova:
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-nova
 
 ## License
 

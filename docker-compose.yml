@@ -17,7 +17,7 @@ services:
       postgres_pass: let-me-in
       postgres_db: graph-node
       ipfs: 'ipfs:5001'
-      ethereum: 'optimism:https://mainnet-replica-4.optimism.io'
+      ethereum: 'nova:https://nova.arbitrum.io/rpc'
       GRAPH_LOG: info
   ipfs:
     image: ipfs/go-ipfs:v0.4.23
