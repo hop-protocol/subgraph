@@ -72,6 +72,8 @@ config/*
 !config/mumbai.json
 !config/optimism-goerli.json
 !config/nova.json
+!config/zksync.json
+!config/consensyszk.json
 
 src/*
 !src/L1_mapping.template.ts

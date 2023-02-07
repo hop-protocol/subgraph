@@ -87,6 +87,18 @@ For Arbitrum Nova:
 ethereum: 'nova:https://nova.arbitrum.io/rpc'
 ```
 
+For zkSync:
+
+```yml
+ethereum: 'zksync:https://zksync2-testnet.zksync.dev'
+```
+
+For ConsenSys zkEVM:
+
+```yml
+ethereum: 'consensyszk:https://consensys-zkevm-goerli-prealpha.infura.io/v3/YOUR_PROJECT_ID'
+```
+
 Start containers:
 
 ```bash
@@ -107,6 +119,18 @@ For Arbitrum Nova:
 npx graph create hop-protocol/hop-nova --node http://127.0.0.1:8020
 ```
 
+For zkSync:
+
+```bash
+npx graph create hop-protocol/hop-zksync --node http://127.0.0.1:8020
+```
+
+For ConsenSys zkEVM:
+
+```bash
+npx graph create hop-protocol/hop-consensyszk --node http://127.0.0.1:8020
+```
+
 Deploy subgraph after building (add this line at the bottom of `buildfiles.template.sh` and comment out existing `npx graph deploy` line):
 
 For Optimism Regenesis:
@@ -119,6 +143,18 @@ For Arbitrum Nova:
 
 ```bash
 npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-nova
+```
+
+For zkSync:
+
+```bash
+npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-zksync
+```
+
+For ConsenSys zkEVM:
+
+```bash
+npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-consensyszk
 ```
 
 Build and deploy:
@@ -135,6 +171,18 @@ For Arbitrum Nova:
 npm run build-deploy:nova
 ```
 
+For zkSync:
+
+```bash
+npm run build-deploy:zksync
+```
+
+For ConsenSys zkEVM:
+
+```bash
+npm run build-deploy:consensyszk
+```
+
 Query subgraphs
 
 For Optimism Regenesis:
@@ -144,6 +192,14 @@ http://localhost:8000/subgraphs/name/hop-protocol/hop-optimism
 For Arbitrum Nova:
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-nova
+
+For zkSync:
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-zksync
+
+For ConsenSys zkEVM:
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-consensyszk
 
 ## License
 

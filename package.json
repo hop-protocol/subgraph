@@ -19,6 +19,8 @@
     "build-deploy:mumbai": "NETWORK=mumbai ./build.sh",
     "build-deploy:optimism-goerli": "NETWORK=optimism-goerli ./build.sh",
     "build-deploy:nova": "NETWORK=nova ./build.sh",
+    "build-deploy:consensyszk": "NETWORK=consensyszk ./build.sh",
+    "build-deploy:zksync": "NETWORK=zksync ./build.sh",
     "clean": "./clean.sh",
     "clean:data": "rimraf data"
   },

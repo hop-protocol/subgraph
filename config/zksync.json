@@ -1,0 +1,25 @@
+{
+    "network": "zksync",
+    "isMainnet": false,
+    "subgraphName": "hop-zksync",
+    "tokens": [{
+      "dataSourceName": "Token",
+      "token": "ETH",
+      "tokenName": "Ethereum",
+      "tokenDecimals": 18,
+      "address": "",
+      "startBlock": 0
+    }],
+    "amms": [{
+      "dataSourceName": "HopL2Amm",
+      "token": "ETH",
+      "address": "",
+      "startBlock": 0
+    }],
+    "bridges": [{
+      "dataSourceName": "HopL2Bridge",
+      "token": "ETH",
+      "address": "",
+      "startBlock": 0
+    }]
+  }

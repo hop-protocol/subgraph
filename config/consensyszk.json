@@ -1,0 +1,25 @@
+{
+    "network": "consensyszk",
+    "isMainnet": false,
+    "subgraphName": "hop-consensyszk",
+    "tokens": [{
+      "dataSourceName": "Token",
+      "token": "ETH",
+      "tokenName": "Ethereum",
+      "tokenDecimals": 18,
+      "address": "0x2C1b868d6596a18e32E61B901E4060C872647b6C",
+      "startBlock": 59449
+    }],
+    "amms": [{
+      "dataSourceName": "HopL2Amm",
+      "token": "ETH",
+      "address": "0x7191061D5d4C60f598214cC6913502184BAddf18",
+      "startBlock": 59449
+    }],
+    "bridges": [{
+      "dataSourceName": "HopL2Bridge",
+      "token": "ETH",
+      "address": "0x3E4a3a4796d16c0Cd582C382691998f7c06420B6",
+      "startBlock": 59449
+    }]
+  }
