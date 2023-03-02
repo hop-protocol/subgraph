@@ -31,7 +31,7 @@ if (test "$IS_SUBGRAPH_STUDIO" = "true"); then
   npx graph auth --studio $DEPLOY_KEY
 
   # deploy studio (comment this out when deploying locally):
-  npx graph deploy --debug --studio "hop-protocol-mainnet"
+  npx graph deploy --studio "hop-protocol-{{network}}"
 else
   echo 'running hosted build'
   # auth (comment this out when deploying locally):

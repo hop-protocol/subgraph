@@ -65,6 +65,7 @@ config/*
 !config/mapping_config.template.json
 !config/mainnet.json
 !config/xdai.json
+!config/gnosis.json
 !config/matic.json
 !config/optimism.json
 !config/arbitrum-one.json

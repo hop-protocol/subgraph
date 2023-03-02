@@ -10,7 +10,6 @@
     "deploy": "graph deploy hop-protocol/hop --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-local": "graph deploy hop-protocol/hop --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
     "build-deploy:mainnet": "NETWORK=mainnet ./build.sh",
-    "build-deploy:mainnet-subgraph-studio": "NETWORK=mainnet IS_SUBGRAPH_STUDIO=true ./build.sh",
     "build-deploy:polygon": "NETWORK=matic ./build.sh",
     "build-deploy:xdai": "NETWORK=xdai ./build.sh",
     "build-deploy:optimism": "NETWORK=optimism ./build.sh",
@@ -21,12 +20,15 @@
     "build-deploy:nova": "NETWORK=nova ./build.sh",
     "build-deploy:consensyszk": "NETWORK=consensyszk ./build.sh",
     "build-deploy:zksync": "NETWORK=zksync ./build.sh",
+    "build-deploy:mainnet:subgraph-studio": "NETWORK=mainnet IS_SUBGRAPH_STUDIO=true ./build.sh",
+    "build-deploy:arbitrum:subgraph-studio": "NETWORK=arbitrum-one IS_SUBGRAPH_STUDIO=true ./build.sh",
+    "build-deploy:gnosis:subgraph-studio": "NETWORK=gnosis IS_SUBGRAPH_STUDIO=true ./build.sh",
     "clean": "./clean.sh",
     "clean:data": "rimraf data"
   },
   "devDependencies": {
-    "@graphprotocol/graph-cli": "0.33.1",
-    "@graphprotocol/graph-ts": "0.29.0",
+    "@graphprotocol/graph-cli": "0.42.3",
+    "@graphprotocol/graph-ts": "0.29.3",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
