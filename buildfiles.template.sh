@@ -27,11 +27,17 @@ npm run build
 
 if (test "$IS_SUBGRAPH_STUDIO" = "true"); then
   echo 'running subgraph studio build'
+
+  SUBGRAPH_STUDIO_DEPLOYMENT_NAME={{network}}
+  if (test "$SUBGRAPH_STUDIO_DEPLOYMENT_NAME" = "arbitrum-one"); then
+    SUBGRAPH_STUDIO_DEPLOYMENT_NAME="arbitrum"
+  fi
+
   # auth studio (comment this out when deploying locally):
   #npx graph auth --studio $DEPLOY_KEY
 
   # deploy studio (comment this out when deploying locally):
-  #npx graph deploy --debug --studio "hop-protocol-mainnet"
+  npx graph deploy --studio "hop-protocol-$SUBGRAPH_STUDIO_DEPLOYMENT_NAME"
 else
   echo 'running hosted build'
   # auth (comment this out when deploying locally):
