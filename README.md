@@ -99,6 +99,12 @@ For ConsenSys zkEVM:
 ethereum: 'consensyszk:https://consensys-zkevm-goerli-prealpha.infura.io/v3/YOUR_PROJECT_ID'
 ```
 
+For Base (Goerli):
+
+```yml
+ethereum: 'base-goerli:https://goerli.base.org'
+```
+
 Start containers:
 
 ```bash
@@ -131,6 +137,12 @@ For ConsenSys zkEVM:
 npx graph create hop-protocol/hop-consensyszk --node http://127.0.0.1:8020
 ```
 
+For Base (Goerli):
+
+```bash
+npx graph create hop-protocol/hop-base-goerli --node http://127.0.0.1:8020
+```
+
 Deploy subgraph after building (add this line at the bottom of `buildfiles.template.sh` and comment out existing `npx graph deploy` line):
 
 For Optimism Regenesis:
@@ -155,6 +167,12 @@ For ConsenSys zkEVM:
 
 ```bash
 npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-consensyszk
+```
+
+For Base (Goerli):
+
+```bash
+npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-goerli
 ```
 
 Build and deploy:
@@ -183,6 +201,12 @@ For ConsenSys zkEVM:
 npm run build-deploy:consensyszk
 ```
 
+For Base (Goerli):
+
+```bash
+npm run build-deploy:base-goerli
+```
+
 Query subgraphs
 
 For Optimism Regenesis:
@@ -200,6 +224,10 @@ http://localhost:8000/subgraphs/name/hop-protocol/hop-zksync
 For ConsenSys zkEVM:
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-consensyszk
+
+For Base:
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-base-goerli
 
 ## License
 

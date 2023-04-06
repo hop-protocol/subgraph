@@ -21,6 +21,7 @@
     "build-deploy:nova": "NETWORK=nova ./build.sh",
     "build-deploy:consensyszk": "NETWORK=consensyszk ./build.sh",
     "build-deploy:zksync": "NETWORK=zksync ./build.sh",
+    "build-deploy:base-goerli": "NETWORK=base-goerli ./build.sh",
     "clean": "./clean.sh",
     "clean:data": "rimraf data"
   },

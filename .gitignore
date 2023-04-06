@@ -74,6 +74,8 @@ config/*
 !config/nova.json
 !config/zksync.json
 !config/consensyszk.json
+!config/base-goerli.json
+!config/base.json
 
 src/*
 !src/L1_mapping.template.ts

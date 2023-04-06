@@ -11,6 +11,8 @@ rm -f config/optimism-goerli_*.json
 rm -f config/nova_*.json
 rm -f config/zksync_*.json
 rm -f config/consensyszk_*.json
+rm -f config/base-goerli_*.json
+rm -f config/base_*.json
 
 rm -f src/L1_mapping_*_*.ts
 rm -f src/L1_token_mapping_*_*.ts
