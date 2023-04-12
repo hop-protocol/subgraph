@@ -34,17 +34,17 @@ if (test "$IS_SUBGRAPH_STUDIO" = "true"); then
   fi
 
   # auth studio (comment this out when deploying locally):
-  #npx graph auth --studio $DEPLOY_KEY
+  npx graph auth --studio $DEPLOY_KEY
 
   # deploy studio (comment this out when deploying locally):
   npx graph deploy --studio "hop-protocol-$SUBGRAPH_STUDIO_DEPLOYMENT_NAME"
 else
   echo 'running hosted build'
   # auth (comment this out when deploying locally):
-  #npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
+  npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
 
   # deploy (comment this out when deploying locally):
-  #npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
+  npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
 fi
 
 # running local (run this in seperate terminal):
@@ -52,4 +52,4 @@ fi
 # npx graph create hop-protocol/hop-base-goerli --node http://127.0.0.1:8020
 
 # uncomment this line here for local deployment and comment out all 'graph auth' and 'graph deploy' lines above:
-npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-goerli
+#npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-goerli
