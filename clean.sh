@@ -9,6 +9,7 @@ rm -f config/arbitrum-one_*.json
 rm -f config/goerli_*.json
 rm -f config/mumbai_*.json
 rm -f config/optimism-goerli_*.json
+rm -f config/arbitrum-goerli_*.json
 rm -f config/nova_*.json
 rm -f config/zksync_*.json
 rm -f config/consensyszk_*.json
