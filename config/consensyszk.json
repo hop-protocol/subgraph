@@ -9,17 +9,82 @@
       "tokenDecimals": 18,
       "address": "0x2C1b868d6596a18e32E61B901E4060C872647b6C",
       "startBlock": 59449
+    }, {
+      "dataSourceName": "TokenUSDC",
+      "token": "USDC",
+      "tokenName": "USD Coin",
+      "tokenDecimals": 6,
+      "address": "0xf56dc6695cF1f5c364eDEbC7Dc7077ac9B586068",
+      "startBlock": 571505
+    }, {
+      "dataSourceName": "TokenHOP",
+      "token": "HOP",
+      "tokenName": "Hop",
+      "tokenDecimals": 18,
+      "address": "0x6F03052743CD99ce1b29265E377e320CD24Eb632",
+      "startBlock": 571167
+    }, {
+      "dataSourceName": "TokenUSDT",
+      "token": "USDT",
+      "tokenName": "USD Tether",
+      "tokenDecimals": 6,
+      "address": "0x1990BC6dfe2ef605Bfc08f5A23564dB75642Ad73",
+      "startBlock": 559320
+    }, {
+      "dataSourceName": "TokenDAI",
+      "token": "DAI",
+      "tokenName": "DAI Stablecoin",
+      "tokenDecimals": 18,
+      "address": "0x8741Ba6225A6BF91f9D73531A98A89807857a2B3",
+      "startBlock": 559381
+    }, {
+      "dataSourceName": "TokenUNI",
+      "token": "UNI",
+      "tokenName": "Uniswap",
+      "tokenDecimals": 18,
+      "address": "0x7823E8DCC8bfc23EA3AC899EB86921f90e80F499",
+      "startBlock": 559429
     }],
     "amms": [{
       "dataSourceName": "HopL2Amm",
       "token": "ETH",
       "address": "0x7191061D5d4C60f598214cC6913502184BAddf18",
       "startBlock": 59449
+    }, {
+      "dataSourceName": "HopL2AmmUSDC",
+      "token": "USDC",
+      "address": "0x723194C6Cfed24883b598931Ee802ab80952C001",
+      "startBlock": 571505
     }],
     "bridges": [{
       "dataSourceName": "HopL2Bridge",
       "token": "ETH",
       "address": "0x3E4a3a4796d16c0Cd582C382691998f7c06420B6",
       "startBlock": 59449
+    }, {
+      "dataSourceName": "HopL2BridgeUSDC",
+      "token": "USDC",
+      "address": "0x884d1Aa15F9957E1aEAA86a82a72e49Bc2bfCbe3",
+      "startBlock": 571505
+    }, {
+      "dataSourceName": "HopL2BridgeHOP",
+      "token": "HOP",
+      "address": "0x2E9bB44C9CB774939462eF874Fc854D8df524F13",
+      "startBlock": 571167
+    }, {
+      "dataSourceName": "HopL2BridgeUSDT",
+      "token": "USDT",
+      "address": "0xdb16fbF595C02EeF7D9233d38C232495734F3D85",
+      "startBlock": 559320
+    }, {
+      "dataSourceName": "HopL2BridgeDAI",
+      "token": "DAI",
+      "address": "0xf11EBB94EC986EA891Aec29cfF151345C83b33Ec",
+      "startBlock": 559381
+    }, {
+      "dataSourceName": "HopL2BridgeUNI",
+      "token": "UNI",
+      "address": "0xb07c6505e1E41112494123e40330c5Ac09817CFB",
+      "startBlock": 559429
     }]
   }

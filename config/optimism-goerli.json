@@ -3,52 +3,23 @@
   "isMainnet": false,
   "subgraphName": "hop-optimism-goerli",
   "tokens": [{
-    "dataSourceName": "Token",
-    "token": "USDC",
-    "tokenName": "USD Coin",
-    "tokenDecimals": 6,
-    "address": "0xCB4cEeFce514B2d910d3ac529076D18e3aDD3775",
-    "startBlock": 407913
-  }, {
     "dataSourceName": "TokenETH",
     "token": "ETH",
     "tokenName": "Ethereum",
     "tokenDecimals": 18,
     "address": "0xDc38c5aF436B9652225f92c370A011C673FA7Ba5",
     "startBlock": 407263
-  }, {
-    "dataSourceName": "TokenHOP",
-    "token": "HOP",
-    "tokenName": "Hop",
-    "tokenDecimals": 18,
-    "address": "0xa5A33aB9063395A90CCbEa2D86a62EcCf27B5742",
-    "startBlock": 1499282
   }],
   "amms": [{
-    "dataSourceName": "HopL2Amm",
-    "token": "USDC",
-    "address": "0xE4757dD81AFbecF61E51824AB9238df6691c3D0e",
-    "startBlock": 407913
-  }, {
     "dataSourceName": "HopL2AmmETH",
     "token": "ETH",
     "address": "0xa50395bdEaca7062255109fedE012eFE63d6D402",
     "startBlock": 407263
   }],
   "bridges": [{
-    "dataSourceName": "HopL2Bridge",
-    "token": "USDC",
-    "address": "0x76b22b8C1079A44F1211D867D68b1eda76a635A7",
-    "startBlock": 407913
-  }, {
     "dataSourceName": "HopL2BridgeETH",
     "token": "ETH",
     "address": "0x2708E5C7087d4C6D295c8B58b2D452c360D505C7",
     "startBlock": 407263
-  }, {
-    "dataSourceName": "HopL2BridgeHOP",
-    "token": "HOP",
-    "address": "0x4AD8db323F6EBEC4DEb53140FfC7dDb22DE5f607",
-    "startBlock": 1499282
   }]
 }

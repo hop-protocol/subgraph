@@ -44,7 +44,7 @@ else
   npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
 
   # deploy (comment this out when deploying locally):
-  npx graph deploy --debug --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
+  npx graph deploy --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
 fi
 
 # running local (run this in seperate terminal):
