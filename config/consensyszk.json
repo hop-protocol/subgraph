@@ -1,7 +1,7 @@
 {
-    "network": "consensyszk",
+    "network": "linea",
     "isMainnet": false,
-    "subgraphName": "hop-consensyszk",
+    "subgraphName": "hop-linea",
     "tokens": [{
       "dataSourceName": "Token",
       "token": "ETH",

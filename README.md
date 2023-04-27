@@ -93,10 +93,10 @@ For zkSync:
 ethereum: 'zksync:https://zksync2-testnet.zksync.dev'
 ```
 
-For ConsenSys zkEVM:
+For Linea:
 
 ```yml
-ethereum: 'consensyszk:https://consensys-zkevm-goerli-prealpha.infura.io/v3/YOUR_PROJECT_ID'
+ethereum: 'linea:https://consensys-zkevm-goerli-prealpha.infura.io/v3/YOUR_PROJECT_ID'
 ```
 
 For Base (Goerli):
@@ -131,10 +131,10 @@ For zkSync:
 npx graph create hop-protocol/hop-zksync --node http://127.0.0.1:8020
 ```
 
-For ConsenSys zkEVM:
+For Linea:
 
 ```bash
-npx graph create hop-protocol/hop-consensyszk --node http://127.0.0.1:8020
+npx graph create hop-protocol/hop-linea --node http://127.0.0.1:8020
 ```
 
 For Base (Goerli):
@@ -163,10 +163,10 @@ For zkSync:
 npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-zksync
 ```
 
-For ConsenSys zkEVM:
+For Linea:
 
 ```bash
-npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-consensyszk
+npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-linea
 ```
 
 For Base (Goerli):
@@ -195,10 +195,10 @@ For zkSync:
 npm run build-deploy:zksync
 ```
 
-For ConsenSys zkEVM:
+For Linea:
 
 ```bash
-npm run build-deploy:consensyszk
+npm run build-deploy:linea
 ```
 
 For Base (Goerli):
@@ -221,9 +221,9 @@ For zkSync:
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-zksync
 
-For ConsenSys zkEVM:
+For Linea:
 
-http://localhost:8000/subgraphs/name/hop-protocol/hop-consensyszk
+http://localhost:8000/subgraphs/name/hop-protocol/hop-linea
 
 For Base:
 

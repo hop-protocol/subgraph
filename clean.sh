@@ -12,7 +12,7 @@ rm -f config/optimism-goerli_*.json
 rm -f config/arbitrum-goerli_*.json
 rm -f config/nova_*.json
 rm -f config/zksync_*.json
-rm -f config/consensyszk_*.json
+rm -f config/linea*.json
 rm -f config/base-goerli_*.json
 rm -f config/base_*.json
 
