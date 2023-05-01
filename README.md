@@ -148,31 +148,31 @@ Deploy subgraph after building (add this line at the bottom of `buildfiles.templ
 For Optimism Regenesis:
 
 ```bash
-npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-optimism
+npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-optimism
 ```
 
 For Arbitrum Nova:
 
 ```bash
-npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-nova
+npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-nova
 ```
 
 For zkSync:
 
 ```bash
-npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-zksync
+npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-zksync
 ```
 
 For Linea (Goerli):
 
 ```bash
-npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-linea-goerli
+npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-linea-goerli
 ```
 
 For Base (Goerli):
 
 ```bash
-npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-goerli
+npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-goerli
 ```
 
 Build and deploy:

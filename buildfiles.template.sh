@@ -52,4 +52,4 @@ fi
 # npx graph create hop-protocol/hop-base-goerli --node http://127.0.0.1:8020
 
 # uncomment this line here for local deployment and comment out all 'graph auth' and 'graph deploy' lines above:
-#npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-goerli
+#npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-goerli
