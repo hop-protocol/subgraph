@@ -76,6 +76,7 @@ config/*
 !config/nova.json
 !config/zksync.json
 !config/linea.json
+!config/linea-goerli.json
 !config/base-goerli.json
 !config/base.json
 

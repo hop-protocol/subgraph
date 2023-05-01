@@ -1,7 +1,7 @@
 {
-    "network": "linea",
+    "network": "linea-goerli",
     "isMainnet": false,
-    "subgraphName": "hop-linea",
+    "subgraphName": "hop-linea-goerli",
     "tokens": [{
       "dataSourceName": "Token",
       "token": "ETH",
