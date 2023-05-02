@@ -58,6 +58,13 @@
     "tokenDecimals": 18,
     "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
     "startBlock": 24710333
+  }, {
+    "dataSourceName": "TokenrETH",
+    "token": "rETH",
+    "tokenName": "Rocket Pool ETH",
+    "tokenDecimals": 18,
+    "address": "0x9Bcef72be871e61ED4fBbc7630889beE758eb81D",
+    "startBlock": 94877802
   }],
   "amms": [{
     "dataSourceName": "HopL2Amm",
@@ -94,6 +101,11 @@
     "token": "sUSD",
     "address": "0x8d4063E82A4Db8CdAed46932E1c71e03CA69Bede",
     "startBlock": 27410231
+  }, {
+    "dataSourceName": "HopL2AmmrETH",
+    "token": "rETH",
+    "address": "0x9Dd8685463285aD5a94D2c128bda3c5e8a6173c8",
+    "startBlock": 94877802
   }],
   "bridges": [{
     "dataSourceName": "HopL2Bridge",
@@ -135,5 +147,10 @@
     "token": "HOP",
     "address": "0x03D7f750777eC48d39D080b020D83Eb2CB4e3547",
     "startBlock": 24710333
+  }, {
+    "dataSourceName": "HopL2BridgerETH",
+    "token": "rETH",
+    "address": "0xA0075E8cE43dcB9970cB7709b9526c1232cc39c2",
+    "startBlock": 94877802
   }]
 }
