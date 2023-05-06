@@ -42,7 +42,7 @@
     "token": "UNI",
     "tokenName": "Uniswap",
     "tokenDecimals": 18,
-    "address": "0x41E5E6045f91B61AACC99edca0967D518fB44CFB",
+    "address": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
     "startBlock": 8892277
   }],
   "bridges": [{
