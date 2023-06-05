@@ -34,7 +34,7 @@ type BonderRemoved @entity {
   id: ID!
   "Removed bonder address"
   previousBonder: String!
-  
+
   "Block entity"
   block: Block
   "Transaction entity"
@@ -126,7 +126,7 @@ type Stake @entity {
 }
 
 type TransferFromL1Completed @entity {
-  "Entity ID"  
+  "Entity ID"
   id: ID!
   "Recipient address"
   recipient: String!
@@ -242,10 +242,10 @@ type TransferSent @entity {
   from: String!
   "Bridge token asset symbol"
   token: String!
-}  
+}
 
 type TransfersCommitted @entity {
-  "Entity ID"  
+  "Entity ID"
   id: ID!
   "Destination of transfer"
   destinationChainId: BigInt!
@@ -288,7 +288,7 @@ type Unstake @entity {
   account: String!
   "Unstaked amount"
   amount: BigInt!
-  
+
   "Block entity"
   block: Block
   "Transaction entity"
@@ -354,7 +354,7 @@ type WithdrawalBonded @entity {
   transferId: Bytes!
   "Amount"
   amount: BigInt!
-  
+
   "Block entity"
   block: Block
   "Transaction entity"
@@ -416,7 +416,7 @@ type Withdrew @entity {
 }
 
 type TokenSwap @entity {
-  "Entity ID"  
+  "Entity ID"
   id: ID!
   "Buyer address"
   buyer: String!
@@ -486,7 +486,7 @@ type Transfer @entity {
 }
 
 type AddLiquidity @entity {
-  "Entity ID"  
+  "Entity ID"
   id: ID!
   "Provider wallet address"
   provider: String!
@@ -557,7 +557,7 @@ type RemoveLiquidity @entity {
 }
 
 type RemoveLiquidityOne @entity {
-  "Entity ID"  
+  "Entity ID"
   id: ID!
   "Provider wallet address"
   provider: String!
@@ -658,7 +658,7 @@ type DailyVolume @entity {
 }
 
 type AmmTvl @entity {
-  "Entity ID"  
+  "Entity ID"
   id: ID!
   "amount"
   amount: BigInt!
@@ -667,7 +667,7 @@ type AmmTvl @entity {
 }
 
 type AmmFee @entity {
- "Entity ID"  
+ "Entity ID"
   id: ID!
   "amount"
   amount: BigInt!
@@ -680,7 +680,7 @@ type AmmFee @entity {
 }
 
 type BonderFee @entity {
-  "Entity ID"  
+  "Entity ID"
   id: ID!
   "amount"
   amount: BigInt!
@@ -744,6 +744,9 @@ type Transaction @entity {
 
   "Transaction gas limit"
   gasLimit: BigInt!
+
+  "Transaction gas used"
+  gasUsed: BigInt!
 
   "Transaction gas price"
   gasPrice: BigInt!

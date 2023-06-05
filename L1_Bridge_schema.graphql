@@ -33,7 +33,7 @@ type BonderRemoved @entity {
   id: ID!
   "Removed bonder address"
   previousBonder: String!
-  
+
   "Block entity"
   block: Block
   "Transaction entity"
@@ -184,7 +184,7 @@ type TransferBondChallenged @entity {
   timestamp: BigInt!
   "Transaction block number"
   blockNumber: BigInt!
-  
+
   "Contract address"
   contractAddress: String!
   "From address"
@@ -344,7 +344,7 @@ type Unstake @entity {
   account: String!
   "Unstaked amount"
   amount: BigInt!
-  
+
   "Block entity"
   block: Block
   "Transaction entity"
@@ -410,7 +410,7 @@ type WithdrawalBonded @entity {
   transferId: Bytes!
   "Amount"
   amount: BigInt!
-  
+
   "Block entity"
   block: Block
   "Transaction entity"
@@ -597,6 +597,9 @@ type Transaction @entity {
 
   "Transaction gas limit"
   gasLimit: BigInt!
+
+  "Transaction gas used"
+  gasUsed: BigInt!
 
   "Transaction gas price"
   gasPrice: BigInt!

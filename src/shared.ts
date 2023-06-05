@@ -37,6 +37,7 @@ export function createTransactionEntityIfNotExists(event: ethereum.Event):void {
     transactionEntity = new TransactionEntity(event.transaction.hash.toHexString())
     transactionEntity.from = event.transaction.from
     transactionEntity.gasLimit = event.transaction.gasLimit
+    transactionEntity.gasUsed = event.receipt!.gasUsed
     transactionEntity.gasPrice = event.transaction.gasPrice
     transactionEntity.hash = event.transaction.hash
     transactionEntity.index = event.transaction.index
