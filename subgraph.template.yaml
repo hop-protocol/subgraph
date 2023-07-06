@@ -15,7 +15,7 @@ dataSources:
       startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
         - Transfer
@@ -25,6 +25,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
+          receipt: true
       file: ./src/L1_token_mapping_{{network}}_{{token}}.ts
 {{/tokens}}
 {{#bridges}}
@@ -37,7 +38,7 @@ dataSources:
       startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
         - BonderAdded
@@ -60,32 +61,46 @@ dataSources:
       eventHandlers:
         - event: BonderAdded(indexed address)
           handler: handleBonderAdded
+          receipt: true
         - event: BonderRemoved(indexed address)
           handler: handleBonderRemoved
+          receipt: true
         - event: ChallengeResolved(indexed bytes32,indexed bytes32,uint256)
           handler: handleChallengeResolved
+          receipt: true
         - event: MultipleWithdrawalsSettled(indexed address,indexed bytes32,uint256)
           handler: handleMultipleWithdrawalsSettled
+          receipt: true
         - event: Stake(indexed address,uint256)
           handler: handleStake
+          receipt: true
         - event: TransferBondChallenged(indexed bytes32,indexed bytes32,uint256)
           handler: handleTransferBondChallenged
+          receipt: true
         - event: TransferRootBonded(indexed bytes32,uint256)
           handler: handleTransferRootBonded
+          receipt: true
         - event: TransferRootConfirmed(indexed uint256,indexed uint256,indexed bytes32,uint256)
           handler: handleTransferRootConfirmed
+          receipt: true
         - event: TransferRootSet(indexed bytes32,uint256)
           handler: handleTransferRootSet
+          receipt: true
         - event: TransferSentToL2(indexed uint256,indexed address,uint256,uint256,uint256,indexed address,uint256)
           handler: handleTransferSentToL2
+          receipt: true
         - event: Unstake(indexed address,uint256)
           handler: handleUnstake
+          receipt: true
         - event: WithdrawalBondSettled(indexed address,indexed bytes32,indexed bytes32)
           handler: handleWithdrawalBondSettled
+          receipt: true
         - event: WithdrawalBonded(indexed bytes32,uint256)
           handler: handleWithdrawalBonded
+          receipt: true
         - event: Withdrew(indexed bytes32,indexed address,uint256,bytes32)
           handler: handleWithdrew
+          receipt: true
       file: ./src/L1_mapping_{{network}}_{{token}}.ts
 {{/bridges}}
 {{/isMainnet}}
@@ -103,7 +118,7 @@ dataSources:
       startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
         - TokenSwap
@@ -117,14 +132,19 @@ dataSources:
       eventHandlers:
         - event: TokenSwap(indexed address,uint256,uint256,uint128,uint128)
           handler: handleTokenSwap
+          receipt: true
         - event: AddLiquidity(indexed address,uint256[],uint256[],uint256,uint256)
           handler: handleAddLiquidity
+          receipt: true
         - event: RemoveLiquidity(indexed address,uint256[],uint256)
           handler: handleRemoveLiquidity
+          receipt: true
         - event: RemoveLiquidityOne(indexed address,uint256,uint256,uint256,uint256)
           handler: handleRemoveLiquidityOne
+          receipt: true
         - event: RemoveLiquidityImbalance(indexed address,uint256[],uint256[],uint256,uint256)
           handler: handleRemoveLiquidityImbalance
+          receipt: true
       file: ./src/L2_Amm_mapping_{{network}}_{{token}}.ts
 {{/amms}}
 {{#bridges}}
@@ -137,7 +157,7 @@ dataSources:
       startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
         - BonderAdded
@@ -158,28 +178,40 @@ dataSources:
       eventHandlers:
         - event: BonderAdded(indexed address)
           handler: handleBonderAdded
+          receipt: true
         - event: BonderRemoved(indexed address)
           handler: handleBonderRemoved
+          receipt: true
         - event: MultipleWithdrawalsSettled(indexed address,indexed bytes32,uint256)
           handler: handleMultipleWithdrawalsSettled
+          receipt: true
         - event: Stake(indexed address,uint256)
           handler: handleStake
+          receipt: true
         - event: TransferFromL1Completed(indexed address,uint256,uint256,uint256,indexed address,uint256)
           handler: handleTransferFromL1Completed
+          receipt: true
         - event: TransferRootSet(indexed bytes32,uint256)
           handler: handleTransferRootSet
+          receipt: true
         - event: TransferSent(indexed bytes32,indexed uint256,indexed address,uint256,bytes32,uint256,uint256,uint256,uint256)
           handler: handleTransferSent
+          receipt: true
         - event: TransfersCommitted(indexed uint256,indexed bytes32,uint256,uint256)
           handler: handleTransfersCommitted
+          receipt: true
         - event: Unstake(indexed address,uint256)
           handler: handleUnstake
+          receipt: true
         - event: WithdrawalBondSettled(indexed address,indexed bytes32,indexed bytes32)
           handler: handleWithdrawalBondSettled
+          receipt: true
         - event: WithdrawalBonded(indexed bytes32,uint256)
           handler: handleWithdrawalBonded
+          receipt: true
         - event: Withdrew(indexed bytes32,indexed address,uint256,bytes32)
           handler: handleWithdrew
+          receipt: true
       file: ./src/L2_mapping_{{network}}_{{token}}.ts
 {{/bridges}}
 {{/isMainnet}}

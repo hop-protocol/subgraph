@@ -105,6 +105,12 @@ For Base (Goerli):
 ethereum: 'base-goerli:https://goerli.base.org'
 ```
 
+For Arbitrum (Goerli):
+
+```yml
+ethereum: 'arbitrum-goerli:https://goerli-rollup.arbitrum.io/rpc'
+```
+
 Start containers:
 
 ```bash
@@ -143,6 +149,12 @@ For Base (Goerli):
 npx graph create hop-protocol/hop-base-goerli --node http://127.0.0.1:8020
 ```
 
+For Arbitrum (Goerli):
+
+```bash
+npx graph create hop-protocol/hop-arbitrum-goerli --node http://127.0.0.1:8020
+```
+
 Deploy subgraph after building (add this line at the bottom of `buildfiles.template.sh` and comment out existing `npx graph deploy` line):
 
 For Optimism Regenesis:
@@ -173,6 +185,12 @@ For Base (Goerli):
 
 ```bash
 npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-goerli
+```
+
+For Arbitrum (Goerli):
+
+```bash
+npx graph deploy --debug --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-arbitrum-goerli
 ```
 
 Build and deploy:
@@ -207,6 +225,12 @@ For Base (Goerli):
 npm run build-deploy:base-goerli
 ```
 
+For Arbitrum (Goerli):
+
+```bash
+npm run build-deploy:arbitrum-goerli
+```
+
 Query subgraphs
 
 For Optimism Regenesis:
@@ -221,13 +245,17 @@ For zkSync:
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-zksync
 
-For Linea:
+For Linea (Goerli):
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-linea-goerli
 
-For Base:
+For Base (Goerli):
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-base-goerli
+
+For Arbitrum (Goerli):
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-arbitrum-goerli
 
 ## License
 
