@@ -2,6 +2,42 @@
 
 > The Hop Protocol Subgraph for [The Graph](https://thegraph.com/).
 
+## Pre-setup notes
+
+```bash
+# Required for AbortController
+nvm install 16.6.1
+nvm use 16.6.1
+
+# Various requirements
+sudo apt install npm
+sudo apt install -y jq
+npm i @graphprotocol/graph-cli@0.53.0
+``````
+
+#### Troubleshooting
+
+- Depending on your NPM version, oboe@2.1.4  & multiaddr@6.1.1 appears to hang when installing NPM packages. In reality, they just take a long time to install (up to or over an hour, depending on the instance type & resources).
+
+- Auth key starts with 70cc
+
+- When setting it up locally and running a load balancer, each of these should work for debugging at various stages
+  - http://ec2...com:8000/subgraphs/name/hop-protocol/hop-base-mainnet
+  - http://lb...com/subgraphs/name/hop-protocol/hop-base-mainnet
+  - https://base.subgraph.hop.exchange/subgraphs/name/hop-protocol/hop-base
+
+
+- If you get the following error, you need to run comment out two lines in `buildfile.template.sh`
+
+```
+# Error
+Failed to deploy to Graph node https://api.thegraph.com/deploy/: subgraph failure::Subgraph [hop-protocol/hop-base-mainnet] not found
+
+# Lines to comment
+npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
+npx graph deploy --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
+```
+
 ## Subgraphs
 
 Mainnet
