@@ -79,6 +79,7 @@ config/*
 !config/linea-goerli.json
 !config/base-goerli.json
 !config/base.json
+!config/base-mainnet.json
 
 src/*
 !src/L1_mapping.template.ts

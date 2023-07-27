@@ -93,6 +93,12 @@ For zkSync:
 ethereum: 'zksync:https://zksync2-testnet.zksync.dev'
 ```
 
+For Base:
+
+```yml
+ethereum: 'base-mainnet:https://developer-access-mainnet.base.org'
+```
+
 For Linea (Goerli):
 
 ```yml
@@ -137,6 +143,12 @@ For zkSync:
 npx graph create hop-protocol/hop-zksync --node http://127.0.0.1:8020
 ```
 
+For Base:
+
+```bash
+npx graph create hop-protocol/hop-base-mainnet --node http://127.0.0.1:8020
+```
+
 For Linea (Goerli):
 
 ```bash
@@ -173,6 +185,12 @@ For zkSync:
 
 ```bash
 npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-zksync
+```
+
+For Base:
+
+```bash
+npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-mainnet
 ```
 
 For Linea (Goerli):
@@ -213,6 +231,12 @@ For zkSync:
 npm run build-deploy:zksync
 ```
 
+For Base:
+
+```bash
+npm run build-deploy:base-mainnet
+```
+
 For Linea (Goerli):
 
 ```bash
@@ -244,6 +268,10 @@ http://localhost:8000/subgraphs/name/hop-protocol/hop-nova
 For zkSync:
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-zksync
+
+For Base:
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-base-mainnet
 
 For Linea (Goerli):
 

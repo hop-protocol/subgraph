@@ -15,6 +15,7 @@ rm -f config/zksync_*.json
 rm -f config/linea-goerli.json
 rm -f config/linea*.json
 rm -f config/base-goerli_*.json
+rm -f config/base-mainnet_*.json
 rm -f config/base_*.json
 
 rm -f src/L1_mapping_*_*.ts
