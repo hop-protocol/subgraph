@@ -1,7 +1,7 @@
 {
     "network": "gnosis",
     "isMainnet": false,
-    "subgraphName": "hop-gnosis",
+    "subgraphName": "hop-xdai",
     "tokens": [{
       "dataSourceName": "Token",
       "token": "USDC",
@@ -120,4 +120,3 @@
       "startBlock": 24309494
     }]
   }
-  

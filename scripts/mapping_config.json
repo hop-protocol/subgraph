@@ -1,0 +1,40 @@
+{
+  "subgraphNetworkMapping": {
+    "mainnet": {
+      "ethereum": "mainnet",
+      "arbitrum": "arbitrum-one",
+      "optimism": "optimism",
+      "gnosis": "gnosis",
+      "polygon": "matic",
+      "nova": "nova",
+      "zksync": "zksync"
+    },
+    "goerli": {
+      "ethereum": "goerli",
+      "arbitrum": "arbitrum-goerli",
+      "optimism": "optimism-goerli",
+      "polygon": "mumbai",
+      "base": "base-goerli",
+      "linea": "linea-goerli"
+    }
+  },
+  "subgraphNameMapping": {
+    "mainnet": {
+      "ethereum": "hop-mainnet",
+      "arbitrum": "hop-arbitrum",
+      "optimism": "hop-optimism",
+      "gnosis": "hop-xdai",
+      "polygon": "hop-polygon",
+      "nova": "hop-nova",
+      "zksync": "hop-zksync"
+    },
+    "goerli": {
+      "ethereum": "hop-goerli",
+      "arbitrum": "hop-arbitrum-goerli",
+      "optimism": "hop-optimism-goerli",
+      "polygon": "hop-mumbai",
+      "base": "hop-base-goerli",
+      "linea": "hop-linea-goerli"
+    }
+  }
+}
