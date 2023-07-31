@@ -242,7 +242,7 @@ function createAmmConfig (net, chain, tokenSymbol) {
 }
 
 async function main () {
-  const outdir = path.resolve(__dirname, '../_config')
+  const outdir = path.resolve(__dirname, '../config')
   const data = {}
   for (const net in subgraphNetworkMapping) {
     for (const chain in subgraphNetworkMapping[net]) {

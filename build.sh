@@ -5,6 +5,9 @@ if [ -z "$NETWORK" ]; then
   exit 1
 fi
 
+echo "generating config json files"
+node scripts/generate_config_json.js
+
 npx mustache config/$NETWORK.json buildfiles.template.sh > buildfiles.sh
 chmod +x buildfiles.sh
 

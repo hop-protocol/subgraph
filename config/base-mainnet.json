@@ -1,0 +1,37 @@
+{
+  "network": "base-mainnet",
+  "isMainnet": false,
+  "subgraphName": "hop-base-mainnet",
+  "tokens": [{
+    "dataSourceName": "Token",
+    "token": "ETH",
+    "tokenName": "Ethereum",
+    "tokenDecimals": 18,
+    "address": "0x4200000000000000000000000000000000000006",
+    "startBlock": 1397238
+  }, {
+    "dataSourceName": "TokenHOP",
+    "token": "HOP",
+    "tokenName": "Hop",
+    "tokenDecimals": 18,
+    "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
+    "startBlock": 1859764
+  }],
+  "amms": [{
+    "dataSourceName": "HopL2Amm",
+    "token": "ETH",
+    "address": "0x0ce6c85cF43553DE10FC56cecA0aef6Ff0DD444d",
+    "startBlock": 1397238
+  }],
+  "bridges": [{
+    "dataSourceName": "HopL2Bridge",
+    "token": "ETH",
+    "address": "0x3666f603Cc164936C1b87e207F36BEBa4AC5f18a",
+    "startBlock": 1397238
+  }, {
+    "dataSourceName": "HopL2BridgeHOP",
+    "token": "HOP",
+    "address": "0xe22D2beDb3Eca35E6397e0C6D62857094aA26F52",
+    "startBlock": 1859764
+  }]
+}

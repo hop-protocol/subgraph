@@ -7,6 +7,7 @@
       "gnosis": "gnosis",
       "polygon": "matic",
       "nova": "nova",
+      "base": "base-mainnet",
       "zksync": "zksync"
     },
     "goerli": {
@@ -26,6 +27,7 @@
       "gnosis": "hop-xdai",
       "polygon": "hop-polygon",
       "nova": "hop-nova",
+      "base": "hop-base-mainnet",
       "zksync": "hop-zksync"
     },
     "goerli": {
