@@ -9,6 +9,7 @@
     "build": "graph build",
     "deploy": "graph deploy hop-protocol/hop --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-local": "graph deploy hop-protocol/hop --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "generate-config-json": "node scripts/generate_config_json.js",
     "build-deploy:mainnet": "NETWORK=mainnet ./build.sh",
     "build-deploy:polygon": "NETWORK=matic ./build.sh",
     "build-deploy:xdai": "NETWORK=gnosis ./build.sh",

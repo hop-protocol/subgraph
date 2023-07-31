@@ -12,28 +12,28 @@
       "startBlock": 1724464
     },
     {
-      "dataSourceName": "TokenMAGIC",
-      "token": "MAGIC",
-      "tokenName": "MAGIC",
-      "tokenDecimals": 18,
-      "address": "0xe8936ac97A85d708d5312D52C30c18d4533b8A9c",
-      "startBlock": 11559944
-    },
-    {
       "dataSourceName": "TokenHOP",
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
       "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
       "startBlock": 15937602
+    },
+    {
+      "dataSourceName": "TokenMAGIC",
+      "token": "MAGIC",
+      "tokenName": "MAGIC",
+      "tokenDecimals": 18,
+      "address": "0xe8936ac97A85d708d5312D52C30c18d4533b8A9c",
+      "startBlock": 11559944
     }
   ],
   "amms": [
     {
       "dataSourceName": "HopL2Amm",
       "token": "ETH",
-      "address": "0xCC0ACeb13a902d0BfBa37AD5d876320C7B590099",
-      "startBlock": 1724460
+      "address": "0x9908109e51D093cF17ef945Df2C62cb17cB877c4",
+      "startBlock": 1724464
     },
     {
       "dataSourceName": "HopL2AmmMAGIC",
@@ -50,16 +50,16 @@
       "startBlock": 1724464
     },
     {
-      "dataSourceName": "HopL2BridgeMAGIC",
-      "token": "MAGIC",
-      "address": "0xE638433e2C1dF5f7a3a21b0a6b5c4b37278e55DC",
-      "startBlock": 11559944
-    },
-    {
       "dataSourceName": "HopL2BridgeHOP",
       "token": "HOP",
       "address": "0x02D47f76523d2f059b617E4346de67482792eB83",
       "startBlock": 15937602
+    },
+    {
+      "dataSourceName": "HopL2BridgeMAGIC",
+      "token": "MAGIC",
+      "address": "0xE638433e2C1dF5f7a3a21b0a6b5c4b37278e55DC",
+      "startBlock": 11559944
     }
   ]
 }

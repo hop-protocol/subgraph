@@ -12,14 +12,6 @@
       "startBlock": 59449
     },
     {
-      "dataSourceName": "TokenUSDC",
-      "token": "USDC",
-      "tokenName": "USD Coin",
-      "tokenDecimals": 6,
-      "address": "0xf56dc6695cF1f5c364eDEbC7Dc7077ac9B586068",
-      "startBlock": 571505
-    },
-    {
       "dataSourceName": "TokenHOP",
       "token": "HOP",
       "tokenName": "Hop",
@@ -28,9 +20,17 @@
       "startBlock": 571167
     },
     {
+      "dataSourceName": "TokenUSDC",
+      "token": "USDC",
+      "tokenName": "USD Coin",
+      "tokenDecimals": 6,
+      "address": "0xf56dc6695cF1f5c364eDEbC7Dc7077ac9B586068",
+      "startBlock": 571505
+    },
+    {
       "dataSourceName": "TokenUSDT",
       "token": "USDT",
-      "tokenName": "USD Tether",
+      "tokenName": "Tether USD",
       "tokenDecimals": 6,
       "address": "0x1990BC6dfe2ef605Bfc08f5A23564dB75642Ad73",
       "startBlock": 559320
@@ -64,6 +64,24 @@
       "token": "USDC",
       "address": "0x723194C6Cfed24883b598931Ee802ab80952C001",
       "startBlock": 571505
+    },
+    {
+      "dataSourceName": "HopL2AmmUSDT",
+      "token": "USDT",
+      "address": "0x0000000000000000000000000000000000000000",
+      "startBlock": 559320
+    },
+    {
+      "dataSourceName": "HopL2AmmDAI",
+      "token": "DAI",
+      "address": "0x0000000000000000000000000000000000000000",
+      "startBlock": 559381
+    },
+    {
+      "dataSourceName": "HopL2AmmUNI",
+      "token": "UNI",
+      "address": "0x0000000000000000000000000000000000000000",
+      "startBlock": 559429
     }
   ],
   "bridges": [
@@ -74,16 +92,16 @@
       "startBlock": 59449
     },
     {
-      "dataSourceName": "HopL2BridgeUSDC",
-      "token": "USDC",
-      "address": "0x884d1Aa15F9957E1aEAA86a82a72e49Bc2bfCbe3",
-      "startBlock": 571505
-    },
-    {
       "dataSourceName": "HopL2BridgeHOP",
       "token": "HOP",
       "address": "0x2E9bB44C9CB774939462eF874Fc854D8df524F13",
       "startBlock": 571167
+    },
+    {
+      "dataSourceName": "HopL2BridgeUSDC",
+      "token": "USDC",
+      "address": "0x884d1Aa15F9957E1aEAA86a82a72e49Bc2bfCbe3",
+      "startBlock": 571505
     },
     {
       "dataSourceName": "HopL2BridgeUSDT",
