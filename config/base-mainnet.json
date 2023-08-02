@@ -16,12 +16,24 @@
     "tokenDecimals": 18,
     "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
     "startBlock": 1859764
+  }, {
+    "dataSourceName": "TokenUSDC",
+    "token": "USDC",
+    "tokenName": "USD Coin",
+    "tokenDecimals": 6,
+    "address": "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
+    "startBlock": 2077758
   }],
   "amms": [{
     "dataSourceName": "HopL2Amm",
     "token": "ETH",
     "address": "0x0ce6c85cF43553DE10FC56cecA0aef6Ff0DD444d",
     "startBlock": 1397238
+  }, {
+    "dataSourceName": "HopL2AmmUSDC",
+    "token": "USDC",
+    "address": "0x022C5cE6F1Add7423268D41e08Df521D5527C2A0",
+    "startBlock": 2077758
   }],
   "bridges": [{
     "dataSourceName": "HopL2Bridge",
@@ -33,5 +45,10 @@
     "token": "HOP",
     "address": "0xe22D2beDb3Eca35E6397e0C6D62857094aA26F52",
     "startBlock": 1859764
+  }, {
+    "dataSourceName": "HopL2BridgeUSDC",
+    "token": "USDC",
+    "address": "0x46ae9BaB8CEA96610807a275EBD36f8e916b5C61",
+    "startBlock": 2077758
   }]
 }
