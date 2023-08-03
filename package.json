@@ -9,9 +9,10 @@
     "build": "graph build",
     "deploy": "graph deploy hop-protocol/hop --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "deploy-local": "graph deploy hop-protocol/hop --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "generate-config-json": "node scripts/generate_config_json.js",
     "build-deploy:mainnet": "NETWORK=mainnet ./build.sh",
     "build-deploy:polygon": "NETWORK=matic ./build.sh",
-    "build-deploy:xdai": "NETWORK=xdai ./build.sh",
+    "build-deploy:xdai": "NETWORK=gnosis ./build.sh",
     "build-deploy:optimism": "NETWORK=optimism ./build.sh",
     "build-deploy:arbitrum": "NETWORK=arbitrum-one ./build.sh",
     "build-deploy:goerli": "NETWORK=goerli ./build.sh",
@@ -35,6 +36,7 @@
     "rimraf": "3.0.2"
   },
   "dependencies": {
+    "@hop-protocol/core": "^0.0.1-beta.175",
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
     "mustache": "^4.2.0",

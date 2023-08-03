@@ -2,53 +2,30 @@
   "network": "arbitrum-goerli",
   "isMainnet": false,
   "subgraphName": "hop-arbitrum-goerli",
-  "tokens": [{
-    "dataSourceName": "Token",
-    "token": "USDC",
-    "tokenName": "USD Coin",
-    "tokenDecimals": 6,
-    "address": "0x17078F231AA8dc256557b49a8f2F72814A71f633",
-    "startBlock": 97011
-  }, {
-    "dataSourceName": "TokenETH",
-    "token": "ETH",
-    "tokenName": "Ethereum",
-    "tokenDecimals": 18,
-    "address": "0xcb5ddfb8d0038247dc0beeecaa7f3457befcb77c",
-    "startBlock": 96936
-  }, {
-    "dataSourceName": "TokenHOP",
-    "token": "HOP",
-    "tokenName": "Hop",
-    "tokenDecimals": 18,
-    "address": "0xB1ea9FeD58a317F81eEEFC18715Dd323FDEf45c4",
-    "startBlock": 422017
-  }],
-  "amms": [{
-    "dataSourceName": "HopL2Amm",
-    "token": "USDC",
-    "address": "0x83f6244Bd87662118d96D9a6D44f09dffF14b30E",
-    "startBlock": 97011
-  }, {
-    "dataSourceName": "HopL2AmmETH",
-    "token": "ETH",
-    "address": "0x69a71b7F6Ff088a0310b4f911b4f9eA11e2E9740",
-    "startBlock": 96936
-  }],
-  "bridges": [{
-    "dataSourceName": "HopL2Bridge",
-    "token": "USDC",
-    "address": "0x86cA30bEF97fB651b8d866D45503684b90cb3312",
-    "startBlock": 97011
-  }, {
-    "dataSourceName": "HopL2BridgeETH",
-    "token": "ETH",
-    "address": "0xb276BC046DFf5024D20A3947475eA20C9F08eB1F",
-    "startBlock": 96936
-  }, {
-    "dataSourceName": "HopL2BridgeHOP",
-    "token": "HOP",
-    "address": "0x3215D2691cc6c95D51DfEc76524B8FA39A55118c",
-    "startBlock": 422017
-  }]
+  "tokens": [
+    {
+      "dataSourceName": "Token",
+      "token": "ETH",
+      "tokenName": "Ethereum",
+      "tokenDecimals": 18,
+      "address": "0xcb5ddfb8d0038247dc0beeecaa7f3457befcb77c",
+      "startBlock": 96936
+    }
+  ],
+  "amms": [
+    {
+      "dataSourceName": "HopL2Amm",
+      "token": "ETH",
+      "address": "0x69a71b7F6Ff088a0310b4f911b4f9eA11e2E9740",
+      "startBlock": 96936
+    }
+  ],
+  "bridges": [
+    {
+      "dataSourceName": "HopL2Bridge",
+      "token": "ETH",
+      "address": "0xb276BC046DFf5024D20A3947475eA20C9F08eB1F",
+      "startBlock": 96936
+    }
+  ]
 }

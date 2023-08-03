@@ -2,24 +2,30 @@
   "network": "optimism-goerli",
   "isMainnet": false,
   "subgraphName": "hop-optimism-goerli",
-  "tokens": [{
-    "dataSourceName": "TokenETH",
-    "token": "ETH",
-    "tokenName": "Ethereum",
-    "tokenDecimals": 18,
-    "address": "0xDc38c5aF436B9652225f92c370A011C673FA7Ba5",
-    "startBlock": 407263
-  }],
-  "amms": [{
-    "dataSourceName": "HopL2AmmETH",
-    "token": "ETH",
-    "address": "0xa50395bdEaca7062255109fedE012eFE63d6D402",
-    "startBlock": 407263
-  }],
-  "bridges": [{
-    "dataSourceName": "HopL2BridgeETH",
-    "token": "ETH",
-    "address": "0x2708E5C7087d4C6D295c8B58b2D452c360D505C7",
-    "startBlock": 407263
-  }]
+  "tokens": [
+    {
+      "dataSourceName": "Token",
+      "token": "ETH",
+      "tokenName": "Ethereum",
+      "tokenDecimals": 18,
+      "address": "0xDc38c5aF436B9652225f92c370A011C673FA7Ba5",
+      "startBlock": 407263
+    }
+  ],
+  "amms": [
+    {
+      "dataSourceName": "HopL2Amm",
+      "token": "ETH",
+      "address": "0xa50395bdEaca7062255109fedE012eFE63d6D402",
+      "startBlock": 407263
+    }
+  ],
+  "bridges": [
+    {
+      "dataSourceName": "HopL2Bridge",
+      "token": "ETH",
+      "address": "0x2708E5C7087d4C6D295c8B58b2D452c360D505C7",
+      "startBlock": 407263
+    }
+  ]
 }

@@ -2,24 +2,30 @@
   "network": "mumbai",
   "isMainnet": false,
   "subgraphName": "hop-mumbai",
-  "tokens": [{
-    "dataSourceName": "TokenETH",
-    "token": "ETH",
-    "tokenName": "Ethereum",
-    "tokenDecimals": 18,
-    "address": "0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa",
-    "startBlock": 27594937
-  }],
-  "amms": [{
-    "dataSourceName": "HopL2AmmETH",
-    "token": "ETH",
-    "address": "0x3666f603Cc164936C1b87e207F36BEBa4AC5f18a",
-    "startBlock": 27594937
-  }],
-  "bridges": [{
-    "dataSourceName": "HopL2BridgeETH",
-    "token": "ETH",
-    "address": "0x34E8251051687BfF4EA23C18e466b3Ed13492abd",
-    "startBlock": 27594937
-  }]
+  "tokens": [
+    {
+      "dataSourceName": "Token",
+      "token": "ETH",
+      "tokenName": "Ethereum",
+      "tokenDecimals": 18,
+      "address": "0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa",
+      "startBlock": 27594937
+    }
+  ],
+  "amms": [
+    {
+      "dataSourceName": "HopL2Amm",
+      "token": "ETH",
+      "address": "0x3666f603Cc164936C1b87e207F36BEBa4AC5f18a",
+      "startBlock": 27594937
+    }
+  ],
+  "bridges": [
+    {
+      "dataSourceName": "HopL2Bridge",
+      "token": "ETH",
+      "address": "0x34E8251051687BfF4EA23C18e466b3Ed13492abd",
+      "startBlock": 27594937
+    }
+  ]
 }

@@ -64,6 +64,18 @@ npx graph auth https://api.thegraph.com/deploy/ <access-token>
 
 The access token is found on the hosted-service [dashboard](https://thegraph.com/hosted-service/dashboard).
 
+### Add new chain config or new addresses
+
+Update `scripts/mapping_config.json` with the new chain network and subgraph name mapping.
+
+If not adding a new chain, and only new addresses, then only update the `@hop-protocol/core` package version and run build/deploy commands as usual.
+
+The config generation script is run automatically when building the subgraph with npm `build-deploy` command and can also be ran with `npm run generate-config-json`.
+
+The generation script `scripts/generate_config_json.js` will read the chain/token config from `@hop-protocol/core` and output/override the config JSON files to `config/`.
+
+When adding new chain, make sure to update `.gitignore` and `clean.sh` (this step can probably be automated).
+
 ### Build and deploy
 
 ```bash
