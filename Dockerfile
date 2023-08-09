@@ -17,8 +17,8 @@ COPY --from=build /usr/src/app/contracts /usr/src/app/contracts
 COPY --from=build /usr/src/app/migrations /usr/src/app/migrations
 COPY --from=build /usr/src/app/scripts /usr/src/app/scripts
 COPY --from=build /usr/src/app/src /usr/src/app/src
-COPY --from=build /usr/src/app/*.sh /usr/src/app
-COPY --from=build /usr/src/app/*.graphql /usr/src/app
-COPY --from=build /usr/src/app/*.yaml /usr/src/app
+COPY --from=build /usr/src/app/*.sh /usr/src/app/
+COPY --from=build /usr/src/app/*.graphql /usr/src/app/
+COPY --from=build /usr/src/app/*.yaml /usr/src/app/
 ENTRYPOINT ["npm", "run"]
 CMD []
