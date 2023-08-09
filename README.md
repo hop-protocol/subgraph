@@ -86,7 +86,7 @@ export NETWORK=base-goerli
 export RPC=https://goerli.base.org
 
 # download docker-compose file
-wget https://github.com/hop-protocol/subgraph/blob/master/docker-compose.yml
+wget https://raw.githubusercontent.com/hop-protocol/subgraph/master/docker-compose.yml
 
 # start services (use `-d` to run in background)
 docker compose up
