@@ -76,6 +76,18 @@ The generation script `scripts/generate_config_json.js` will read the chain/toke
 
 When adding new chain, make sure to update `.gitignore` and `clean.sh` (this step can probably be automated).
 
+### Running local graph node with Docker
+
+After bumping the version of `@hop-protocol/core` in `package.json` and pushing to github and CircleCI finishes building the [docker image](https://hub.docker.com/r/hopprotocol/subgraph), run the following commands to build and deploy the subgraph locally or on a server using docker compose:
+
+```bash
+export NETWORK=base-goerli
+export RPC=https://goerli.base.org
+docker compose up
+```
+
+After a minute or so the graph should be available at http://localhost:8000/subgraphs/name/hop-protocol/hop-base-goerli/graphql
+
 ### Build and deploy
 
 ```bash
@@ -90,6 +102,13 @@ npm run build-deploy:arbitrum
 npm run build-deploy:goerli
 npm run build-deploy:mumbai
 npm run build-deploy:optimism-goerli
+
+# local
+npm run build-deploy:arbitrum-goerli
+npm run build-deploy:nova
+npm run build-deploy:zksync
+npm run build-deploy:base-goerli
+npm run build-deploy:base-mainnet
 ```
 
 By default, it will deploy under `hop-protocol` github org.

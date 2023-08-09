@@ -25,31 +25,34 @@ npx mustache $TEMP_CONFIG src/L2_Amm_mapping.template.ts > src/L2_Amm_mapping_${
 npm run codegen
 npm run build
 
-if (test "$IS_SUBGRAPH_STUDIO" = "true"); then
-  echo 'running subgraph studio build'
+if (test "$IS_DOCKER" = "true"); then
+  # running local (run this in separate terminal and update env vars accordingly):
+  # NETWORK=base-goerli RPC=https://goerli.base.org docker-compose up
+  # export IPFS_HOST=http://localhost:5001
+  # export GRAPH_NODE_HOST=http://localhost:8020
+  npx graph create hop-protocol/hop-$NETWORK --node $GRAPH_NODE_HOST
 
-  SUBGRAPH_STUDIO_DEPLOYMENT_NAME={{network}}
-  if (test "$SUBGRAPH_STUDIO_DEPLOYMENT_NAME" = "arbitrum-one"); then
-    SUBGRAPH_STUDIO_DEPLOYMENT_NAME="arbitrum"
-  fi
-
-  # auth studio (comment this out when deploying locally):
-  npx graph auth --studio $DEPLOY_KEY
-
-  # deploy studio (comment this out when deploying locally):
-  npx graph deploy --studio "hop-protocol-$SUBGRAPH_STUDIO_DEPLOYMENT_NAME"
+  npx graph deploy --ipfs $IPFS_HOST --node $GRAPH_NODE_HOST --version-label=v0.0.1 hop-protocol/hop-$NETWORK
 else
-  echo 'running hosted build'
-  # auth (comment this out when deploying locally):
-  npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
+  if (test "$IS_SUBGRAPH_STUDIO" = "true"); then
+    echo 'running subgraph studio build'
 
-  # deploy (comment this out when deploying locally):
-  npx graph deploy --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
+    SUBGRAPH_STUDIO_DEPLOYMENT_NAME={{network}}
+    if (test "$SUBGRAPH_STUDIO_DEPLOYMENT_NAME" = "arbitrum-one"); then
+      SUBGRAPH_STUDIO_DEPLOYMENT_NAME="arbitrum"
+    fi
+
+    # auth studio:
+    npx graph auth --studio $DEPLOY_KEY
+
+    # deploy studio:
+    npx graph deploy --studio "hop-protocol-$SUBGRAPH_STUDIO_DEPLOYMENT_NAME"
+  else
+    echo 'running hosted build'
+    # auth:
+    npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
+
+    # deploy:
+    npx graph deploy --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
+  fi
 fi
-
-# running local (run this in seperate terminal):
-# docker-compose up
-# npx graph create hop-protocol/hop-base-goerli --node http://127.0.0.1:8020
-
-# uncomment this line here for local deployment and comment out all 'graph auth' and 'graph deploy' lines above:
-#npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-goerli
