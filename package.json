@@ -36,7 +36,7 @@
     "rimraf": "3.0.2"
   },
   "dependencies": {
-    "@hop-protocol/core": "^0.0.1-beta.175",
+    "@hop-protocol/core": "^0.0.1-beta.181",
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
     "mustache": "^4.2.0",
