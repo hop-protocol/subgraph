@@ -89,7 +89,7 @@ export RPC=https://goerli.base.org
 wget https://raw.githubusercontent.com/hop-protocol/subgraph/master/docker-compose.yml
 
 # start services (use `-d` to run in background)
-docker compose up
+docker compose up --pull=always
 ```
 
 After a minute or so the graph should be available at http://localhost:8000/subgraphs/name/hop-protocol/hop-base-goerli/graphql
