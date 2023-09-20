@@ -23,7 +23,7 @@
     "build-deploy:linea-goerli": "NETWORK=linea-goerli ./build.sh",
     "build-deploy:zksync": "NETWORK=zksync ./build.sh",
     "build-deploy:base-mainnet": "NETWORK=base ./build.sh",
-    "build-deploy:base-goerli": "NETWORK=base-goerli IS_SUBGRAPH_STUDIO=true ./build.sh",
+    "build-deploy:base-goerli:subgraph-studio": "NETWORK=base-testnet IS_SUBGRAPH_STUDIO=true ./build.sh",
     "build-deploy:mainnet:subgraph-studio": "NETWORK=mainnet IS_SUBGRAPH_STUDIO=true ./build.sh",
     "build-deploy:arbitrum:subgraph-studio": "NETWORK=arbitrum-one IS_SUBGRAPH_STUDIO=true ./build.sh",
     "build-deploy:gnosis:subgraph-studio": "NETWORK=gnosis IS_SUBGRAPH_STUDIO=true ./build.sh",
