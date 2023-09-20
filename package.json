@@ -22,8 +22,8 @@
     "build-deploy:nova": "NETWORK=nova ./build.sh",
     "build-deploy:linea-goerli": "NETWORK=linea-goerli ./build.sh",
     "build-deploy:zksync": "NETWORK=zksync ./build.sh",
-    "build-deploy:base-goerli": "NETWORK=base-goerli ./build.sh",
-    "build-deploy:base-mainnet": "NETWORK=base-mainnet ./build.sh",
+    "build-deploy:base-mainnet": "NETWORK=base ./build.sh",
+    "build-deploy:base-goerli": "NETWORK=base-goerli IS_SUBGRAPH_STUDIO=true ./build.sh",
     "build-deploy:mainnet:subgraph-studio": "NETWORK=mainnet IS_SUBGRAPH_STUDIO=true ./build.sh",
     "build-deploy:arbitrum:subgraph-studio": "NETWORK=arbitrum-one IS_SUBGRAPH_STUDIO=true ./build.sh",
     "build-deploy:gnosis:subgraph-studio": "NETWORK=gnosis IS_SUBGRAPH_STUDIO=true ./build.sh",
@@ -31,7 +31,7 @@
     "clean:data": "rimraf data"
   },
   "devDependencies": {
-    "@graphprotocol/graph-cli": "0.51.0",
+    "@graphprotocol/graph-cli": "^0.58.0",
     "@graphprotocol/graph-ts": "0.31.0",
     "rimraf": "3.0.2"
   },

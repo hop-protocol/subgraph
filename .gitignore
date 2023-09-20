@@ -80,6 +80,7 @@ config/*
 !config/base-goerli.json
 !config/base.json
 !config/base-mainnet.json
+!config/base-testnet.json
 
 src/*
 !src/L1_mapping.template.ts

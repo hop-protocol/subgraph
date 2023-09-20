@@ -7,7 +7,7 @@
       "gnosis": "gnosis",
       "polygon": "matic",
       "nova": "nova",
-      "base": "base-mainnet",
+      "base": "base",
       "zksync": "zksync"
     },
     "goerli": {
@@ -15,7 +15,7 @@
       "arbitrum": "arbitrum-goerli",
       "optimism": "optimism-goerli",
       "polygon": "mumbai",
-      "base": "base-goerli",
+      "base": "base-testnet",
       "linea": "linea-goerli"
     }
   },
@@ -27,7 +27,7 @@
       "gnosis": "hop-xdai",
       "polygon": "hop-polygon",
       "nova": "hop-nova",
-      "base": "hop-base-mainnet",
+      "base": "hop-base",
       "zksync": "hop-zksync"
     },
     "goerli": {

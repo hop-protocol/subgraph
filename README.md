@@ -47,6 +47,7 @@ Mainnet
 - [xDai](https://thegraph.com/explorer/subgraph/hop-protocol/hop-xdai)
 - [Optimism](https://thegraph.com/explorer/subgraph/hop-protocol/hop-optimism)
 - [Arbitrum](https://thegraph.com/explorer/subgraph/hop-protocol/hop-arbitrum)
+- [Base](https://thegraph.com/explorer/subgraph/hop-protocol/hop-base)
 
 Goerli
 
