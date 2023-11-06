@@ -1,0 +1,31 @@
+{
+  "network": "base-testnet",
+  "isMainnet": false,
+  "subgraphName": "hop-base-goerli",
+  "tokens": [
+    {
+      "dataSourceName": "Token",
+      "token": "ETH",
+      "tokenName": "Ethereum",
+      "tokenDecimals": 18,
+      "address": "0x4200000000000000000000000000000000000006",
+      "startBlock": 1551608
+    }
+  ],
+  "amms": [
+    {
+      "dataSourceName": "HopL2Amm",
+      "token": "ETH",
+      "address": "0xB87aC009F61Fa214f196e232fD14A6f8AE422FA1",
+      "startBlock": 1551608
+    }
+  ],
+  "bridges": [
+    {
+      "dataSourceName": "HopL2Bridge",
+      "token": "ETH",
+      "address": "0xCB4cEeFce514B2d910d3ac529076D18e3aDD3775",
+      "startBlock": 1551608
+    }
+  ]
+}
