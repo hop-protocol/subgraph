@@ -115,6 +115,7 @@ npm run build-deploy:nova
 npm run build-deploy:zksync
 npm run build-deploy:base-goerli
 npm run build-deploy:base-mainnet
+npm run build-deploy:linea
 ```
 
 By default, it will deploy under `hop-protocol` github org.
@@ -172,6 +173,12 @@ For Base:
 ethereum: 'base-mainnet:https://developer-access-mainnet.base.org'
 ```
 
+For Linea:
+
+```yml
+ethereum: 'linea:https://rpc.linea.build'
+```
+
 For Linea (Goerli):
 
 ```yml
@@ -222,6 +229,12 @@ For Base:
 npx graph create hop-protocol/hop-base-mainnet --node http://127.0.0.1:8020
 ```
 
+For Base:
+
+```bash
+npx graph create hop-protocol/hop-linea --node http://127.0.0.1:8020
+```
+
 For Linea (Goerli):
 
 ```bash
@@ -264,6 +277,12 @@ For Base:
 
 ```bash
 npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-mainnet
+```
+
+For Linea:
+
+```bash
+npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-linea
 ```
 
 For Linea (Goerli):
@@ -310,6 +329,12 @@ For Base:
 npm run build-deploy:base-mainnet
 ```
 
+For Linea:
+
+```bash
+npm run build-deploy:linea
+```
+
 For Linea (Goerli):
 
 ```bash
@@ -345,6 +370,10 @@ http://localhost:8000/subgraphs/name/hop-protocol/hop-zksync
 For Base:
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-base-mainnet
+
+For Linea:
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-linea
 
 For Linea (Goerli):
 

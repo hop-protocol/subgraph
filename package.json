@@ -21,6 +21,7 @@
     "build-deploy:arbitrum-goerli": "NETWORK=arbitrum-goerli ./build.sh",
     "build-deploy:nova": "NETWORK=nova ./build.sh",
     "build-deploy:linea-goerli": "NETWORK=linea-goerli ./build.sh",
+    "build-deploy:linea": "NETWORK=linea ./build.sh",
     "build-deploy:zksync": "NETWORK=zksync ./build.sh",
     "build-deploy:base-goerli": "NETWORK=base-goerli ./build.sh",
     "build-deploy:base-mainnet": "NETWORK=base-mainnet ./build.sh",
@@ -36,7 +37,7 @@
     "rimraf": "3.0.2"
   },
   "dependencies": {
-    "@hop-protocol/core": "^0.0.1-beta.181",
+    "@hop-protocol/core": "^0.0.1-beta.196",
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
     "mustache": "^4.2.0",

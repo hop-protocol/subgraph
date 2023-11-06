@@ -1,0 +1,31 @@
+{
+    "network": "linea",
+    "isMainnet": false,
+    "subgraphName": "hop-linea",
+    "tokens": [
+      {
+        "dataSourceName": "Token",
+        "token": "ETH",
+        "tokenName": "Ethereum",
+        "tokenDecimals": 18,
+        "address": "0xe5D7C2a44FfDDf6b295A15c148167daaAf5Cf34f",
+        "startBlock": 794342
+      }
+    ],
+    "amms": [
+      {
+        "dataSourceName": "HopL2Amm",
+        "token": "ETH",
+        "address": "0x2935173357c010F8B56c8719a44f9FbdDa90f67c",
+        "startBlock": 794342
+      }
+    ],
+    "bridges": [
+      {
+        "dataSourceName": "HopL2Bridge",
+        "token": "ETH",
+        "address": "0xCbb852A6274e03fA00fb4895dE0463f66dF27a11",
+        "startBlock": 794342
+      }
+    ]
+  }

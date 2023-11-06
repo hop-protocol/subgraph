@@ -8,7 +8,8 @@
       "polygon": "matic",
       "nova": "nova",
       "base": "base-mainnet",
-      "zksync": "zksync"
+      "zksync": "zksync",
+      "linea": "linea"
     },
     "goerli": {
       "ethereum": "goerli",
@@ -28,7 +29,8 @@
       "polygon": "hop-polygon",
       "nova": "hop-nova",
       "base": "hop-base-mainnet",
-      "zksync": "hop-zksync"
+      "zksync": "hop-zksync",
+      "linea": "hop-linea"
     },
     "goerli": {
       "ethereum": "hop-goerli",
