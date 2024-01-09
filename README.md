@@ -60,9 +60,12 @@ export RPC=https://goerli.base.org
 # download docker-compose file
 wget https://raw.githubusercontent.com/hop-protocol/subgraph/master/docker-compose.yml
 
-# start services (the `-d` is used to run in background)
+# start services 
+# the `-d` is used to run in background
+# the `--pull=always` is used to update the image when there is one available
+
 # NOTE: The NETWORK and RPC are redundant, but sometimes cause issues if they do not exist
-sudo RPC=https://rpc.linea.build NETWORK=linea docker compose up
+sudo RPC=https://rpc.linea.build NETWORK=linea docker compose up --pull=always
 ```
 
 After a minute or so the graph should be available at http://localhost:8000/subgraphs/name/hop-protocol/hop-base-goerli/graphql
