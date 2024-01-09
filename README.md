@@ -30,17 +30,23 @@ npx graph auth https://api.thegraph.com/deploy/ <access-token>
 
 The access token is found on the hosted-service [dashboard](https://thegraph.com/hosted-service/dashboard).
 
-### Add new chain config or new addresses
+## Instructions to Add new chain config or new addresses
 
-Update `scripts/mapping_config.json` with the new chain network and subgraph name mapping.
+1. Update `scripts/mapping_config.json` with the new chain network and subgraph name mapping.
 
-If not adding a new chain, and only new addresses, then only update the `@hop-protocol/core` package version and run build/deploy commands as usual.
+2. Update the `@hop-protocol/core` package version in `package.json`.
+
+3. Add the `build-deploy` npm script in `package.json`.
+
+4. Update `.gitignore` and `clean.sh` (this step can probably be automated).
+
+5. Run `npm i` to install the latest `@hop-protocol/core` package
+
+6. Run `npm run generate-config-json` to create the updated config files
 
 The config generation script is run automatically when building the subgraph with npm `build-deploy` command and can also be ran with `npm run generate-config-json`.
 
 The generation script `scripts/generate_config_json.js` will read the chain/token config from `@hop-protocol/core` and output/override the config JSON files to `config/`.
-
-When adding new chain, make sure to update `.gitignore` and `clean.sh` (this step can probably be automated).
 
 ### Running local graph node with Docker
 
@@ -119,6 +125,7 @@ npm run build-deploy:zksync
 npm run build-deploy:base-goerli
 npm run build-deploy:base-mainnet
 npm run build-deploy:linea
+npm run build-deploy:polygonzk
 ```
 
 By default, it will deploy under `hop-protocol` github org.
@@ -182,6 +189,12 @@ For Linea:
 ethereum: 'linea:https://rpc.linea.build'
 ```
 
+For Polygonzk:
+
+```yml
+ethereum: 'polygonzk:https://zkevm-rpc.com'
+```
+
 For Linea (Goerli):
 
 ```yml
@@ -238,6 +251,12 @@ For Base:
 npx graph create hop-protocol/hop-linea --node http://127.0.0.1:8020
 ```
 
+For Polygonzk:
+
+```bash
+npx graph create hop-protocol/hop-polygonzk --node http://127.0.0.1:8020
+```
+
 For Linea (Goerli):
 
 ```bash
@@ -286,6 +305,12 @@ For Linea:
 
 ```bash
 npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-linea
+```
+
+For Polygonzk:
+
+```bash
+npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-polygonzk
 ```
 
 For Linea (Goerli):
@@ -338,6 +363,12 @@ For Linea:
 npm run build-deploy:linea
 ```
 
+For Polygonzk:
+
+```bash
+npm run build-deploy:polygonzk
+```
+
 For Linea (Goerli):
 
 ```bash
@@ -377,6 +408,10 @@ http://localhost:8000/subgraphs/name/hop-protocol/hop-base-mainnet
 For Linea:
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-linea
+
+For Polygonzk:
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-polygonzk
 
 For Linea (Goerli):
 
