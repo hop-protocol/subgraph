@@ -48,9 +48,9 @@ The config generation script is run automatically when building the subgraph wit
 
 The generation script `scripts/generate_config_json.js` will read the chain/token config from `@hop-protocol/core` and output/override the config JSON files to `config/`.
 
-### Running local graph node with Docker
+7. [Install Docker](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 
-After bumping the version of `@hop-protocol/core` in `package.json` and pushing to github and CircleCI finishes building the [docker image](https://hub.docker.com/r/hopprotocol/subgraph), run the following commands to build and deploy the subgraph locally or on a server using docker compose:
+8. After bumping the version of `@hop-protocol/core` in `package.json` and pushing to github and CircleCI finishes building the [docker image](https://hub.docker.com/r/hopprotocol/subgraph), run the following commands to build and deploy the subgraph locally or on a server using docker compose:
 
 ```bash
 # change this values to deploy a different subgraph. Refer to `scripts/mapping_config.json` for the subgraph name
@@ -60,8 +60,8 @@ export RPC=https://goerli.base.org
 # download docker-compose file
 wget https://raw.githubusercontent.com/hop-protocol/subgraph/master/docker-compose.yml
 
-# start services (use `-d` to run in background)
-docker compose up --pull=always
+# start services (the `-d` is used to run in background)
+docker compose up --pull=always -d
 ```
 
 After a minute or so the graph should be available at http://localhost:8000/subgraphs/name/hop-protocol/hop-base-goerli/graphql
