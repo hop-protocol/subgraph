@@ -61,10 +61,16 @@ export RPC=https://goerli.base.org
 wget https://raw.githubusercontent.com/hop-protocol/subgraph/master/docker-compose.yml
 
 # start services (the `-d` is used to run in background)
-docker compose up --pull=always -d
+# NOTE: The NETWORK and RPC are redundant, but sometimes cause issues if they do not exist
+sudo RPC=https://rpc.linea.build NETWORK=linea docker compose up
 ```
 
 After a minute or so the graph should be available at http://localhost:8000/subgraphs/name/hop-protocol/hop-base-goerli/graphql
+
+9. Troubleshooting
+
+* If your server is unreachable from outside, ensure you enabled port `8000` with UFW
+  * Disable and enable UFW after this
 
 ## Pre-setup notes
 
