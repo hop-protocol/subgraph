@@ -9,7 +9,8 @@
       "nova": "nova",
       "base": "base",
       "zksync": "zksync",
-      "linea": "linea"
+      "linea": "linea",
+      "polygonzk": "polygonzk"
     },
     "goerli": {
       "ethereum": "goerli",
@@ -30,7 +31,8 @@
       "nova": "hop-nova",
       "base": "hop-base",
       "zksync": "hop-zksync",
-      "linea": "hop-linea"
+      "linea": "hop-linea",
+      "polygonzk": "hop-polygonzk"
     },
     "goerli": {
       "ethereum": "hop-goerli",

@@ -18,6 +18,8 @@ rm -f config/base-goerli_*.json
 rm -f config/base-testnet_*.json
 rm -f config/base-mainnet_*.json
 rm -f config/base_*.json
+rm -f config/polygonzk_mainnet.json
+rm -f config/polygonzk_*.json
 
 rm -f src/L1_mapping_*_*.ts
 rm -f src/L1_token_mapping_*_*.ts
