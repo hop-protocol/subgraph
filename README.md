@@ -359,6 +359,14 @@ For Arbitrum (Goerli):
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-arbitrum-goerli
 
+## Github Actions
+
+Run github action build locally with [act](https://github.com/nektos/act):
+
+```sh
+act --workflows .github/workflows/build.yml
+```
+
 ## License
 
 [MIT](LICENSE)

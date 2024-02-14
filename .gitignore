@@ -104,3 +104,5 @@ data
 .vscode
 
 _config
+
+.secrets
