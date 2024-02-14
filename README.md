@@ -2,7 +2,82 @@
 
 > The Hop Protocol Subgraph for [The Graph](https://thegraph.com/).
 
+
+## Subgraphs
+
+Mainnet
+
+- [Mainnet](https://thegraph.com/explorer/subgraph/hop-protocol/hop-mainnet)
+- [Polygon](https://thegraph.com/explorer/subgraph/hop-protocol/hop-polygon)
+- [xDai](https://thegraph.com/explorer/subgraph/hop-protocol/hop-xdai)
+- [Optimism](https://thegraph.com/explorer/subgraph/hop-protocol/hop-optimism)
+- [Arbitrum](https://thegraph.com/explorer/subgraph/hop-protocol/hop-arbitrum)
+- [Base](https://thegraph.com/explorer/subgraph/hop-protocol/hop-base)
+
+Goerli
+
+- [Goerli](https://thegraph.com/explorer/subgraph/hop-protocol/hop-goerli)
+- [Mumbai](https://thegraph.com/explorer/subgraph/hop-protocol/hop-mumbai)
+- [Optimism Goerli](https://thegraph.com/explorer/subgraph/hop-protocol/hop-optimism-goerli)
+
+## Development
+
+### Authenticate
+
+```bash
+npx graph auth https://api.thegraph.com/deploy/ <access-token>
+```
+
+The access token is found on the hosted-service [dashboard](https://thegraph.com/hosted-service/dashboard).
+
+## Instructions to Add new chain config or new addresses
+
+1. Update `scripts/mapping_config.json` with the new chain network and subgraph name mapping.
+
+2. Update the `@hop-protocol/core` package version in `package.json`.
+
+3. Add the `build-deploy` npm script in `package.json`.
+
+4. Update `.gitignore` and `clean.sh` (this step can probably be automated).
+
+5. Run `npm i` to install the latest `@hop-protocol/core` package
+
+6. Run `npm run generate-config-json` to create the updated config files
+
+The config generation script is run automatically when building the subgraph with npm `build-deploy` command and can also be ran with `npm run generate-config-json`.
+
+The generation script `scripts/generate_config_json.js` will read the chain/token config from `@hop-protocol/core` and output/override the config JSON files to `config/`.
+
+7. [Install Docker](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
+
+8. After bumping the version of `@hop-protocol/core` in `package.json` and pushing to github and CircleCI finishes building the [docker image](https://hub.docker.com/r/hopprotocol/subgraph), run the following commands to build and deploy the subgraph locally or on a server using docker compose:
+
+```bash
+# change this values to deploy a different subgraph. Refer to `scripts/mapping_config.json` for the subgraph name
+export NETWORK=base-goerli
+export RPC=https://goerli.base.org
+
+# download docker-compose file
+wget https://raw.githubusercontent.com/hop-protocol/subgraph/master/docker-compose.yml
+
+# start services 
+# the `-d` is used to run in background
+# the `--pull=always` is used to update the image when there is one available
+
+# NOTE: The NETWORK and RPC are redundant, but sometimes cause issues if they do not exist
+sudo RPC=https://rpc.linea.build NETWORK=linea docker compose up --pull=always
+```
+
+After a minute or so the graph should be available at http://localhost:8000/subgraphs/name/hop-protocol/hop-base-goerli/graphql
+
+9. Troubleshooting
+
+* If your server is unreachable from outside, ensure you enabled port `8000` with UFW
+  * Disable and enable UFW after this
+
 ## Pre-setup notes
+
+_**These are deprecated in favor of the local Docker instructions. Only reference these if Docker is not used.**_
 
 ```bash
 # Required for AbortController
@@ -37,64 +112,6 @@ Failed to deploy to Graph node https://api.thegraph.com/deploy/: subgraph failur
 npx graph auth https://api.thegraph.com/deploy/ $ACCESS_TOKEN
 npx graph deploy --product hosted-service --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ "$GITHUB_ORG/{{subgraphName}}"
 ```
-
-## Subgraphs
-
-Mainnet
-
-- [Mainnet](https://thegraph.com/explorer/subgraph/hop-protocol/hop-mainnet)
-- [Polygon](https://thegraph.com/explorer/subgraph/hop-protocol/hop-polygon)
-- [xDai](https://thegraph.com/explorer/subgraph/hop-protocol/hop-xdai)
-- [Optimism](https://thegraph.com/explorer/subgraph/hop-protocol/hop-optimism)
-- [Arbitrum](https://thegraph.com/explorer/subgraph/hop-protocol/hop-arbitrum)
-- [Base](https://thegraph.com/explorer/subgraph/hop-protocol/hop-base)
-
-Goerli
-
-- [Goerli](https://thegraph.com/explorer/subgraph/hop-protocol/hop-goerli)
-- [Mumbai](https://thegraph.com/explorer/subgraph/hop-protocol/hop-mumbai)
-- [Optimism Goerli](https://thegraph.com/explorer/subgraph/hop-protocol/hop-optimism-goerli)
-
-## Development
-
-### Authenticate
-
-```bash
-npx graph auth https://api.thegraph.com/deploy/ <access-token>
-```
-
-The access token is found on the hosted-service [dashboard](https://thegraph.com/hosted-service/dashboard).
-
-### Add new chain config or new addresses
-
-Update `scripts/mapping_config.json` with the new chain network and subgraph name mapping.
-
-If not adding a new chain, and only new addresses, then only update the `@hop-protocol/core` package version and run build/deploy commands as usual.
-
-The config generation script is run automatically when building the subgraph with npm `build-deploy` command and can also be ran with `npm run generate-config-json`.
-
-The generation script `scripts/generate_config_json.js` will read the chain/token config from `@hop-protocol/core` and output/override the config JSON files to `config/`.
-
-When adding new chain, make sure to update `.gitignore` and `clean.sh` (this step can probably be automated).
-
-### Running local graph node with Docker
-
-After bumping the version of `@hop-protocol/core` in `package.json` and pushing to github and CircleCI finishes building the [docker image](https://hub.docker.com/r/hopprotocol/subgraph), run the following commands to build and deploy the subgraph locally or on a server using docker compose:
-
-```bash
-# change this values to deploy a different subgraph. Refer to `scripts/mapping_config.json` for the subgraph name
-export NETWORK=base-goerli
-export RPC=https://goerli.base.org
-
-# download docker-compose file
-wget https://raw.githubusercontent.com/hop-protocol/subgraph/master/docker-compose.yml
-
-# start services (use `-d` to run in background)
-docker compose up --pull=always
-```
-
-After a minute or so the graph should be available at http://localhost:8000/subgraphs/name/hop-protocol/hop-base-goerli/graphql
-
 ### Build and deploy
 
 ```bash
@@ -116,6 +133,8 @@ npm run build-deploy:nova
 npm run build-deploy:zksync
 npm run build-deploy:base-goerli
 npm run build-deploy:base-mainnet
+npm run build-deploy:linea
+npm run build-deploy:polygonzk
 ```
 
 By default, it will deploy under `hop-protocol` github org.
@@ -173,6 +192,18 @@ For Base:
 ethereum: 'base-mainnet:https://developer-access-mainnet.base.org'
 ```
 
+For Linea:
+
+```yml
+ethereum: 'linea:https://rpc.linea.build'
+```
+
+For Polygonzk:
+
+```yml
+ethereum: 'polygonzk:https://zkevm-rpc.com'
+```
+
 For Linea (Goerli):
 
 ```yml
@@ -223,6 +254,18 @@ For Base:
 npx graph create hop-protocol/hop-base-mainnet --node http://127.0.0.1:8020
 ```
 
+For Base:
+
+```bash
+npx graph create hop-protocol/hop-linea --node http://127.0.0.1:8020
+```
+
+For Polygonzk:
+
+```bash
+npx graph create hop-protocol/hop-polygonzk --node http://127.0.0.1:8020
+```
+
 For Linea (Goerli):
 
 ```bash
@@ -265,6 +308,18 @@ For Base:
 
 ```bash
 npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-base-mainnet
+```
+
+For Linea:
+
+```bash
+npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-linea
+```
+
+For Polygonzk:
+
+```bash
+npx graph deploy --ipfs http://localhost:5001 --node http://localhost:8020 hop-protocol/hop-polygonzk
 ```
 
 For Linea (Goerli):
@@ -311,6 +366,18 @@ For Base:
 npm run build-deploy:base-mainnet
 ```
 
+For Linea:
+
+```bash
+npm run build-deploy:linea
+```
+
+For Polygonzk:
+
+```bash
+npm run build-deploy:polygonzk
+```
+
 For Linea (Goerli):
 
 ```bash
@@ -346,6 +413,14 @@ http://localhost:8000/subgraphs/name/hop-protocol/hop-zksync
 For Base:
 
 http://localhost:8000/subgraphs/name/hop-protocol/hop-base-mainnet
+
+For Linea:
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-linea
+
+For Polygonzk:
+
+http://localhost:8000/subgraphs/name/hop-protocol/hop-polygonzk
 
 For Linea (Goerli):
 

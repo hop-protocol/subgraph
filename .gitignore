@@ -81,6 +81,8 @@ config/*
 !config/base.json
 !config/base-mainnet.json
 !config/base-testnet.json
+!config/polygonzk-mainnet.json
+!config/polygonzk.json
 
 src/*
 !src/L1_mapping.template.ts

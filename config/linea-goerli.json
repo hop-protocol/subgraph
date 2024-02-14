@@ -2,7 +2,30 @@
   "network": "linea-goerli",
   "isMainnet": false,
   "subgraphName": "hop-linea-goerli",
-  "tokens": [],
-  "amms": [],
-  "bridges": []
+  "tokens": [
+    {
+      "dataSourceName": "Token",
+      "token": "ETH",
+      "tokenName": "Ethereum",
+      "tokenDecimals": 18,
+      "address": "0x2C1b868d6596a18e32E61B901E4060C872647b6C",
+      "startBlock": 1904158
+    }
+  ],
+  "amms": [
+    {
+      "dataSourceName": "HopL2Amm",
+      "token": "ETH",
+      "address": "0x1Be8d7851d64BC296e9E941F414f9a6635b5D830",
+      "startBlock": 1904158
+    }
+  ],
+  "bridges": [
+    {
+      "dataSourceName": "HopL2Bridge",
+      "token": "ETH",
+      "address": "0x893246FACF345c99e4235E5A7bbEE7404c988b96",
+      "startBlock": 1904158
+    }
+  ]
 }
