@@ -5,6 +5,7 @@
   "tokens": [
     {
       "dataSourceName": "Token",
+      "isUSDCe": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -27,5 +28,6 @@
       "address": "0x893246FACF345c99e4235E5A7bbEE7404c988b96",
       "startBlock": 1904158
     }
-  ]
+  ],
+  "cctpBridges": []
 }

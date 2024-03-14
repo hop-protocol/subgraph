@@ -5,14 +5,25 @@
   "tokens": [
     {
       "dataSourceName": "TokenUSDC",
+      "isUSDCe": false,
       "token": "USDC",
       "tokenName": "USD Coin",
+      "tokenDecimals": 6,
+      "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "startBlock": 0
+    },
+    {
+      "dataSourceName": "TokenUSDC.e",
+      "isUSDCe": true,
+      "token": "USDC.e",
+      "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
       "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
       "startBlock": 12650032
     },
     {
       "dataSourceName": "TokenUSDT",
+      "isUSDCe": false,
       "token": "USDT",
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
@@ -21,6 +32,7 @@
     },
     {
       "dataSourceName": "TokenMATIC",
+      "isUSDCe": false,
       "token": "MATIC",
       "tokenName": "Matic",
       "tokenDecimals": 18,
@@ -29,6 +41,7 @@
     },
     {
       "dataSourceName": "TokenDAI",
+      "isUSDCe": false,
       "token": "DAI",
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
@@ -37,6 +50,7 @@
     },
     {
       "dataSourceName": "Token",
+      "isUSDCe": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -45,6 +59,7 @@
     },
     {
       "dataSourceName": "TokenHOP",
+      "isUSDCe": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
@@ -53,6 +68,7 @@
     },
     {
       "dataSourceName": "TokenSNX",
+      "isUSDCe": false,
       "token": "SNX",
       "tokenName": "Synthetix Network Token",
       "tokenDecimals": 18,
@@ -61,6 +77,7 @@
     },
     {
       "dataSourceName": "TokensUSD",
+      "isUSDCe": false,
       "token": "sUSD",
       "tokenName": "Synth sUSD",
       "tokenDecimals": 18,
@@ -69,6 +86,7 @@
     },
     {
       "dataSourceName": "TokenrETH",
+      "isUSDCe": false,
       "token": "rETH",
       "tokenName": "Rocket Pool ETH",
       "tokenDecimals": 18,
@@ -77,6 +95,7 @@
     },
     {
       "dataSourceName": "TokenMAGIC",
+      "isUSDCe": false,
       "token": "MAGIC",
       "tokenName": "MAGIC",
       "tokenDecimals": 18,
@@ -145,5 +164,6 @@
       "address": "0xf074540eb83c86211F305E145eB31743E228E57d",
       "startBlock": 17445930
     }
-  ]
+  ],
+  "cctpBridges": []
 }

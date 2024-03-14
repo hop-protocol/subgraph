@@ -4,15 +4,17 @@
   "subgraphName": "hop-arbitrum",
   "tokens": [
     {
-      "dataSourceName": "TokenUSDC",
-      "token": "USDC",
-      "tokenName": "USD Coin",
+      "dataSourceName": "TokenUSDC.e",
+      "isUSDCe": true,
+      "token": "USDC.e",
+      "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
       "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
       "startBlock": 440027
     },
     {
       "dataSourceName": "TokenUSDT",
+      "isUSDCe": false,
       "token": "USDT",
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
@@ -21,6 +23,7 @@
     },
     {
       "dataSourceName": "TokenDAI",
+      "isUSDCe": false,
       "token": "DAI",
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
@@ -29,6 +32,7 @@
     },
     {
       "dataSourceName": "Token",
+      "isUSDCe": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -37,6 +41,7 @@
     },
     {
       "dataSourceName": "TokenHOP",
+      "isUSDCe": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
@@ -45,6 +50,7 @@
     },
     {
       "dataSourceName": "TokenrETH",
+      "isUSDCe": false,
       "token": "rETH",
       "tokenName": "Rocket Pool ETH",
       "tokenDecimals": 18,
@@ -53,6 +59,7 @@
     },
     {
       "dataSourceName": "TokenMAGIC",
+      "isUSDCe": false,
       "token": "MAGIC",
       "tokenName": "MAGIC",
       "tokenDecimals": 18,
@@ -100,8 +107,8 @@
   ],
   "bridges": [
     {
-      "dataSourceName": "HopL2BridgeUSDC",
-      "token": "USDC",
+      "dataSourceName": "HopL2BridgeUSDC.e",
+      "token": "USDC.e",
       "address": "0x0e0E3d2C5c292161999474247956EF542caBF8dd",
       "startBlock": 440027
     },
@@ -141,5 +148,6 @@
       "address": "0xEa5abf2C909169823d939de377Ef2Bf897A6CE98",
       "startBlock": 99536351
     }
-  ]
+  ],
+  "cctpBridges": []
 }

@@ -4,15 +4,17 @@
   "subgraphName": "hop-base",
   "tokens": [
     {
-      "dataSourceName": "TokenUSDC",
-      "token": "USDC",
-      "tokenName": "USD Coin",
+      "dataSourceName": "TokenUSDC.e",
+      "isUSDCe": true,
+      "token": "USDC.e",
+      "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
       "address": "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
       "startBlock": 2077758
     },
     {
       "dataSourceName": "Token",
+      "isUSDCe": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -21,6 +23,7 @@
     },
     {
       "dataSourceName": "TokenHOP",
+      "isUSDCe": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
@@ -44,8 +47,8 @@
   ],
   "bridges": [
     {
-      "dataSourceName": "HopL2BridgeUSDC",
-      "token": "USDC",
+      "dataSourceName": "HopL2BridgeUSDC.e",
+      "token": "USDC.e",
       "address": "0x46ae9BaB8CEA96610807a275EBD36f8e916b5C61",
       "startBlock": 2077758
     },
@@ -61,5 +64,6 @@
       "address": "0xe22D2beDb3Eca35E6397e0C6D62857094aA26F52",
       "startBlock": 1859764
     }
-  ]
+  ],
+  "cctpBridges": []
 }

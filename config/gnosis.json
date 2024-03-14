@@ -4,15 +4,17 @@
   "subgraphName": "hop-xdai",
   "tokens": [
     {
-      "dataSourceName": "TokenUSDC",
-      "token": "USDC",
-      "tokenName": "USD Coin",
+      "dataSourceName": "TokenUSDC.e",
+      "isUSDCe": true,
+      "token": "USDC.e",
+      "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
       "address": "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
       "startBlock": 16617211
     },
     {
       "dataSourceName": "TokenUSDT",
+      "isUSDCe": false,
       "token": "USDT",
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
@@ -21,6 +23,7 @@
     },
     {
       "dataSourceName": "TokenMATIC",
+      "isUSDCe": false,
       "token": "MATIC",
       "tokenName": "Matic",
       "tokenDecimals": 18,
@@ -29,6 +32,7 @@
     },
     {
       "dataSourceName": "TokenDAI",
+      "isUSDCe": false,
       "token": "DAI",
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
@@ -37,6 +41,7 @@
     },
     {
       "dataSourceName": "Token",
+      "isUSDCe": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -45,6 +50,7 @@
     },
     {
       "dataSourceName": "TokenHOP",
+      "isUSDCe": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
@@ -86,8 +92,8 @@
   ],
   "bridges": [
     {
-      "dataSourceName": "HopL2BridgeUSDC",
-      "token": "USDC",
+      "dataSourceName": "HopL2BridgeUSDC.e",
+      "token": "USDC.e",
       "address": "0x25D8039bB044dC227f741a9e381CA4cEAE2E6aE8",
       "startBlock": 16617211
     },
@@ -121,5 +127,6 @@
       "address": "0x6F03052743CD99ce1b29265E377e320CD24Eb632",
       "startBlock": 24309494
     }
-  ]
+  ],
+  "cctpBridges": []
 }

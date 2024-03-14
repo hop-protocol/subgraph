@@ -12,6 +12,8 @@ npx mustache config/$NETWORK.json buildfiles.template.sh > buildfiles.sh
 chmod +x buildfiles.sh
 
 echo 'generated buildfiles.sh'
+echo 'running buildfiles.sh'
 
 ./buildfiles.sh
 
+echo 'done running buildfiles.sh'

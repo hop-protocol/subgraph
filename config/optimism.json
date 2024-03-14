@@ -5,14 +5,25 @@
   "tokens": [
     {
       "dataSourceName": "TokenUSDC",
+      "isUSDCe": false,
       "token": "USDC",
       "tokenName": "USD Coin",
+      "tokenDecimals": 6,
+      "address": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+      "startBlock": 0
+    },
+    {
+      "dataSourceName": "TokenUSDC.e",
+      "isUSDCe": true,
+      "token": "USDC.e",
+      "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
       "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
       "startBlock": 1
     },
     {
       "dataSourceName": "TokenUSDT",
+      "isUSDCe": false,
       "token": "USDT",
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
@@ -21,6 +32,7 @@
     },
     {
       "dataSourceName": "TokenDAI",
+      "isUSDCe": false,
       "token": "DAI",
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
@@ -29,6 +41,7 @@
     },
     {
       "dataSourceName": "Token",
+      "isUSDCe": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -37,6 +50,7 @@
     },
     {
       "dataSourceName": "TokenHOP",
+      "isUSDCe": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
@@ -45,6 +59,7 @@
     },
     {
       "dataSourceName": "TokenSNX",
+      "isUSDCe": false,
       "token": "SNX",
       "tokenName": "Synthetix Network Token",
       "tokenDecimals": 18,
@@ -53,6 +68,7 @@
     },
     {
       "dataSourceName": "TokensUSD",
+      "isUSDCe": false,
       "token": "sUSD",
       "tokenName": "Synth sUSD",
       "tokenDecimals": 18,
@@ -61,6 +77,7 @@
     },
     {
       "dataSourceName": "TokenrETH",
+      "isUSDCe": false,
       "token": "rETH",
       "tokenName": "Rocket Pool ETH",
       "tokenDecimals": 18,
@@ -160,6 +177,15 @@
       "token": "rETH",
       "address": "0xA0075E8cE43dcB9970cB7709b9526c1232cc39c2",
       "startBlock": 94877802
+    }
+  ],
+  "cctpBridges": [
+    {
+      "dataSourceName": "HopL2CctpBridgeUSDC",
+      "token": "USDC",
+      "address": "0xa81D244A1814468C734E5b4101F7b9c0c577a8fC",
+      "cctpAddress": "0x297f4585CD8d37226A536741e05af924fBE3EbAd",
+      "startBlock": 1
     }
   ]
 }

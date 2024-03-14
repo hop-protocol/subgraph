@@ -786,6 +786,29 @@ type Token @entity {
   symbol: String!
 }
 
+type CCTPTransferSent @entity {
+  "Entity ID"
+  id: ID!
 
+  "CTTP Nonce"
+  cctpNonce: BigInt!
 
+  "Chain ID"
+  chainId: BigInt!
 
+  "Recipient"
+  recipient: String!
+
+  "Amount"
+  amount: BigInt!
+
+  "Bonder fee"
+  bonderFee: BigInt!
+
+  "Block entity"
+  block: Block
+  "Transaction entity"
+  transaction: Transaction
+  "Bridge token asset entity"
+  tokenEntity: Token
+}

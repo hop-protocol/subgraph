@@ -5,6 +5,7 @@
   "tokens": [
     {
       "dataSourceName": "Token",
+      "isUSDCe": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -13,6 +14,7 @@
     },
     {
       "dataSourceName": "TokenHOP",
+      "isUSDCe": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
@@ -41,5 +43,6 @@
       "address": "0x9ec9551d4A1a1593b0ee8124D98590CC71b3B09D",
       "startBlock": 9014754
     }
-  ]
+  ],
+  "cctpBridges": []
 }

@@ -214,4 +214,27 @@ dataSources:
           receipt: true
       file: ./src/L2_mapping_{{network}}_{{token}}.ts
 {{/bridges}}
+{{#cctpBridges}}
+  - kind: ethereum/contract
+    name: {{dataSourceName}}
+    network: {{network}}
+    source:
+      address: '{{cctpAddress}}'
+      abi: L2_HopCCTPImplementation
+      startBlock: {{startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CCTPTransferSent
+      abis:
+        - name: L2_HopCCTPImplementation
+          file: ./abis/L2_HopCCTPImplementation.json
+      eventHandlers:
+        - event: CCTPTransferSent(indexed uint64,indexed uint256,indexed address,uint256,uint256)
+          handler: handleCCTPTransferSent
+          receipt: true
+      file: ./src/L2_HopCCTPImplementation_mapping_{{network}}_{{token}}.ts
+{{/cctpBridges}}
 {{/isMainnet}}

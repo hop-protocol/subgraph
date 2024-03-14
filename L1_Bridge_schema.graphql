@@ -638,3 +638,23 @@ type Token @entity {
   "Token symbol"
   symbol: String!
 }
+
+type CCTPTransferSent @entity {
+  "Entity ID"
+  id: ID!
+
+  "CTTP Nonce"
+  cctpNonce: BigInt!
+
+  "Chain ID"
+  chainId: BigInt!
+
+  "Recipient"
+  recipient: String!
+
+  "Amount"
+  amount: BigInt!
+
+  "Bonder fee"
+  bonderFee: BigInt!
+}
