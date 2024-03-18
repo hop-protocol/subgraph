@@ -143,6 +143,7 @@
       "token": "USDC",
       "address": "0x25D8039bB044dC227f741a9e381CA4cEAE2E6aE8",
       "cctpAddress": "0x8796860ca1677Bf5d54cE5A348Fe4b779a8212f3",
+      "cctpMessageTransmitter": "0xF3be9355363857F3e001be68856A2f96b4C39Ba9",
       "startBlock": 15810014
     }
   ]

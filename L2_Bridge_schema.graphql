@@ -812,3 +812,30 @@ type CCTPTransferSent @entity {
   "Bridge token asset entity"
   tokenEntity: Token
 }
+
+type CCTPMessageReceived @entity {
+  "Entity ID"
+  id: ID!
+
+  "Address"
+  address: String!
+
+  "Source Domain"
+  sourceDomain: BigInt!
+
+  "CCTP Nonce"
+  nonce: BigInt!
+
+  "Sender"
+  sender: String!
+
+  "Message Body"
+  messageBody: Bytes!
+
+  "Block entity"
+  block: Block
+  "Transaction entity"
+  transaction: Transaction
+  "Bridge token asset entity"
+  tokenEntity: Token
+}

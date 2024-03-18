@@ -103,6 +103,7 @@ function createBridgesConfig (net, chain) {
   if (usdcIndex !== -1 && usdcEIndex !== -1) {
     json[usdcIndex].address = json[usdcEIndex].address
     json[usdcIndex].cctpAddress = json[usdcEIndex].cctpAddress
+    json[usdcIndex].cctpMessageTransmitter = json[usdcEIndex].cctpMessageTransmitter
     json[usdcIndex].startBlock = json[usdcEIndex].startBlock
 
     json.splice(usdcEIndex, 1) // Remove the USDC.e object
@@ -199,15 +200,18 @@ function createBridgeConfig (net, chain, tokenSymbol) {
   const token = tokenSymbol
   let address = ''
   let cctpAddress = ''
+  let cctpMessageTransmitter = ''
   if (chain === 'ethereum') {
     address = networkConfig[net].bridges[tokenSymbol][chain].l1Bridge
     if (networkConfig[net].bridges[tokenSymbol][chain].cctpL1Bridge) {
       cctpAddress = networkConfig[net].bridges[tokenSymbol][chain].cctpL1Bridge
+      cctpMessageTransmitter = networkConfig[net].bridges[tokenSymbol][chain].cctpMessageTransmitter
     }
   } else {
     address = networkConfig[net].bridges[tokenSymbol][chain].l2Bridge
     if (networkConfig[net].bridges[tokenSymbol][chain].cctpL2Bridge) {
       cctpAddress = networkConfig[net].bridges[tokenSymbol][chain].cctpL2Bridge
+      cctpMessageTransmitter = networkConfig[net].bridges[tokenSymbol][chain].cctpMessageTransmitter
     }
   }
 
@@ -231,6 +235,7 @@ function createBridgeConfig (net, chain, tokenSymbol) {
     token,
     address,
     cctpAddress,
+    cctpMessageTransmitter,
     startBlock
   }
 }
@@ -275,7 +280,7 @@ function addCctpBridges(json) {
     if (bridge.cctpAddress !== "") {
       cctpBridges.push({ ...bridge })
     }
-    const { cctpAddress, ...rest } = bridge
+    const { cctpAddress, cctpMessageTransmitter, ...rest } = bridge
     return rest
   });
 

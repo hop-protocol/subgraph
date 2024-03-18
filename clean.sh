@@ -27,3 +27,5 @@ rm -f src/L2_mapping_*_*.ts
 rm -f src/L2_Amm_mapping_*_*.ts
 rm -f src/L2_token_mapping_*_*.ts
 rm -f src/token_mapping_*_*.ts
+rm -f src/L2_HopCCTPImplementation_mapping_*_*.ts
+rm -f src/L2_CCTPMessageTransmitter_mapping_*_*.ts
