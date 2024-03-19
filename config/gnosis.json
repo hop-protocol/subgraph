@@ -6,6 +6,7 @@
     {
       "dataSourceName": "TokenUSDC.e",
       "isUSDCe": true,
+      "isUSDC": false,
       "token": "USDC.e",
       "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
@@ -15,6 +16,7 @@
     {
       "dataSourceName": "TokenUSDT",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "USDT",
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
@@ -24,6 +26,7 @@
     {
       "dataSourceName": "TokenMATIC",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "MATIC",
       "tokenName": "Matic",
       "tokenDecimals": 18,
@@ -33,6 +36,7 @@
     {
       "dataSourceName": "TokenDAI",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "DAI",
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
@@ -42,6 +46,7 @@
     {
       "dataSourceName": "Token",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -51,6 +56,7 @@
     {
       "dataSourceName": "TokenHOP",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,

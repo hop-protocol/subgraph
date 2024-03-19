@@ -22,9 +22,20 @@ npx mustache $TEMP_CONFIG src/CCTPMessageTransmitter_mapping.template.ts > src/C
 npx mustache $TEMP_CONFIG src/L2_token_mapping.template.ts > src/L2_token_mapping_${NETWORK}_${TOKEN}.ts
 npx mustache $TEMP_CONFIG src/L2_mapping.template.ts > src/L2_mapping_${NETWORK}_${TOKEN}.ts
 npx mustache $TEMP_CONFIG src/L2_Amm_mapping.template.ts > src/L2_Amm_mapping_${NETWORK}_${TOKEN}.ts
+npx mustache $TEMP_CONFIG src/L2_HopCCTPImplementation_mapping.template.ts > src/L2_HopCCTPImplementation_mapping_${NETWORK}_${TOKEN}.ts
 npx mustache $TEMP_CONFIG src/CCTPMessageTransmitter_mapping.template.ts > src/CCTPMessageTransmitter_mapping_${NETWORK}_${TOKEN}.ts
 {{/isMainnet}}
 {{/isUSDCe}}
+
+{{#isMainnet}}
+{{#isUSDCe}}
+TOKEN="{{token}}"
+TEMP_CONFIG="/tmp/config_${NETWORK}_${TOKEN}.json"
+cat config/$NETWORK.json | jq "{ network: .network, isMainnet: .isMainnet, subgraphName: .subgraphName, token: \"$TOKEN\", address: (.tokens[] | select(.token == \"$TOKEN\")).address, tokenName: (.tokens[] | select(.token == \"$TOKEN\")).tokenName, tokenDecimals: (.tokens[] | select(.token == \"$TOKEN\")).tokenDecimals, ammAddress: (try ((.amms[] | select(.token == \"$TOKEN\")).address) // \"\"), bridgeAddress: (try ((.bridges[] | select(.token == \"$TOKEN\")).address) // \"\"), cctpBridgeAddress: (try ((.bridges[] | select(.token == \"$TOKEN\")).cctpAddress) // \"\"), cctpMessageTransmitter: (try ((.bridges[] | select(.token == \"$TOKEN\")).cctpMessageTransmitter) // \"\") }" > $TEMP_CONFIG
+npx mustache $TEMP_CONFIG src/L1_token_mapping.template.ts > src/L1_token_mapping_${NETWORK}_USDC.ts
+{{/isUSDCe}}
+{{/isMainnet}}
+
 {{/tokens}}
 
 npm run codegen

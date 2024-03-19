@@ -4,8 +4,19 @@
   "subgraphName": "hop-arbitrum",
   "tokens": [
     {
+      "dataSourceName": "TokenUSDC",
+      "isUSDCe": false,
+      "isUSDC": true,
+      "token": "USDC",
+      "tokenName": "USD Coin",
+      "tokenDecimals": 6,
+      "address": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+      "startBlock": 0
+    },
+    {
       "dataSourceName": "TokenUSDC.e",
       "isUSDCe": true,
+      "isUSDC": false,
       "token": "USDC.e",
       "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
@@ -15,6 +26,7 @@
     {
       "dataSourceName": "TokenUSDT",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "USDT",
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
@@ -24,6 +36,7 @@
     {
       "dataSourceName": "TokenDAI",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "DAI",
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
@@ -33,6 +46,7 @@
     {
       "dataSourceName": "Token",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -42,6 +56,7 @@
     {
       "dataSourceName": "TokenHOP",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
@@ -51,6 +66,7 @@
     {
       "dataSourceName": "TokenrETH",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "rETH",
       "tokenName": "Rocket Pool ETH",
       "tokenDecimals": 18,
@@ -60,6 +76,7 @@
     {
       "dataSourceName": "TokenMAGIC",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "MAGIC",
       "tokenName": "MAGIC",
       "tokenDecimals": 18,
@@ -107,8 +124,8 @@
   ],
   "bridges": [
     {
-      "dataSourceName": "HopL2BridgeUSDC.e",
-      "token": "USDC.e",
+      "dataSourceName": "HopL2BridgeUSDC",
+      "token": "USDC",
       "address": "0x0e0E3d2C5c292161999474247956EF542caBF8dd",
       "startBlock": 440027
     },
@@ -149,5 +166,14 @@
       "startBlock": 99536351
     }
   ],
-  "cctpBridges": []
+  "cctpBridges": [
+    {
+      "dataSourceName": "HopL2CctpBridgeUSDC",
+      "token": "USDC",
+      "address": "0x0e0E3d2C5c292161999474247956EF542caBF8dd",
+      "cctpAddress": "0x6504BFcaB789c35325cA4329f1f41FaC340bf982",
+      "cctpMessageTransmitter": "0xC30362313FBBA5cf9163F0bb16a0e01f01A896ca",
+      "startBlock": 440027
+    }
+  ]
 }

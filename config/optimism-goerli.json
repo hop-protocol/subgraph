@@ -6,6 +6,7 @@
     {
       "dataSourceName": "Token",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,

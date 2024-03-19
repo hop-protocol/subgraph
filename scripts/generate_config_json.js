@@ -177,6 +177,7 @@ function createTokenConfig (net, chain, tokenSymbol) {
   return {
     dataSourceName,
     isUSDCe: tokenSymbol === 'USDC.e',
+    isUSDC: tokenSymbol === 'USDC',
     token,
     tokenName,
     tokenDecimals,

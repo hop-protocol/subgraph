@@ -6,6 +6,7 @@
     {
       "dataSourceName": "TokenUSDC",
       "isUSDCe": false,
+      "isUSDC": true,
       "token": "USDC",
       "tokenName": "USD Coin",
       "tokenDecimals": 6,
@@ -15,6 +16,7 @@
     {
       "dataSourceName": "TokenUSDC.e",
       "isUSDCe": true,
+      "isUSDC": false,
       "token": "USDC.e",
       "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
@@ -24,6 +26,7 @@
     {
       "dataSourceName": "TokenUSDT",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "USDT",
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
@@ -33,6 +36,7 @@
     {
       "dataSourceName": "TokenDAI",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "DAI",
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
@@ -42,6 +46,7 @@
     {
       "dataSourceName": "Token",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -51,6 +56,7 @@
     {
       "dataSourceName": "TokenHOP",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
@@ -60,6 +66,7 @@
     {
       "dataSourceName": "TokenSNX",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "SNX",
       "tokenName": "Synthetix Network Token",
       "tokenDecimals": 18,
@@ -69,6 +76,7 @@
     {
       "dataSourceName": "TokensUSD",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "sUSD",
       "tokenName": "Synth sUSD",
       "tokenDecimals": 18,
@@ -78,6 +86,7 @@
     {
       "dataSourceName": "TokenrETH",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "rETH",
       "tokenName": "Rocket Pool ETH",
       "tokenDecimals": 18,
@@ -184,7 +193,7 @@
       "dataSourceName": "HopL2CctpBridgeUSDC",
       "token": "USDC",
       "address": "0xa81D244A1814468C734E5b4101F7b9c0c577a8fC",
-      "cctpAddress": "0x297f4585CD8d37226A536741e05af924fBE3EbAd",
+      "cctpAddress": "0x469147af8Bde580232BE9DC84Bb4EC84d348De24",
       "cctpMessageTransmitter": "0x4d41f22c5a0e5c74090899e5a8fb597a8842b3e8",
       "startBlock": 1
     }

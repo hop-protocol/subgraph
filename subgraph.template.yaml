@@ -6,6 +6,7 @@ schema:
   file: ./L1_Bridge_schema.graphql
 dataSources:
 {{#tokens}}
+{{^isUSDCe}}
   - kind: ethereum/contract
     name: {{dataSourceName}}
     network: {{network}}
@@ -27,6 +28,7 @@ dataSources:
           handler: handleTransfer
           receipt: true
       file: ./src/L1_token_mapping_{{network}}_{{token}}.ts
+{{/isUSDCe}}
 {{/tokens}}
 {{#bridges}}
   - kind: ethereum/contract
@@ -124,7 +126,7 @@ dataSources:
         - event: CCTPTransferSent(indexed uint64,indexed uint256,indexed address,uint256,uint256)
           handler: handleCCTPTransferSent
           receipt: true
-      file: ./src/L2_HopCCTPImplementation_mapping_{{network}}_{{token}}.ts
+      file: ./src/L1_HopCCTPImplementation_mapping_{{network}}_{{token}}.ts
   - kind: ethereum/contract
     name: CCTPMessageTransmitter{{token}}
     network: {{network}}

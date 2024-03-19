@@ -6,6 +6,7 @@
     {
       "dataSourceName": "Token",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
@@ -15,6 +16,7 @@
     {
       "dataSourceName": "TokenHOP",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
@@ -24,6 +26,7 @@
     {
       "dataSourceName": "TokenMAGIC",
       "isUSDCe": false,
+      "isUSDC": false,
       "token": "MAGIC",
       "tokenName": "MAGIC",
       "tokenDecimals": 18,
