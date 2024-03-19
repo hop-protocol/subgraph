@@ -5,23 +5,25 @@
   "tokens": [
     {
       "dataSourceName": "Token",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0x4F9A0e7FD2Bf6067db6994CF12E4495Df938E6e9",
-      "startBlock": 9014486
+      "startBlock": 9014486,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenHOP",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
       "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
-      "startBlock": 9014754
+      "startBlock": 9014754,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     }
   ],
   "amms": [

@@ -9,7 +9,7 @@ npx mustache config/$NETWORK.json subgraph.template.yaml > subgraph.yaml
 {{^isUSDCe}}
 TOKEN="{{token}}"
 TEMP_CONFIG="/tmp/config_${NETWORK}_${TOKEN}.json"
-cat config/$NETWORK.json | jq "{ network: .network, isMainnet: .isMainnet, subgraphName: .subgraphName, token: \"$TOKEN\", address: (.tokens[] | select(.token == \"$TOKEN\")).address, tokenName: (.tokens[] | select(.token == \"$TOKEN\")).tokenName, tokenDecimals: (.tokens[] | select(.token == \"$TOKEN\")).tokenDecimals, ammAddress: (try ((.amms[] | select(.token == \"$TOKEN\")).address) // \"\"), bridgeAddress: (.bridges[] | select(.token == \"$TOKEN\")).address, cctpBridgeAddress: (.bridges[] | select(.token == \"$TOKEN\")).cctpAddress, cctpMessageTransmitter: (.bridges[] | select(.token == \"$TOKEN\")).cctpMessageTransmitter }" > $TEMP_CONFIG
+cat config/$NETWORK.json | jq "{ network: .network, isMainnet: .isMainnet, subgraphName: .subgraphName, token: \"$TOKEN\", address: (.tokens[] | select(.token == \"$TOKEN\")).address, tokenName: (.tokens[] | select(.token == \"$TOKEN\")).tokenName, tokenDecimals: (.tokens[] | select(.token == \"$TOKEN\")).tokenDecimals, ammAddress: (try ((.amms[] | select(.token == \"$TOKEN\")).address) // \"\"), bridgeAddress: (try ((.bridges[] | select(.token == \"$TOKEN\")).address) // \"\"), cctpBridgeAddress: (try ((.bridges[] | select(.token == \"$TOKEN\")).cctpAddress) // \"\"), cctpMessageTransmitter: (try ((.bridges[] | select(.token == \"$TOKEN\")).cctpMessageTransmitter) // \"\") }" > $TEMP_CONFIG
 
 npx mustache $TEMP_CONFIG config/mapping_config.template.json > config/${NETWORK}_${TOKEN}.json
 {{#isMainnet}}
@@ -28,6 +28,8 @@ npx mustache $TEMP_CONFIG src/CCTPMessageTransmitter_mapping.template.ts > src/C
 {{/isUSDCe}}
 
 {{#isMainnet}}
+
+# make "USDC.e" be "USDC" in subgraphs
 {{#isUSDCe}}
 TOKEN="{{token}}"
 TEMP_CONFIG="/tmp/config_${NETWORK}_${TOKEN}.json"

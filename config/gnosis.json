@@ -5,63 +5,80 @@
   "tokens": [
     {
       "dataSourceName": "TokenUSDC.e",
-      "isUSDCe": true,
-      "isUSDC": false,
       "token": "USDC.e",
       "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
       "address": "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
-      "startBlock": 16617211
+      "startBlock": 16617211,
+      "isUSDCe": true,
+      "isUSDC": false,
+      "isGnosis": true
     },
     {
       "dataSourceName": "TokenUSDT",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "USDT",
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
       "address": "0x4ECaBa5870353805a9F068101A40E0f32ed605C6",
-      "startBlock": 17155195
+      "startBlock": 17155195,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": true
     },
     {
       "dataSourceName": "TokenMATIC",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "MATIC",
       "tokenName": "Matic",
       "tokenDecimals": 18,
       "address": "0x7122d7661c4564b7C6Cd4878B06766489a6028A2",
-      "startBlock": 17444924
+      "startBlock": 17444924,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": true
     },
     {
       "dataSourceName": "TokenDAI",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "DAI",
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
       "address": "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d",
-      "startBlock": 18093617
+      "startBlock": 18093617,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": true
     },
     {
       "dataSourceName": "Token",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1",
-      "startBlock": 18359713
+      "startBlock": 18359713,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": true
     },
     {
       "dataSourceName": "TokenHOP",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
       "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
-      "startBlock": 24309494
+      "startBlock": 24309494,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": true
+    },
+    {
+      "dataSourceName": "TokenUSDC",
+      "token": "USDC",
+      "tokenName": "USD Coin",
+      "tokenDecimals": 6,
+      "address": "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+      "startBlock": 16617211,
+      "isUSDCe": false,
+      "isUSDC": true,
+      "isGnosis": true
     }
   ],
   "amms": [
@@ -98,8 +115,8 @@
   ],
   "bridges": [
     {
-      "dataSourceName": "HopL2BridgeUSDC.e",
-      "token": "USDC.e",
+      "dataSourceName": "HopL2BridgeUSDC",
+      "token": "USDC",
       "address": "0x25D8039bB044dC227f741a9e381CA4cEAE2E6aE8",
       "startBlock": 16617211
     },

@@ -5,33 +5,36 @@
   "tokens": [
     {
       "dataSourceName": "Token",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0x722E8BdD2ce80A4422E880164f2079488e115365",
-      "startBlock": 1724464
+      "startBlock": 1724464,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenHOP",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
       "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
-      "startBlock": 15937602
+      "startBlock": 15937602,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenMAGIC",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "MAGIC",
       "tokenName": "MAGIC",
       "tokenDecimals": 18,
       "address": "0xe8936ac97A85d708d5312D52C30c18d4533b8A9c",
-      "startBlock": 11559944
+      "startBlock": 11559944,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     }
   ],
   "amms": [

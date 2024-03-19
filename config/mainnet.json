@@ -5,113 +5,124 @@
   "tokens": [
     {
       "dataSourceName": "TokenUSDC",
-      "isUSDCe": false,
-      "isUSDC": true,
       "token": "USDC",
       "tokenName": "USD Coin",
       "tokenDecimals": 6,
       "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-      "startBlock": 0
+      "startBlock": 0,
+      "isUSDCe": false,
+      "isUSDC": true,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenUSDC.e",
-      "isUSDCe": true,
-      "isUSDC": false,
       "token": "USDC.e",
       "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
       "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-      "startBlock": 12650032
+      "startBlock": 12650032,
+      "isUSDCe": true,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenUSDT",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "USDT",
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
       "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-      "startBlock": 12860139
+      "startBlock": 12860139,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenMATIC",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "MATIC",
       "tokenName": "Matic",
       "tokenDecimals": 18,
       "address": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
-      "startBlock": 12969385
+      "startBlock": 12969385,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenDAI",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "DAI",
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
       "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-      "startBlock": 13226217
+      "startBlock": 13226217,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "Token",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0x0000000000000000000000000000000000000000",
-      "startBlock": 13331564
+      "startBlock": 13331564,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenHOP",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
       "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
-      "startBlock": 15592825
+      "startBlock": 15592825,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenSNX",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "SNX",
       "tokenName": "Synthetix Network Token",
       "tokenDecimals": 18,
       "address": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
-      "startBlock": 15634323
+      "startBlock": 15634323,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokensUSD",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "sUSD",
       "tokenName": "Synth sUSD",
       "tokenDecimals": 18,
       "address": "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51",
-      "startBlock": 15678491
+      "startBlock": 15678491,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenrETH",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "rETH",
       "tokenName": "Rocket Pool ETH",
       "tokenDecimals": 18,
       "address": "0xae78736Cd615f374D3085123A210448E74Fc6393",
-      "startBlock": 17141336
+      "startBlock": 17141336,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenMAGIC",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "MAGIC",
       "tokenName": "MAGIC",
       "tokenDecimals": 18,
       "address": "0xB0c7a3Ba49C7a6EaBa6cD4a96C55a1391070Ac9A",
-      "startBlock": 17445930
+      "startBlock": 17445930,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     }
   ],
   "bridges": [

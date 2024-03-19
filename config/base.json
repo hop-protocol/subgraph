@@ -5,43 +5,47 @@
   "tokens": [
     {
       "dataSourceName": "TokenUSDC",
-      "isUSDCe": false,
-      "isUSDC": true,
       "token": "USDC",
       "tokenName": "USD Coin",
       "tokenDecimals": 6,
       "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-      "startBlock": 0
+      "startBlock": 0,
+      "isUSDCe": false,
+      "isUSDC": true,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenUSDC.e",
-      "isUSDCe": true,
-      "isUSDC": false,
       "token": "USDC.e",
       "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
       "address": "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
-      "startBlock": 2077758
+      "startBlock": 2077758,
+      "isUSDCe": true,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "Token",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0x4200000000000000000000000000000000000006",
-      "startBlock": 1397238
+      "startBlock": 1397238,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenHOP",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
       "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
-      "startBlock": 1859764
+      "startBlock": 1859764,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     }
   ],
   "amms": [

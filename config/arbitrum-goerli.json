@@ -5,13 +5,14 @@
   "tokens": [
     {
       "dataSourceName": "Token",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0xcb5ddfb8d0038247dc0beeecaa7f3457befcb77c",
-      "startBlock": 96936
+      "startBlock": 96936,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     }
   ],
   "amms": [

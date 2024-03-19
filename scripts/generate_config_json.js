@@ -44,6 +44,21 @@ function createL2Config (net, chain) {
   const amms = createAmmsConfig(net, chain)
   const bridges = createBridgesConfig(net, chain)
 
+  const isGnosis = chain === 'gnosis'
+  if (isGnosis) {
+    let token = { ...tokens.find(token => token.token === 'USDC.e') }
+    token.token = 'USDC'
+    token.dataSourceName = 'TokenUSDC'
+    token.tokenName = 'USD Coin'
+    token.isUSDCe = false
+    token.isUSDC = true
+    tokens.push(token)
+
+    const bridge = bridges.find(item => item.token === 'USDC.e')
+    bridge.token = 'USDC'
+    bridge.dataSourceName = 'HopL2BridgeUSDC'
+  }
+
   return {
     network,
     isMainnet,
@@ -174,15 +189,20 @@ function createTokenConfig (net, chain, tokenSymbol) {
     throw new Error(`address not found for ${tokenSymbol} on chain ${chain}`)
   }
 
+  const isUSDCe =  tokenSymbol === 'USDC.e'
+  const isUSDC = tokenSymbol === 'USDC'
+  const isGnosis = chain === 'gnosis'
+
   return {
     dataSourceName,
-    isUSDCe: tokenSymbol === 'USDC.e',
-    isUSDC: tokenSymbol === 'USDC',
     token,
     tokenName,
     tokenDecimals,
     address,
-    startBlock
+    startBlock,
+    isUSDCe,
+    isUSDC,
+    isGnosis
   }
 }
 

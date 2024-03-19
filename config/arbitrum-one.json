@@ -5,83 +5,91 @@
   "tokens": [
     {
       "dataSourceName": "TokenUSDC",
-      "isUSDCe": false,
-      "isUSDC": true,
       "token": "USDC",
       "tokenName": "USD Coin",
       "tokenDecimals": 6,
       "address": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
-      "startBlock": 0
+      "startBlock": 0,
+      "isUSDCe": false,
+      "isUSDC": true,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenUSDC.e",
-      "isUSDCe": true,
-      "isUSDC": false,
       "token": "USDC.e",
       "tokenName": "USD Coin Bridged",
       "tokenDecimals": 6,
       "address": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
-      "startBlock": 440027
+      "startBlock": 440027,
+      "isUSDCe": true,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenUSDT",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "USDT",
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
       "address": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
-      "startBlock": 441562
+      "startBlock": 441562,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenDAI",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "DAI",
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
       "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
-      "startBlock": 945326
+      "startBlock": 945326,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "Token",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "ETH",
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
-      "startBlock": 2135598
+      "startBlock": 2135598,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenHOP",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "HOP",
       "tokenName": "Hop",
       "tokenDecimals": 18,
       "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
-      "startBlock": 26088165
+      "startBlock": 26088165,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenrETH",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "rETH",
       "tokenName": "Rocket Pool ETH",
       "tokenDecimals": 18,
       "address": "0xEC70Dcb4A1EFa46b8F2D97C310C9c4790ba5ffA8",
-      "startBlock": 85020329
+      "startBlock": 85020329,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenMAGIC",
-      "isUSDCe": false,
-      "isUSDC": false,
       "token": "MAGIC",
       "tokenName": "MAGIC",
       "tokenDecimals": 18,
       "address": "0x539bdE0d7Dbd336b79148AA742883198BBF60342",
-      "startBlock": 99536351
+      "startBlock": 99536351,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     }
   ],
   "amms": [
