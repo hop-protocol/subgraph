@@ -6,5 +6,6 @@
   "tokenDecimals": "{{tokenDecimals}}",
   "tokenName": "{{tokenName}}",
   "ammAddress": "{{ammAddress}}",
-  "bridgeAddress": "{{bridgeAddress}}"
+  "bridgeAddress": "{{bridgeAddress}}",
+  "cctpBridgeAddress": "{{cctpBridgeAddress}}"
 }

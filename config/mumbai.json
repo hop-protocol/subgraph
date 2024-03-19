@@ -4,5 +4,6 @@
   "subgraphName": "hop-mumbai",
   "tokens": [],
   "amms": [],
-  "bridges": []
+  "bridges": [],
+  "cctpBridges": []
 }

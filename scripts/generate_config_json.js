@@ -10,10 +10,14 @@ const networkConfig = {
 }
 
 function createConfig (net, chain) {
+  let config
   if (chain === 'ethereum') {
-    return createL1Config(net, chain)
+    config = createL1Config(net, chain)
+  } else {
+    config = createL2Config(net, chain)
   }
-  return createL2Config(net, chain)
+
+  return addCctpBridges(config)
 }
 
 function createL1Config (net, chain) {
@@ -39,6 +43,21 @@ function createL2Config (net, chain) {
   const tokens = createTokensConfig(net, chain)
   const amms = createAmmsConfig(net, chain)
   const bridges = createBridgesConfig(net, chain)
+
+  const isGnosis = chain === 'gnosis'
+  if (isGnosis) {
+    let token = { ...tokens.find(token => token.token === 'USDC.e') }
+    token.token = 'USDC'
+    token.dataSourceName = 'TokenUSDC'
+    token.tokenName = 'USD Coin'
+    token.isUSDCe = false
+    token.isUSDC = true
+    tokens.push(token)
+
+    const bridge = bridges.find(item => item.token === 'USDC.e')
+    bridge.token = 'USDC'
+    bridge.dataSourceName = 'HopL2BridgeUSDC'
+  }
 
   return {
     network,
@@ -93,6 +112,18 @@ function createBridgesConfig (net, chain) {
     }
   }
 
+  const usdcIndex = json.findIndex(bridge => bridge.token === 'USDC')
+  const usdcEIndex = json.findIndex(bridge => bridge.token === 'USDC.e')
+
+  if (usdcIndex !== -1 && usdcEIndex !== -1) {
+    json[usdcIndex].address = json[usdcEIndex].address
+    json[usdcIndex].cctpAddress = json[usdcEIndex].cctpAddress
+    json[usdcIndex].cctpMessageTransmitter = json[usdcEIndex].cctpMessageTransmitter
+    json[usdcIndex].startBlock = json[usdcEIndex].startBlock
+
+    json.splice(usdcEIndex, 1) // Remove the USDC.e object
+  }
+
   return json
 }
 
@@ -107,7 +138,7 @@ function createAmmsConfig (net, chain) {
   const bridges = conf.bridges
   const json = []
   for (const tokenSymbol in bridges) {
-    if (tokenSymbol === 'HOP') {
+    if (tokenSymbol === 'HOP' || tokenSymbol === 'USDC') {
       continue
     }
     const bridge = bridges[tokenSymbol]
@@ -155,8 +186,12 @@ function createTokenConfig (net, chain, tokenSymbol) {
   }
 
   if (!address) {
-    throw new Error(`address not found for ${tokenSymbol}`)
+    throw new Error(`address not found for ${tokenSymbol} on chain ${chain}`)
   }
+
+  const isUSDCe =  tokenSymbol === 'USDC.e'
+  const isUSDC = tokenSymbol === 'USDC'
+  const isGnosis = chain === 'gnosis'
 
   return {
     dataSourceName,
@@ -164,7 +199,10 @@ function createTokenConfig (net, chain, tokenSymbol) {
     tokenName,
     tokenDecimals,
     address,
-    startBlock
+    startBlock,
+    isUSDCe,
+    isUSDC,
+    isGnosis
   }
 }
 
@@ -182,10 +220,20 @@ function createBridgeConfig (net, chain, tokenSymbol) {
 
   const token = tokenSymbol
   let address = ''
+  let cctpAddress = ''
+  let cctpMessageTransmitter = ''
   if (chain === 'ethereum') {
     address = networkConfig[net].bridges[tokenSymbol][chain].l1Bridge
+    if (networkConfig[net].bridges[tokenSymbol][chain].cctpL1Bridge) {
+      cctpAddress = networkConfig[net].bridges[tokenSymbol][chain].cctpL1Bridge
+      cctpMessageTransmitter = networkConfig[net].bridges[tokenSymbol][chain].cctpMessageTransmitter
+    }
   } else {
     address = networkConfig[net].bridges[tokenSymbol][chain].l2Bridge
+    if (networkConfig[net].bridges[tokenSymbol][chain].cctpL2Bridge) {
+      cctpAddress = networkConfig[net].bridges[tokenSymbol][chain].cctpL2Bridge
+      cctpMessageTransmitter = networkConfig[net].bridges[tokenSymbol][chain].cctpMessageTransmitter
+    }
   }
 
   const startBlock = networkConfig[net].bridges[tokenSymbol][chain].bridgeDeployedBlockNumber || 0
@@ -198,14 +246,17 @@ function createBridgeConfig (net, chain, tokenSymbol) {
     throw new Error(`token not found for ${tokenSymbol}`)
   }
 
-  if (!address) {
-    throw new Error(`address not found for ${tokenSymbol}`)
+  if (!(address || cctpAddress)) {
+    console.log(networkConfig[net].bridges[tokenSymbol][chain])
+    throw new Error(`address not found for ${tokenSymbol} on chain ${chain}`)
   }
 
   return {
     dataSourceName,
     token,
     address,
+    cctpAddress,
+    cctpMessageTransmitter,
     startBlock
   }
 }
@@ -213,11 +264,15 @@ function createBridgeConfig (net, chain, tokenSymbol) {
 function createAmmConfig (net, chain, tokenSymbol) {
   let dataSourceName = 'HopL2Amm'
 
-  if (tokenSymbol !== 'ETH') {
-    dataSourceName = `${dataSourceName}${tokenSymbol}`
+  let _token = tokenSymbol
+  if (_token === 'USDC.e') {
+    _token = 'USDC'
   }
 
-  const token = tokenSymbol
+  if (_token !== 'ETH') {
+    dataSourceName = `${dataSourceName}${_token}`
+  }
+
   const address = networkConfig[net].bridges[tokenSymbol][chain].l2SaddleSwap
   const startBlock = networkConfig[net].bridges[tokenSymbol][chain].bridgeDeployedBlockNumber || 0
 
@@ -225,20 +280,38 @@ function createAmmConfig (net, chain, tokenSymbol) {
     throw new Error(`dataSourceName not found for ${tokenSymbol}`)
   }
 
-  if (!token) {
-    throw new Error(`token not found for ${tokenSymbol}`)
-  }
-
   if (!address) {
-    throw new Error(`address not found for ${tokenSymbol}`)
+    throw new Error(`amm address not found for ${tokenSymbol} on ${chain} chain`)
   }
 
   return {
     dataSourceName,
-    token,
+    token: _token,
     address,
     startBlock
   }
+}
+
+function addCctpBridges(json) {
+  const cctpBridges = []
+  const originalBridges = json.bridges
+
+  // Modify original array to remove "cctpAddress" field and copy items with non-empty "cctpAddress" to the new array
+  const bridges = originalBridges.map(bridge => {
+    if (bridge.cctpAddress !== "") {
+      cctpBridges.push({ ...bridge })
+    }
+    const { cctpAddress, cctpMessageTransmitter, ...rest } = bridge
+    return rest
+  });
+
+  json.bridges = bridges
+  json.cctpBridges = cctpBridges.map(bridge => {
+    bridge.dataSourceName = bridge.dataSourceName.replace('Bridge', 'CctpBridge')
+    return bridge
+  })
+
+  return json
 }
 
 async function main () {

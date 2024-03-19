@@ -9,7 +9,10 @@
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0xDc38c5aF436B9652225f92c370A011C673FA7Ba5",
-      "startBlock": 407263
+      "startBlock": 407263,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     }
   ],
   "amms": [
@@ -27,5 +30,6 @@
       "address": "0x2708E5C7087d4C6D295c8B58b2D452c360D505C7",
       "startBlock": 407263
     }
-  ]
+  ],
+  "cctpBridges": []
 }

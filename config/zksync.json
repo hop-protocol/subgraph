@@ -4,5 +4,6 @@
   "subgraphName": "hop-zksync",
   "tokens": [],
   "amms": [],
-  "bridges": []
+  "bridges": [],
+  "cctpBridges": []
 }

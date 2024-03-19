@@ -9,7 +9,10 @@
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0xe5D7C2a44FfDDf6b295A15c148167daaAf5Cf34f",
-      "startBlock": 794342
+      "startBlock": 794342,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenHOP",
@@ -17,7 +20,10 @@
       "tokenName": "Hop",
       "tokenDecimals": 18,
       "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
-      "startBlock": 1518790
+      "startBlock": 1518790,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     }
   ],
   "amms": [
@@ -41,5 +47,6 @@
       "address": "0x0a6b1904369fE59E002ad0713ae89d4E3dF5A7Cf",
       "startBlock": 1518790
     }
-  ]
+  ],
+  "cctpBridges": []
 }

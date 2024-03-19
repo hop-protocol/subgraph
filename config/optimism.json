@@ -8,8 +8,22 @@
       "token": "USDC",
       "tokenName": "USD Coin",
       "tokenDecimals": 6,
+      "address": "0x0b2c639c533813f4aa9d7837caf62653d097ff85",
+      "startBlock": 0,
+      "isUSDCe": false,
+      "isUSDC": true,
+      "isGnosis": false
+    },
+    {
+      "dataSourceName": "TokenUSDC.e",
+      "token": "USDC.e",
+      "tokenName": "USD Coin Bridged",
+      "tokenDecimals": 6,
       "address": "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
-      "startBlock": 1
+      "startBlock": 1,
+      "isUSDCe": true,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenUSDT",
@@ -17,7 +31,10 @@
       "tokenName": "Tether USD",
       "tokenDecimals": 6,
       "address": "0x94b008aA00579c1307B0EF2c499aD98a8ce58e58",
-      "startBlock": 1
+      "startBlock": 1,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenDAI",
@@ -25,7 +42,10 @@
       "tokenName": "DAI Stablecoin",
       "tokenDecimals": 18,
       "address": "0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1",
-      "startBlock": 1
+      "startBlock": 1,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "Token",
@@ -33,7 +53,10 @@
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0x4200000000000000000000000000000000000006",
-      "startBlock": 1
+      "startBlock": 1,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenHOP",
@@ -41,7 +64,10 @@
       "tokenName": "Hop",
       "tokenDecimals": 18,
       "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
-      "startBlock": 24710333
+      "startBlock": 24710333,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenSNX",
@@ -49,7 +75,10 @@
       "tokenName": "Synthetix Network Token",
       "tokenDecimals": 18,
       "address": "0x8700dAec35aF8Ff88c16BdF0418774CB3D7599B4",
-      "startBlock": 26092038
+      "startBlock": 26092038,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokensUSD",
@@ -57,7 +86,10 @@
       "tokenName": "Synth sUSD",
       "tokenDecimals": 18,
       "address": "0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9",
-      "startBlock": 27410328
+      "startBlock": 27410328,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenrETH",
@@ -65,7 +97,10 @@
       "tokenName": "Rocket Pool ETH",
       "tokenDecimals": 18,
       "address": "0x9Bcef72be871e61ED4fBbc7630889beE758eb81D",
-      "startBlock": 94877802
+      "startBlock": 94877802,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     }
   ],
   "amms": [
@@ -160,6 +195,16 @@
       "token": "rETH",
       "address": "0xA0075E8cE43dcB9970cB7709b9526c1232cc39c2",
       "startBlock": 94877802
+    }
+  ],
+  "cctpBridges": [
+    {
+      "dataSourceName": "HopL2CctpBridgeUSDC",
+      "token": "USDC",
+      "address": "0xa81D244A1814468C734E5b4101F7b9c0c577a8fC",
+      "cctpAddress": "0x469147af8Bde580232BE9DC84Bb4EC84d348De24",
+      "cctpMessageTransmitter": "0x4d41f22c5a0e5c74090899e5a8fb597a8842b3e8",
+      "startBlock": 1
     }
   ]
 }

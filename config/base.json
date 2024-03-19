@@ -8,8 +8,22 @@
       "token": "USDC",
       "tokenName": "USD Coin",
       "tokenDecimals": 6,
+      "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "startBlock": 0,
+      "isUSDCe": false,
+      "isUSDC": true,
+      "isGnosis": false
+    },
+    {
+      "dataSourceName": "TokenUSDC.e",
+      "token": "USDC.e",
+      "tokenName": "USD Coin Bridged",
+      "tokenDecimals": 6,
       "address": "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
-      "startBlock": 2077758
+      "startBlock": 2077758,
+      "isUSDCe": true,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "Token",
@@ -17,7 +31,10 @@
       "tokenName": "Ethereum",
       "tokenDecimals": 18,
       "address": "0x4200000000000000000000000000000000000006",
-      "startBlock": 1397238
+      "startBlock": 1397238,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     },
     {
       "dataSourceName": "TokenHOP",
@@ -25,7 +42,10 @@
       "tokenName": "Hop",
       "tokenDecimals": 18,
       "address": "0xc5102fE9359FD9a28f877a67E36B0F050d81a3CC",
-      "startBlock": 1859764
+      "startBlock": 1859764,
+      "isUSDCe": false,
+      "isUSDC": false,
+      "isGnosis": false
     }
   ],
   "amms": [
@@ -60,6 +80,16 @@
       "token": "HOP",
       "address": "0xe22D2beDb3Eca35E6397e0C6D62857094aA26F52",
       "startBlock": 1859764
+    }
+  ],
+  "cctpBridges": [
+    {
+      "dataSourceName": "HopL2CctpBridgeUSDC",
+      "token": "USDC",
+      "address": "0x46ae9BaB8CEA96610807a275EBD36f8e916b5C61",
+      "cctpAddress": "0xe7F40BF16AB09f4a6906Ac2CAA4094aD2dA48Cc2",
+      "cctpMessageTransmitter": "0xAD09780d193884d503182aD4588450C416D6F9D4",
+      "startBlock": 2077758
     }
   ]
 }
