@@ -34,23 +34,23 @@ The access token is found on the hosted-service [dashboard](https://thegraph.com
 
 1. Update `scripts/mapping_config.json` with the new chain network and subgraph name mapping.
 
-2. Update the `@hop-protocol/core` package version in `package.json`.
+2. Update the `@hop-protocol/sdk` package version in `package.json`.
 
 3. Add the `build-deploy` npm script in `package.json`.
 
 4. Update `.gitignore` and `clean.sh` (this step can probably be automated).
 
-5. Run `npm i` to install the latest `@hop-protocol/core` package
+5. Run `npm i` to install the latest `@hop-protocol/sdk` package
 
 6. Run `npm run generate-config-json` to create the updated config files
 
 The config generation script is run automatically when building the subgraph with npm `build-deploy` command and can also be ran with `npm run generate-config-json`.
 
-The generation script `scripts/generate_config_json.js` will read the chain/token config from `@hop-protocol/core` and output/override the config JSON files to `config/`.
+The generation script `scripts/generate_config_json.js` will read the chain/token config from `@hop-protocol/sdk` and output/override the config JSON files to `config/`.
 
 7. [Install Docker](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 
-8. After bumping the version of `@hop-protocol/core` in `package.json` and pushing to github and CircleCI finishes building the [docker image](https://hub.docker.com/r/hopprotocol/subgraph), run the following commands to build and deploy the subgraph locally or on a server using docker compose:
+8. After bumping the version of `@hop-protocol/sdk` in `package.json` and pushing to github and github action finishes building the [docker image](https://hub.docker.com/r/hopprotocol/subgraph), run the following commands to build and deploy the subgraph locally or on a server using docker compose:
 
 ```bash
 # change this values to deploy a different subgraph. Refer to `scripts/mapping_config.json` for the subgraph name
@@ -60,7 +60,7 @@ export RPC=https://goerli.base.org
 # download docker-compose file
 wget https://raw.githubusercontent.com/hop-protocol/subgraph/master/docker-compose.yml
 
-# start services 
+# start services
 # the `-d` is used to run in background
 # the `--pull=always` is used to update the image when there is one available
 

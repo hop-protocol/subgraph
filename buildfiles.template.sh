@@ -63,11 +63,17 @@ else
       SUBGRAPH_STUDIO_DEPLOYMENT_NAME="polygon"
     fi
 
+    SUBGRAPH_NAME="hop-protocol-$SUBGRAPH_STUDIO_DEPLOYMENT_NAME-studio"
+
+    echo "Authenticating"
+
     # auth studio:
     npx graph auth --studio $DEPLOY_KEY
 
+    echo "Deploying subgraph \"$SUBGRAPH_NAME\""
+
     # deploy studio:
-    npx graph deploy --studio "hop-protocol-$SUBGRAPH_STUDIO_DEPLOYMENT_NAME-studio"
+    npx graph deploy --studio "$SUBGRAPH_NAME"
   else
     echo 'running hosted build'
     # auth:
