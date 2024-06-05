@@ -59,12 +59,15 @@ else
     if (test "$SUBGRAPH_STUDIO_DEPLOYMENT_NAME" = "arbitrum-one"); then
       SUBGRAPH_STUDIO_DEPLOYMENT_NAME="arbitrum"
     fi
+    if (test "$SUBGRAPH_STUDIO_DEPLOYMENT_NAME" = "matic"); then
+      SUBGRAPH_STUDIO_DEPLOYMENT_NAME="polygon"
+    fi
 
     # auth studio:
     npx graph auth --studio $DEPLOY_KEY
 
     # deploy studio:
-    npx graph deploy --studio "hop-protocol-$SUBGRAPH_STUDIO_DEPLOYMENT_NAME"
+    npx graph deploy --studio "hop-protocol-$SUBGRAPH_STUDIO_DEPLOYMENT_NAME-studio"
   else
     echo 'running hosted build'
     # auth:
