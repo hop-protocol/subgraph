@@ -112,7 +112,7 @@ dataSources:
     source:
       address: '{{cctpAddress}}'
       abi: L2_HopCCTPImplementation
-      startBlock: {{startBlock}}
+      startBlock: {{cctpStartBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -133,7 +133,7 @@ dataSources:
     source:
       address: '{{cctpMessageTransmitter}}'
       abi: CCTPMessageTransmitter
-      startBlock: {{startBlock}}
+      startBlock: {{cctpStartBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -267,7 +267,7 @@ dataSources:
     source:
       address: '{{cctpAddress}}'
       abi: L2_HopCCTPImplementation
-      startBlock: {{startBlock}}
+      startBlock: {{cctpStartBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -288,7 +288,7 @@ dataSources:
     source:
       address: '{{cctpMessageTransmitter}}'
       abi: CCTPMessageTransmitter
-      startBlock: {{startBlock}}
+      startBlock: {{cctpStartBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

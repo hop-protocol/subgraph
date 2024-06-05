@@ -152,49 +152,57 @@
       "dataSourceName": "HopL2BridgeUSDC",
       "token": "USDC",
       "address": "0xa81D244A1814468C734E5b4101F7b9c0c577a8fC",
-      "startBlock": 1
+      "startBlock": 1,
+      "cctpStartBlock": 117599491
     },
     {
       "dataSourceName": "HopL2BridgeUSDT",
       "token": "USDT",
       "address": "0x46ae9BaB8CEA96610807a275EBD36f8e916b5C61",
-      "startBlock": 1
+      "startBlock": 1,
+      "cctpStartBlock": 1
     },
     {
       "dataSourceName": "HopL2BridgeDAI",
       "token": "DAI",
       "address": "0x7191061D5d4C60f598214cC6913502184BAddf18",
-      "startBlock": 1
+      "startBlock": 1,
+      "cctpStartBlock": 1
     },
     {
       "dataSourceName": "HopL2Bridge",
       "token": "ETH",
       "address": "0x83f6244Bd87662118d96D9a6D44f09dffF14b30E",
-      "startBlock": 1
+      "startBlock": 1,
+      "cctpStartBlock": 1
     },
     {
       "dataSourceName": "HopL2BridgeHOP",
       "token": "HOP",
       "address": "0x03D7f750777eC48d39D080b020D83Eb2CB4e3547",
-      "startBlock": 24710333
+      "startBlock": 24710333,
+      "cctpStartBlock": 24710333
     },
     {
       "dataSourceName": "HopL2BridgeSNX",
       "token": "SNX",
       "address": "0x16284c7323c35F4960540583998C98B1CfC581a7",
-      "startBlock": 26092038
+      "startBlock": 26092038,
+      "cctpStartBlock": 26092038
     },
     {
       "dataSourceName": "HopL2BridgesUSD",
       "token": "sUSD",
       "address": "0x33Fe5bB8DA466dA55a8A32D6ADE2BB104E2C5201",
-      "startBlock": 27410328
+      "startBlock": 27410328,
+      "cctpStartBlock": 27410328
     },
     {
       "dataSourceName": "HopL2BridgerETH",
       "token": "rETH",
       "address": "0xA0075E8cE43dcB9970cB7709b9526c1232cc39c2",
-      "startBlock": 94877802
+      "startBlock": 94877802,
+      "cctpStartBlock": 94877802
     }
   ],
   "cctpBridges": [
@@ -204,7 +212,8 @@
       "address": "0xa81D244A1814468C734E5b4101F7b9c0c577a8fC",
       "cctpAddress": "0x469147af8Bde580232BE9DC84Bb4EC84d348De24",
       "cctpMessageTransmitter": "0x4d41f22c5a0e5c74090899e5a8fb597a8842b3e8",
-      "startBlock": 1
+      "startBlock": 1,
+      "cctpStartBlock": 117599491
     }
   ]
 }

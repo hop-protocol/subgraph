@@ -135,43 +135,50 @@
       "dataSourceName": "HopL2BridgeUSDC",
       "token": "USDC",
       "address": "0x0e0E3d2C5c292161999474247956EF542caBF8dd",
-      "startBlock": 440027
+      "startBlock": 440027,
+      "cctpStartBlock": 191777196
     },
     {
       "dataSourceName": "HopL2BridgeUSDT",
       "token": "USDT",
       "address": "0x72209Fe68386b37A40d6bCA04f78356fd342491f",
-      "startBlock": 441562
+      "startBlock": 441562,
+      "cctpStartBlock": 441562
     },
     {
       "dataSourceName": "HopL2BridgeDAI",
       "token": "DAI",
       "address": "0x7aC115536FE3A185100B2c4DE4cb328bf3A58Ba6",
-      "startBlock": 945326
+      "startBlock": 945326,
+      "cctpStartBlock": 945326
     },
     {
       "dataSourceName": "HopL2Bridge",
       "token": "ETH",
       "address": "0x3749C4f034022c39ecafFaBA182555d4508caCCC",
-      "startBlock": 2135598
+      "startBlock": 2135598,
+      "cctpStartBlock": 2135598
     },
     {
       "dataSourceName": "HopL2BridgeHOP",
       "token": "HOP",
       "address": "0x25FB92E505F752F730cAD0Bd4fa17ecE4A384266",
-      "startBlock": 26088165
+      "startBlock": 26088165,
+      "cctpStartBlock": 26088165
     },
     {
       "dataSourceName": "HopL2BridgerETH",
       "token": "rETH",
       "address": "0xc315239cFb05F1E130E7E28E603CEa4C014c57f0",
-      "startBlock": 85020329
+      "startBlock": 85020329,
+      "cctpStartBlock": 85020329
     },
     {
       "dataSourceName": "HopL2BridgeMAGIC",
       "token": "MAGIC",
       "address": "0xEa5abf2C909169823d939de377Ef2Bf897A6CE98",
-      "startBlock": 99536351
+      "startBlock": 99536351,
+      "cctpStartBlock": 99536351
     }
   ],
   "cctpBridges": [
@@ -181,7 +188,8 @@
       "address": "0x0e0E3d2C5c292161999474247956EF542caBF8dd",
       "cctpAddress": "0x6504BFcaB789c35325cA4329f1f41FaC340bf982",
       "cctpMessageTransmitter": "0xC30362313FBBA5cf9163F0bb16a0e01f01A896ca",
-      "startBlock": 440027
+      "startBlock": 440027,
+      "cctpStartBlock": 191777196
     }
   ]
 }

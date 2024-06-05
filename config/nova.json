@@ -56,19 +56,22 @@
       "dataSourceName": "HopL2Bridge",
       "token": "ETH",
       "address": "0x8796860ca1677Bf5d54cE5A348Fe4b779a8212f3",
-      "startBlock": 1724464
+      "startBlock": 1724464,
+      "cctpStartBlock": 1724464
     },
     {
       "dataSourceName": "HopL2BridgeHOP",
       "token": "HOP",
       "address": "0x02D47f76523d2f059b617E4346de67482792eB83",
-      "startBlock": 15937602
+      "startBlock": 15937602,
+      "cctpStartBlock": 15937602
     },
     {
       "dataSourceName": "HopL2BridgeMAGIC",
       "token": "MAGIC",
       "address": "0xE638433e2C1dF5f7a3a21b0a6b5c4b37278e55DC",
-      "startBlock": 11559944
+      "startBlock": 11559944,
+      "cctpStartBlock": 11559944
     }
   ],
   "cctpBridges": []

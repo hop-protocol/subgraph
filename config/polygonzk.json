@@ -39,13 +39,15 @@
       "dataSourceName": "HopL2Bridge",
       "token": "ETH",
       "address": "0x0ce6c85cF43553DE10FC56cecA0aef6Ff0DD444d",
-      "startBlock": 9014486
+      "startBlock": 9014486,
+      "cctpStartBlock": 9014486
     },
     {
       "dataSourceName": "HopL2BridgeHOP",
       "token": "HOP",
       "address": "0x9ec9551d4A1a1593b0ee8124D98590CC71b3B09D",
-      "startBlock": 9014754
+      "startBlock": 9014754,
+      "cctpStartBlock": 9014754
     }
   ],
   "cctpBridges": []

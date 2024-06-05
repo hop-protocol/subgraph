@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
-const { mainnet: mainnetAddresses, goerli: goerliAddresses } = require('@hop-protocol/core/addresses')
-const { tokens: tokenMeta } = require('@hop-protocol/core/metadata')
+const { mainnet: mainnetAddresses, goerli: goerliAddresses } = require('@hop-protocol/sdk/addresses')
+const { getToken } = require('@hop-protocol/sdk')
 const { subgraphNameMapping, subgraphNetworkMapping } = require('./mapping_config.json')
 
 const networkConfig = {
@@ -120,6 +120,7 @@ function createBridgesConfig (net, chain) {
     json[usdcIndex].cctpAddress = json[usdcEIndex].cctpAddress
     json[usdcIndex].cctpMessageTransmitter = json[usdcEIndex].cctpMessageTransmitter
     json[usdcIndex].startBlock = json[usdcEIndex].startBlock
+    json[usdcIndex].cctpStartBlock = json[usdcEIndex].cctpStartBlock
 
     json.splice(usdcEIndex, 1) // Remove the USDC.e object
   }
@@ -159,8 +160,9 @@ function createTokenConfig (net, chain, tokenSymbol) {
     dataSourceName = `${dataSourceName}${tokenSymbol}`
   }
   const token = tokenSymbol
-  const tokenName = tokenMeta[tokenSymbol].name
-  const tokenDecimals = tokenMeta[tokenSymbol].decimals
+  const tokenMeta = getToken(tokenSymbol)
+  const tokenName = tokenMeta.name
+  const tokenDecimals = tokenMeta.decimals
   let address = ''
   if (chain === 'ethereum') {
     address = networkConfig[net].bridges[tokenSymbol][chain].l1CanonicalToken
@@ -237,6 +239,7 @@ function createBridgeConfig (net, chain, tokenSymbol) {
   }
 
   const startBlock = networkConfig[net].bridges[tokenSymbol][chain].bridgeDeployedBlockNumber || 0
+  const cctpStartBlock = networkConfig[net].bridges[tokenSymbol][chain].cctpBridgeDeployedBlockNumber || startBlock
 
   if (!dataSourceName) {
     throw new Error(`dataSourceName not found for ${tokenSymbol}`)
@@ -257,7 +260,8 @@ function createBridgeConfig (net, chain, tokenSymbol) {
     address,
     cctpAddress,
     cctpMessageTransmitter,
-    startBlock
+    startBlock,
+    cctpStartBlock
   }
 }
 
